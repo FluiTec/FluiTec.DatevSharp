@@ -18,7 +18,7 @@ namespace FluiTec.Datev.Models
 		///     IsoCurrencySymbol may be obtained on .NET using new
 		///     RegionInfo(System.Threading.Thread.CurrentThread.CurrentUICulture.LCID).ISOCurrencySymbol
 		/// </remarks>
-		public DatevHeader(string exportedBy, string isoCurrencySymbol)
+		public DatevHeader(string exportedBy, string isoCurrencySymbol = null)
 		{
 			Created = DateTime.Now;
 			ExportedBy = exportedBy;

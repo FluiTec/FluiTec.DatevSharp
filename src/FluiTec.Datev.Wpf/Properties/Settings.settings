@@ -1,0 +1,15 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="FluiTec.Datev.Wpf.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="BaseDir" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Y:\DATEV WTS\</Value>
+    </Setting>
+    <Setting Name="ExportsFileName" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">exports.xml</Value>
+    </Setting>
+    <Setting Name="ConsultantFileName" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">consultant.xml</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

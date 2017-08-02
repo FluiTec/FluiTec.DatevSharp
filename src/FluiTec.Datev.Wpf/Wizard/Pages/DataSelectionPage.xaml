@@ -1,0 +1,24 @@
+﻿<UserControl x:Class="FluiTec.Datev.Wpf.Wizard.DataSelectionPage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:FluiTec.Datev.Wpf.Wizard"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <Grid>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="*" />
+		</Grid.ColumnDefinitions>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="Auto"/>
+			<RowDefinition Height="5" />
+			<RowDefinition Height="Auto" />
+			<RowDefinition Height="5" />
+			<RowDefinition Height="Auto" />
+		</Grid.RowDefinitions>
+		<CheckBox Grid.Row="0" Content="Addressen exportieren" IsChecked="{Binding Path=(local:DataSelectionModel.ExportAddresses)}" />
+		<CheckBox Grid.Row="2" Content="Zahlungsbedingungen exportieren" IsChecked="{Binding Path=(local:DataSelectionModel.ExportPaymentConditions)}" />
+		<CheckBox Grid.Row="4" Content="Buchungsstapel exportieren" IsChecked="{Binding Path=(local:DataSelectionModel.ExportBookings)}" />
+	</Grid>
+</UserControl>
