@@ -11,7 +11,7 @@
         DataContext="{Binding Export, Source={StaticResource Locator}}"
         Title="{Binding Title}" Icon="/Resources/person.ico" Height="525" Width="525" MinHeight="510" MinWidth="525">
     <Grid>
-		<syncfusion:WizardControl HelpVisible="False" CancelText="Abbrechen" BackText="Zurück" NextText="Weiter" FinishText="Fertig" CancelButtonCancelsWindow="True" HelpText="Hilfe" FinishButtonClosesWindow="True">
+		<syncfusion:WizardControl HelpVisible="False" CancelText="Abbrechen" BackText="Zurück" NextText="Weiter" FinishText="Fertig" CancelButtonCancelsWindow="True" HelpText="Hilfe" FinishButtonClosesWindow="False">
 			<i:Interaction.Triggers>
 				<i:EventTrigger EventName="Finish">
 					<i:InvokeCommandAction Command="{Binding FinishCommand}" />

@@ -21,10 +21,22 @@ namespace FluiTec.Datev.Models
 				if (!string.IsNullOrWhiteSpace(value))
 					sb.AppendLine(value);
 
-			if (!FitDefault(sourceValues))
-				if (!FitByWord(sourceValues))
-					if (!FitUgly(sourceValues))
-						throw new NotImplementedException(message: "CustomerString was too long to handle...");
+			if (FitDefault(sourceValues))
+			{
+				Validate("default");
+				return;
+			}
+			if (FitByWord(sourceValues))
+			{
+				Validate("byword");
+				return;
+			}
+			if (FitUgly(sourceValues))
+				Validate("ugly");
+			else
+			{
+				throw new NotImplementedException(message: "CustomerString was too long to handle...");
+			}
 		}
 
 		private List<int> TargetLengths { get; }
@@ -35,7 +47,7 @@ namespace FluiTec.Datev.Models
 		/// <returns>	True if it succeeds, false if it fails. </returns>
 		private bool FitDefault(string[] lines)
 		{
-			if (lines.Where((t, i) => !(t == null || t.Length <= TargetLengths[i])).Any())
+			if (lines.Where((t, i) => !(t != null && t.Length > TargetLengths[i])).Any())
 				return false;
 
 			var counter = 0;
@@ -105,6 +117,15 @@ namespace FluiTec.Datev.Models
 			if (start + TargetLengths[lines.Length - 1] < content.Length)
 				return false;
 			return true;
+		}
+
+		private void Validate(string caller)
+		{
+			for(var i = 0; i < TargetStrings.Count; i++)
+			{
+				if (TargetStrings[i].Length > TargetLengths[i])
+					throw new ArgumentException();
+			}
 		}
 	}
 }

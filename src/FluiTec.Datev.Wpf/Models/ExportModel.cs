@@ -1,10 +1,17 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace FluiTec.Datev.Wpf.Models
 {
 	/// <summary>	A data Model for the export. </summary>
 	public class ExportModel
 	{
+		/// <summary>	Default constructor. </summary>
+		public ExportModel()
+		{
+			SavedFiles = new List<string>();
+		}
+
 		/// <summary>	Gets or sets the name. </summary>
 		/// <value>	The name. </value>
 		public string Name { get; set; }
@@ -20,5 +27,9 @@ namespace FluiTec.Datev.Wpf.Models
 		/// <summary>	Gets or sets the Date/Time of the till. </summary>
 		/// <value>	The till. </value>
 		public DateTime Till { get; set; }
+
+		/// <summary>	Gets or sets the saved files. </summary>
+		/// <value>	The saved files. </value>
+		public List<string> SavedFiles { get; set; }
 	}
 }

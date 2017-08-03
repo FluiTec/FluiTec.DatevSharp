@@ -1,4 +1,5 @@
-﻿using System.Collections.ObjectModel;
+﻿using System;
+using System.Collections.ObjectModel;
 using FluiTec.Datev.Wpf.Models;
 
 namespace FluiTec.Datev.Wpf.Services
@@ -6,8 +7,8 @@ namespace FluiTec.Datev.Wpf.Services
 	/// <summary>	Interface for export service. </summary>
 	public interface IExportService
 	{
-		/// <summary>	Gets the exports. </summary>
-		/// <returns>	The exports. </returns>
+		event EventHandler<EventArgs> ExportsUpdated;
 		ObservableCollection<ExportModel> GetExports();
+		void SetExports(ObservableCollection<ExportModel> models);
 	}
 }

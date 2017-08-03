@@ -1,0 +1,1163 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="wtsModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Adressen">
+          <Key>
+            <PropertyRef Name="Kurzname" />
+          </Key>
+          <Property Name="Kurzname" Type="varchar" MaxLength="16" Nullable="false" />
+          <Property Name="Name1" Type="varchar" MaxLength="40" />
+          <Property Name="Name2" Type="varchar" MaxLength="40" />
+          <Property Name="Name3" Type="varchar" MaxLength="40" />
+          <Property Name="Straße" Type="varchar" MaxLength="50" />
+          <Property Name="PLZ" Type="varchar" MaxLength="10" />
+          <Property Name="Ort" Type="varchar" MaxLength="30" />
+          <Property Name="Postfach" Type="varchar" MaxLength="20" />
+          <Property Name="PPZ" Type="varchar" MaxLength="10" />
+          <Property Name="Postfachort" Type="varchar" MaxLength="30" />
+          <Property Name="Nummer" Type="varchar" MaxLength="16" />
+          <Property Name="Postanschrift" Type="tinyint" Nullable="false" />
+          <Property Name="Ländercode" Type="smallint" />
+          <Property Name="Briefanrede" Type="varchar" MaxLength="50" />
+          <Property Name="Telefon" Type="varchar" MaxLength="30" />
+          <Property Name="Telefax" Type="varchar" MaxLength="30" />
+          <Property Name="Kommunikation" Type="varchar" MaxLength="50" />
+          <Property Name="Gruppe" Type="varchar" MaxLength="20" />
+          <Property Name="Info" Type="text" />
+          <Property Name="Typ" Type="tinyint" Nullable="false" />
+          <Property Name="Divers" Type="bit" Nullable="false" />
+          <Property Name="Herkunft" Type="varchar" MaxLength="30" />
+          <Property Name="Branche" Type="varchar" MaxLength="30" />
+          <Property Name="Mobiltelefon" Type="varchar" MaxLength="30" />
+          <Property Name="Autotelefon" Type="varchar" MaxLength="30" />
+          <Property Name="Internetadresse" Type="varchar" MaxLength="255" />
+          <Property Name="BLZ" Type="varchar" MaxLength="11" />
+          <Property Name="Bankname" Type="varchar" MaxLength="40" />
+          <Property Name="Bankkonto" Type="varchar" MaxLength="34" />
+          <Property Name="Vertreter" Type="varchar" MaxLength="20" />
+          <Property Name="Zahlungsart" Type="varchar" MaxLength="30" />
+          <Property Name="Zahlungsmittel" Type="varchar" MaxLength="30" />
+          <Property Name="Versandtext" Type="varchar" MaxLength="50" />
+          <Property Name="ILN" Type="varchar" MaxLength="13" />
+          <Property Name="Bankkontoinhaber" Type="varchar" MaxLength="50" />
+          <Property Name="Fahrtzone" Type="varchar" MaxLength="8" />
+          <Property Name="Archivunterordner" Type="varchar" MaxLength="20" />
+          <Property Name="SperrkontoBLZ" Type="varchar" MaxLength="11" />
+          <Property Name="Sperrkontobankname" Type="varchar" MaxLength="40" />
+          <Property Name="Sperrkontonummer" Type="varchar" MaxLength="34" />
+          <Property Name="Preiscode" Type="tinyint" Nullable="false" />
+          <Property Name="Steuercode" Type="tinyint" Nullable="false" />
+          <Property Name="Mahncode" Type="tinyint" Nullable="false" />
+          <Property Name="Grundrabatt" Type="float" />
+          <Property Name="Kosten" Type="money" />
+          <Property Name="Kostensatz" Type="float" />
+          <Property Name="Kalkulationszuschlag" Type="float" />
+          <Property Name="Preiszuschlag" Type="float" />
+          <Property Name="Kalkulationsart" Type="tinyint" />
+          <Property Name="Konto" Type="int" />
+          <Property Name="Sammelkonto" Type="int" />
+          <Property Name="Sachkonto" Type="int" />
+          <Property Name="UStID" Type="varchar" MaxLength="16" />
+          <Property Name="Kreditlimit" Type="money" />
+          <Property Name="Kreditsperre" Type="bit" Nullable="false" />
+          <Property Name="Ausgeblendet" Type="bit" Nullable="false" />
+          <Property Name="Geschlecht" Type="tinyint" Nullable="false" />
+          <Property Name="Umsatzdatum" Type="datetime" />
+          <Property Name="Erstkontakt" Type="datetime" />
+          <Property Name="Mahndruckdatum" Type="datetime" />
+          <Property Name="Zahlungsdatum" Type="datetime" />
+          <Property Name="Löschdatum" Type="datetime" />
+          <Property Name="Änderungsdatum" Type="datetime" />
+          <Property Name="Erstanlagedatum" Type="datetime" />
+          <Property Name="Bearbeiter" Type="varchar" MaxLength="20" />
+          <Property Name="Eigentümer" Type="varchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="Buchungen">
+          <Key>
+            <PropertyRef Name="Nummer" />
+          </Key>
+          <Property Name="Nummer" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Typ" Type="tinyint" Nullable="false" />
+          <Property Name="Belegnummer" Type="varchar" MaxLength="16" />
+          <Property Name="Projekt" Type="varchar" MaxLength="50" />
+          <Property Name="Personal" Type="varchar" MaxLength="20" />
+          <Property Name="Kasse" Type="varchar" MaxLength="30" />
+          <Property Name="Fremdbelegnummer" Type="varchar" MaxLength="16" />
+          <Property Name="Auftragsnummer" Type="varchar" MaxLength="16" />
+          <Property Name="Unternehmensbereich" Type="varchar" MaxLength="16" />
+          <Property Name="Kurzname" Type="varchar" MaxLength="16" />
+          <Property Name="Name1" Type="varchar" MaxLength="40" />
+          <Property Name="Name2" Type="varchar" MaxLength="40" />
+          <Property Name="Name3" Type="varchar" MaxLength="40" />
+          <Property Name="Straße" Type="varchar" MaxLength="50" />
+          <Property Name="PLZ" Type="varchar" MaxLength="10" />
+          <Property Name="Ort" Type="varchar" MaxLength="30" />
+          <Property Name="BLZ" Type="varchar" MaxLength="11" />
+          <Property Name="Bankname" Type="varchar" MaxLength="40" />
+          <Property Name="Bankkonto" Type="varchar" MaxLength="34" />
+          <Property Name="Steuersatz" Type="float" />
+          <Property Name="Skontosatz1" Type="float" />
+          <Property Name="Skontosatz2" Type="float" />
+          <Property Name="Skontotage1" Type="smallint" />
+          <Property Name="Skontotage2" Type="smallint" />
+          <Property Name="Zieltage" Type="smallint" />
+          <Property Name="Zahlungsart" Type="varchar" MaxLength="30" />
+          <Property Name="Zahlungsmittel" Type="varchar" MaxLength="30" />
+          <Property Name="Zahlungsweise" Type="varchar" MaxLength="8" />
+          <Property Name="Hausbanksachkonto" Type="int" />
+          <Property Name="Mahnstufe" Type="tinyint" />
+          <Property Name="Mahncode" Type="tinyint" Nullable="false" />
+          <Property Name="Verrechnungsart" Type="tinyint" Nullable="false" />
+          <Property Name="Fortschreibungen" Type="tinyint" Nullable="false" />
+          <Property Name="Buchungsart" Type="varchar" MaxLength="40" />
+          <Property Name="Tagebuch" Type="varchar" MaxLength="40" />
+          <Property Name="Buchungstext" Type="varchar" MaxLength="255" />
+          <Property Name="UStID" Type="varchar" MaxLength="16" />
+          <Property Name="Steuerart" Type="varchar" MaxLength="8" />
+          <Property Name="Umsatzgruppe" Type="tinyint" Nullable="false" />
+          <Property Name="Gesperrt" Type="bit" Nullable="false" />
+          <Property Name="Kostenstelle" Type="int" />
+          <Property Name="Bewertungsgrad" Type="float" />
+          <Property Name="Betrag" Type="money" />
+          <Property Name="Steuerbetrag" Type="money" />
+          <Property Name="Skontofähig" Type="money" />
+          <Property Name="Skontobetrag1" Type="money" />
+          <Property Name="Skontobetrag2" Type="money" />
+          <Property Name="Zahlbetrag" Type="money" />
+          <Property Name="Zahlungsbetrag" Type="money" />
+          <Property Name="Zahlungssumme" Type="money" />
+          <Property Name="Mahngebühren" Type="money" />
+          <Property Name="Verzugszinsen" Type="money" />
+          <Property Name="Ausgleichsbetrag" Type="money" />
+          <Property Name="Sicherheitseinbehalt" Type="money" />
+          <Property Name="Sicherheitsleistung" Type="tinyint" Nullable="false" />
+          <Property Name="Bruttoabzüge" Type="money" />
+          <Property Name="Buchungsperiode" Type="datetime" />
+          <Property Name="Belegdatum" Type="datetime" />
+          <Property Name="Zieldatum" Type="datetime" />
+          <Property Name="Valutadatum" Type="datetime" />
+          <Property Name="Skontodatum1" Type="datetime" />
+          <Property Name="Skontodatum2" Type="datetime" />
+          <Property Name="Zahldatum" Type="datetime" />
+          <Property Name="Zahlungsdatum" Type="datetime" />
+          <Property Name="Mahndatum" Type="datetime" />
+          <Property Name="Mahndruckdatum" Type="datetime" />
+          <Property Name="Journaldatum" Type="datetime" />
+          <Property Name="Druckdatum" Type="datetime" />
+          <Property Name="Buchhaltungsdatum" Type="datetime" />
+          <Property Name="Löschdatum" Type="datetime" />
+          <Property Name="Änderungsdatum" Type="datetime" />
+          <Property Name="Erstanlagedatum" Type="datetime" />
+          <Property Name="Bearbeiter" Type="varchar" MaxLength="20" />
+          <Property Name="Eigentümer" Type="varchar" MaxLength="20" />
+          <Property Name="Sicherheitsfrist" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Buchungsarten">
+          <Key>
+            <PropertyRef Name="Name" />
+          </Key>
+          <Property Name="Name" Type="varchar" MaxLength="40" Nullable="false" />
+          <Property Name="Typ" Type="tinyint" Nullable="false" />
+          <Property Name="Gruppe" Type="varchar" MaxLength="20" />
+          <Property Name="Kurztext" Type="varchar" MaxLength="255" />
+          <Property Name="Beschreibung" Type="varchar" MaxLength="255" />
+          <Property Name="Buchungscode" Type="tinyint" Nullable="false" />
+          <Property Name="Tagebuch" Type="varchar" MaxLength="40" />
+          <Property Name="Änderungsdatum" Type="datetime" />
+          <Property Name="Eigentümer" Type="varchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="Projektmerkmale">
+          <Key>
+            <PropertyRef Name="Nummer" />
+            <PropertyRef Name="Merkmal" />
+          </Key>
+          <Property Name="Nummer" Type="int" Nullable="false" />
+          <Property Name="Merkmal" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Datentyp" Type="int" Nullable="false" />
+          <Property Name="Wert" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="Projektzweige">
+          <Key>
+            <PropertyRef Name="Nummer" />
+          </Key>
+          <Property Name="Nummer" Type="int" Nullable="false" />
+          <Property Name="Projekt" Type="varchar" MaxLength="50" />
+          <Property Name="Kennung" Type="varchar" MaxLength="50" />
+          <Property Name="Typ" Type="tinyint" Nullable="false" />
+          <Property Name="Kurztext" Type="varchar" MaxLength="50" />
+          <Property Name="Beschreibung" Type="text" />
+          <Property Name="Thema" Type="varchar" MaxLength="40" />
+          <Property Name="Stichwörter" Type="varchar" MaxLength="50" />
+          <Property Name="Kommentar" Type="text" />
+          <Property Name="Kurzname" Type="varchar" MaxLength="16" />
+          <Property Name="Name1" Type="varchar" MaxLength="40" />
+          <Property Name="Name2" Type="varchar" MaxLength="40" />
+          <Property Name="Name3" Type="varchar" MaxLength="40" />
+          <Property Name="Straße" Type="varchar" MaxLength="50" />
+          <Property Name="PLZ" Type="varchar" MaxLength="10" />
+          <Property Name="Ort" Type="varchar" MaxLength="30" />
+          <Property Name="Briefanrede" Type="varchar" MaxLength="50" />
+          <Property Name="Rechnungsadresse" Type="varchar" MaxLength="16" />
+          <Property Name="Lieferadresse" Type="varchar" MaxLength="16" />
+          <Property Name="LieferadresseName1" Type="varchar" MaxLength="40" />
+          <Property Name="LieferadresseName2" Type="varchar" MaxLength="40" />
+          <Property Name="LieferadresseName3" Type="varchar" MaxLength="40" />
+          <Property Name="LieferadresseStraße" Type="varchar" MaxLength="40" />
+          <Property Name="LieferadressePLZ" Type="varchar" MaxLength="10" />
+          <Property Name="LieferadresseOrt" Type="varchar" MaxLength="30" />
+          <Property Name="Pauschalsumme" Type="money" />
+          <Property Name="Zuschlagsbetrag" Type="money" />
+          <Property Name="Zuschlagssatz" Type="float" />
+          <Property Name="Kosten" Type="money" />
+          <Property Name="Kostensatz" Type="float" />
+          <Property Name="Provisionssatz" Type="float" />
+          <Property Name="Sicherheitseinbehalt" Type="money" />
+          <Property Name="Sicherheitssatz" Type="float" />
+          <Property Name="Steuerart" Type="varchar" MaxLength="8" />
+          <Property Name="Interimsgegenkonto" Type="int" />
+          <Property Name="Kostenstelle" Type="int" />
+          <Property Name="Zahlungsart" Type="varchar" MaxLength="30" />
+          <Property Name="Zahlungsmittel" Type="varchar" MaxLength="30" />
+          <Property Name="Zahlungsweise" Type="varchar" MaxLength="8" />
+          <Property Name="Sicherheitsbasissatz" Type="float" />
+          <Property Name="Vertreter" Type="varchar" MaxLength="20" />
+          <Property Name="Versandtext" Type="text" />
+          <Property Name="Zeichen" Type="varchar" MaxLength="20" />
+          <Property Name="Maske" Type="varchar" MaxLength="80" />
+          <Property Name="Vergabenummer" Type="varchar" MaxLength="20" />
+          <Property Name="Vorgangsart" Type="varchar" MaxLength="40" Nullable="false" />
+          <Property Name="Druckstatus" Type="tinyint" Nullable="false" />
+          <Property Name="Dezimalstellen" Type="tinyint" />
+          <Property Name="Status" Type="tinyint" Nullable="false" />
+          <Property Name="Belegnummer" Type="varchar" MaxLength="16" />
+          <Property Name="Zusammenstellungen" Type="tinyint" />
+          <Property Name="Sicherheitsleistung" Type="tinyint" Nullable="false" />
+          <Property Name="Anlage" Type="varchar" MaxLength="30" />
+          <Property Name="EKFaktor0" Type="float" />
+          <Property Name="EKFaktor1" Type="float" />
+          <Property Name="EKFaktor2" Type="float" />
+          <Property Name="EKFaktor3" Type="float" />
+          <Property Name="EKFaktor4" Type="float" />
+          <Property Name="EKFaktor5" Type="float" />
+          <Property Name="EKFaktor6" Type="float" />
+          <Property Name="EKFaktor7" Type="float" />
+          <Property Name="VKFaktor0" Type="float" />
+          <Property Name="VKFaktor1" Type="float" />
+          <Property Name="VKFaktor2" Type="float" />
+          <Property Name="VKFaktor3" Type="float" />
+          <Property Name="VKFaktor4" Type="float" />
+          <Property Name="VKFaktor5" Type="float" />
+          <Property Name="VKFaktor6" Type="float" />
+          <Property Name="VKFaktor7" Type="float" />
+          <Property Name="Zuschlag0" Type="float" />
+          <Property Name="Zuschlag1" Type="float" />
+          <Property Name="Zuschlag2" Type="float" />
+          <Property Name="Zuschlag3" Type="float" />
+          <Property Name="Zuschlag4" Type="float" />
+          <Property Name="Zuschlag5" Type="float" />
+          <Property Name="Zuschlag6" Type="float" />
+          <Property Name="Zuschlag7" Type="float" />
+          <Property Name="Zeitfaktor" Type="float" />
+          <Property Name="Zeitvorgabefaktor" Type="float" />
+          <Property Name="Kalkulationszuschlag" Type="float" />
+          <Property Name="Preiszuschlag" Type="float" />
+          <Property Name="Mindestertrag" Type="float" />
+          <Property Name="Zeitgewichtungsfaktor" Type="float" />
+          <Property Name="Preiscode" Type="tinyint" />
+          <Property Name="Steuercode" Type="tinyint" Nullable="false" />
+          <Property Name="Zeitgruppe" Type="tinyint" Nullable="false" />
+          <Property Name="Lohnzuschlag" Type="varchar" MaxLength="16" />
+          <Property Name="Lohnkostenpreis" Type="money" />
+          <Property Name="Lohnerlöspreis" Type="money" />
+          <Property Name="Sollkosten0" Type="money" />
+          <Property Name="Sollkosten1" Type="money" />
+          <Property Name="Sollkosten2" Type="money" />
+          <Property Name="Sollkosten3" Type="money" />
+          <Property Name="Sollkosten4" Type="money" />
+          <Property Name="Sollkosten5" Type="money" />
+          <Property Name="Sollkosten6" Type="money" />
+          <Property Name="Sollkosten7" Type="money" />
+          <Property Name="Sonderzuschlag0" Type="float" />
+          <Property Name="Sonderzuschlag1" Type="float" />
+          <Property Name="Sonderzuschlag2" Type="float" />
+          <Property Name="Sonderzuschlag3" Type="float" />
+          <Property Name="Sonderzuschlag4" Type="float" />
+          <Property Name="Sonderzuschlag5" Type="float" />
+          <Property Name="Sonderzuschlag6" Type="float" />
+          <Property Name="Sonderzuschlag7" Type="float" />
+          <Property Name="Sonderzuschlag8" Type="float" />
+          <Property Name="Sonderzuschlag9" Type="float" />
+          <Property Name="Sonderzuschlag10" Type="float" />
+          <Property Name="Sonderzuschlag11" Type="float" />
+          <Property Name="Sonderzuschlag12" Type="float" />
+          <Property Name="Sonderzuschlag13" Type="float" />
+          <Property Name="Sonderzuschlag14" Type="float" />
+          <Property Name="Sonderzuschlag15" Type="float" />
+          <Property Name="Nettosumme0" Type="money" />
+          <Property Name="Nettosumme1" Type="money" />
+          <Property Name="Nettosumme2" Type="money" />
+          <Property Name="Nettosumme3" Type="money" />
+          <Property Name="Nettosumme4" Type="money" />
+          <Property Name="Nettosumme5" Type="money" />
+          <Property Name="Nettosumme6" Type="money" />
+          <Property Name="Nettosumme7" Type="money" />
+          <Property Name="Optionen" Type="int" />
+          <Property Name="Textspeicherung" Type="tinyint" Nullable="false" />
+          <Property Name="Priorität" Type="tinyint" />
+          <Property Name="Folgenummer" Type="smallint" />
+          <Property Name="Lagerhaltung" Type="tinyint" Nullable="false" />
+          <Property Name="Bearbeitungsmodus" Type="tinyint" Nullable="false" />
+          <Property Name="Auftragsnummer" Type="varchar" MaxLength="16" />
+          <Property Name="Lager" Type="varchar" MaxLength="20" />
+          <Property Name="Fremdbelegnummer" Type="varchar" MaxLength="16" />
+          <Property Name="Quellbelegnummer" Type="varchar" MaxLength="16" />
+          <Property Name="Nettobetrag" Type="money" />
+          <Property Name="Bruttobetrag" Type="money" />
+          <Property Name="Schätzzeit" Type="float" />
+          <Property Name="Abrechnungszeit" Type="float" />
+          <Property Name="Sollzeit" Type="float" />
+          <Property Name="Fertigstellungsgrad" Type="float" />
+          <Property Name="Zuschlagschance" Type="float" />
+          <Property Name="Datensatzcursor" Type="int" />
+          <Property Name="Angebotsabgabe" Type="datetime" />
+          <Property Name="Zuschlagsfrist" Type="datetime" />
+          <Property Name="Termin" Type="datetime" />
+          <Property Name="Valutadatum" Type="datetime" />
+          <Property Name="Sicherheitsfrist" Type="datetime" />
+          <Property Name="Belegdatum" Type="datetime" />
+          <Property Name="Fertigstellungsdatum" Type="datetime" />
+          <Property Name="Notierungsdatum" Type="datetime" />
+          <Property Name="Druckdatum" Type="datetime" />
+          <Property Name="Abrechnungsdatum" Type="datetime" />
+          <Property Name="Abschlußdatum" Type="datetime" />
+          <Property Name="Ablaufdatum" Type="datetime" />
+          <Property Name="Änderungsdatum" Type="datetime" />
+          <Property Name="Erstanlagedatum" Type="datetime" />
+          <Property Name="Bearbeiter" Type="varchar" MaxLength="20" />
+          <Property Name="Eigentümer" Type="varchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="Zahlungsarten">
+          <Key>
+            <PropertyRef Name="Name" />
+          </Key>
+          <Property Name="Name" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="Gruppe" Type="varchar" MaxLength="16" />
+          <Property Name="Kurztext" Type="varchar" MaxLength="80" />
+          <Property Name="Beschreibung" Type="text" />
+          <Property Name="Skontosatz1" Type="float" />
+          <Property Name="Skontosatz2" Type="float" />
+          <Property Name="Skontotage1" Type="smallint" />
+          <Property Name="Skontotage2" Type="smallint" />
+          <Property Name="Zieltage" Type="smallint" />
+          <Property Name="Zieltagemodus" Type="tinyint" Nullable="false" />
+          <Property Name="Anweisungsautomatik" Type="tinyint" Nullable="false" />
+          <Property Name="Gebühreneinzug" Type="bit" Nullable="false" />
+          <Property Name="Skontomodus" Type="tinyint" Nullable="false" />
+          <Property Name="Zahlungsfrist" Type="smallint" Nullable="false" />
+          <Property Name="Verzugsmahnstufe" Type="tinyint" />
+          <Property Name="Verzugszinsen" Type="float" />
+          <Property Name="Verzugsmodus" Type="tinyint" Nullable="false" />
+          <Property Name="Mahntage1" Type="smallint" Nullable="false" />
+          <Property Name="Mahntage2" Type="smallint" Nullable="false" />
+          <Property Name="Mahntage3" Type="smallint" Nullable="false" />
+          <Property Name="Mahngebühr1" Type="money" />
+          <Property Name="Mahngebühr2" Type="money" />
+          <Property Name="Mahngebühr3" Type="money" />
+          <Property Name="Provisionsschmälerung" Type="float" />
+          <Property Name="Fälligkeitszuschlag" Type="float" />
+          <Property Name="Externname" Type="varchar" MaxLength="4" Nullable="false" />
+          <Property Name="Änderungsdatum" Type="datetime" />
+        </EntityType>
+        <EntityContainer Name="wtsModelStoreContainer">
+          <EntitySet Name="Adressen" EntityType="Self.Adressen" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Buchungen" EntityType="Self.Buchungen" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Buchungsarten" EntityType="Self.Buchungsarten" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Projektmerkmale" EntityType="Self.Projektmerkmale" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Projektzweige" EntityType="Self.Projektzweige" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Zahlungsarten" EntityType="Self.Zahlungsarten" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="wtsModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Adressen">
+          <Key>
+            <PropertyRef Name="Kurzname" />
+          </Key>
+          <Property Name="Kurzname" Type="String" MaxLength="16" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Name1" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="Name2" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="Name3" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="Straße" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PLZ" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Ort" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Postfach" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="PPZ" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Postfachort" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Nummer" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+          <Property Name="Postanschrift" Type="Byte" Nullable="false" />
+          <Property Name="Ländercode" Type="Int16" />
+          <Property Name="Briefanrede" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Telefon" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Telefax" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Kommunikation" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Gruppe" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Info" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Typ" Type="Byte" Nullable="false" />
+          <Property Name="Divers" Type="Boolean" Nullable="false" />
+          <Property Name="Herkunft" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Branche" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Mobiltelefon" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Autotelefon" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Internetadresse" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="BLZ" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
+          <Property Name="Bankname" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="Bankkonto" Type="String" MaxLength="34" FixedLength="false" Unicode="false" />
+          <Property Name="Vertreter" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Zahlungsart" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Zahlungsmittel" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Versandtext" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ILN" Type="String" MaxLength="13" FixedLength="false" Unicode="false" />
+          <Property Name="Bankkontoinhaber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Fahrtzone" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+          <Property Name="Archivunterordner" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="SperrkontoBLZ" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
+          <Property Name="Sperrkontobankname" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="Sperrkontonummer" Type="String" MaxLength="34" FixedLength="false" Unicode="false" />
+          <Property Name="Preiscode" Type="Byte" Nullable="false" />
+          <Property Name="Steuercode" Type="Byte" Nullable="false" />
+          <Property Name="Mahncode" Type="Byte" Nullable="false" />
+          <Property Name="Grundrabatt" Type="Double" />
+          <Property Name="Kosten" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="Kostensatz" Type="Double" />
+          <Property Name="Kalkulationszuschlag" Type="Double" />
+          <Property Name="Preiszuschlag" Type="Double" />
+          <Property Name="Kalkulationsart" Type="Byte" />
+          <Property Name="Konto" Type="Int32" />
+          <Property Name="Sammelkonto" Type="Int32" />
+          <Property Name="Sachkonto" Type="Int32" />
+          <Property Name="UStID" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+          <Property Name="Kreditlimit" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="Kreditsperre" Type="Boolean" Nullable="false" />
+          <Property Name="Ausgeblendet" Type="Boolean" Nullable="false" />
+          <Property Name="Geschlecht" Type="Byte" Nullable="false" />
+          <Property Name="Umsatzdatum" Type="DateTime" Precision="3" />
+          <Property Name="Erstkontakt" Type="DateTime" Precision="3" />
+          <Property Name="Mahndruckdatum" Type="DateTime" Precision="3" />
+          <Property Name="Zahlungsdatum" Type="DateTime" Precision="3" />
+          <Property Name="Löschdatum" Type="DateTime" Precision="3" />
+          <Property Name="Änderungsdatum" Type="DateTime" Precision="3" />
+          <Property Name="Erstanlagedatum" Type="DateTime" Precision="3" />
+          <Property Name="Bearbeiter" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Eigentümer" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Buchungen">
+          <Key>
+            <PropertyRef Name="Nummer" />
+          </Key>
+          <Property Name="Nummer" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Typ" Type="Byte" Nullable="false" />
+          <Property Name="Belegnummer" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+          <Property Name="Projekt" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Personal" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Kasse" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Fremdbelegnummer" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+          <Property Name="Auftragsnummer" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+          <Property Name="Unternehmensbereich" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+          <Property Name="Kurzname" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+          <Property Name="Name1" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="Name2" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="Name3" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="Straße" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PLZ" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Ort" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="BLZ" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
+          <Property Name="Bankname" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="Bankkonto" Type="String" MaxLength="34" FixedLength="false" Unicode="false" />
+          <Property Name="Steuersatz" Type="Double" />
+          <Property Name="Skontosatz1" Type="Double" />
+          <Property Name="Skontosatz2" Type="Double" />
+          <Property Name="Skontotage1" Type="Int16" />
+          <Property Name="Skontotage2" Type="Int16" />
+          <Property Name="Zieltage" Type="Int16" />
+          <Property Name="Zahlungsart" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Zahlungsmittel" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Zahlungsweise" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+          <Property Name="Hausbanksachkonto" Type="Int32" />
+          <Property Name="Mahnstufe" Type="Byte" />
+          <Property Name="Mahncode" Type="Byte" Nullable="false" />
+          <Property Name="Verrechnungsart" Type="Byte" Nullable="false" />
+          <Property Name="Fortschreibungen" Type="Byte" Nullable="false" />
+          <Property Name="Buchungsart" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="Tagebuch" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="Buchungstext" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="UStID" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+          <Property Name="Steuerart" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+          <Property Name="Umsatzgruppe" Type="Byte" Nullable="false" />
+          <Property Name="Gesperrt" Type="Boolean" Nullable="false" />
+          <Property Name="Kostenstelle" Type="Int32" />
+          <Property Name="Bewertungsgrad" Type="Double" />
+          <Property Name="Betrag" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="Steuerbetrag" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="Skontofähig" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="Skontobetrag1" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="Skontobetrag2" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="Zahlbetrag" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="Zahlungsbetrag" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="Zahlungssumme" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="Mahngebühren" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="Verzugszinsen" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="Ausgleichsbetrag" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="Sicherheitseinbehalt" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="Sicherheitsleistung" Type="Byte" Nullable="false" />
+          <Property Name="Bruttoabzüge" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="Buchungsperiode" Type="DateTime" Precision="3" />
+          <Property Name="Belegdatum" Type="DateTime" Precision="3" />
+          <Property Name="Zieldatum" Type="DateTime" Precision="3" />
+          <Property Name="Valutadatum" Type="DateTime" Precision="3" />
+          <Property Name="Skontodatum1" Type="DateTime" Precision="3" />
+          <Property Name="Skontodatum2" Type="DateTime" Precision="3" />
+          <Property Name="Zahldatum" Type="DateTime" Precision="3" />
+          <Property Name="Zahlungsdatum" Type="DateTime" Precision="3" />
+          <Property Name="Mahndatum" Type="DateTime" Precision="3" />
+          <Property Name="Mahndruckdatum" Type="DateTime" Precision="3" />
+          <Property Name="Journaldatum" Type="DateTime" Precision="3" />
+          <Property Name="Druckdatum" Type="DateTime" Precision="3" />
+          <Property Name="Buchhaltungsdatum" Type="DateTime" Precision="3" />
+          <Property Name="Löschdatum" Type="DateTime" Precision="3" />
+          <Property Name="Änderungsdatum" Type="DateTime" Precision="3" />
+          <Property Name="Erstanlagedatum" Type="DateTime" Precision="3" />
+          <Property Name="Bearbeiter" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Eigentümer" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Sicherheitsfrist" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="Zahlungsarten">
+          <Key>
+            <PropertyRef Name="Name" />
+          </Key>
+          <Property Name="Name" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Gruppe" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+          <Property Name="Kurztext" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+          <Property Name="Beschreibung" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Skontosatz1" Type="Double" />
+          <Property Name="Skontosatz2" Type="Double" />
+          <Property Name="Skontotage1" Type="Int16" />
+          <Property Name="Skontotage2" Type="Int16" />
+          <Property Name="Zieltage" Type="Int16" />
+          <Property Name="Zieltagemodus" Type="Byte" Nullable="false" />
+          <Property Name="Anweisungsautomatik" Type="Byte" Nullable="false" />
+          <Property Name="Gebühreneinzug" Type="Boolean" Nullable="false" />
+          <Property Name="Skontomodus" Type="Byte" Nullable="false" />
+          <Property Name="Zahlungsfrist" Type="Int16" Nullable="false" />
+          <Property Name="Verzugsmahnstufe" Type="Byte" />
+          <Property Name="Verzugszinsen" Type="Double" />
+          <Property Name="Verzugsmodus" Type="Byte" Nullable="false" />
+          <Property Name="Mahntage1" Type="Int16" Nullable="false" />
+          <Property Name="Mahntage2" Type="Int16" Nullable="false" />
+          <Property Name="Mahntage3" Type="Int16" Nullable="false" />
+          <Property Name="Mahngebühr1" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="Mahngebühr2" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="Mahngebühr3" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="Provisionsschmälerung" Type="Double" />
+          <Property Name="Fälligkeitszuschlag" Type="Double" />
+          <Property Name="Externname" Type="String" MaxLength="4" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Änderungsdatum" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityContainer Name="wtsEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Adressens" EntityType="Self.Adressen" />
+          <EntitySet Name="Buchungens" EntityType="Self.Buchungen" />
+          <EntitySet Name="Zahlungsartens" EntityType="Self.Zahlungsarten" />
+          <EntitySet Name="Buchungsartens" EntityType="wtsModel.Buchungsarten" />
+          <EntitySet Name="Projektzweiges" EntityType="wtsModel.Projektzweige" />
+          <EntitySet Name="Projektmerkmales" EntityType="wtsModel.Projektmerkmale" />
+        </EntityContainer>
+        <EntityType Name="Buchungsarten">
+          <Key>
+            <PropertyRef Name="Name" />
+          </Key>
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="Typ" Type="Byte" Nullable="false" />
+          <Property Name="Gruppe" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Kurztext" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Beschreibung" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Buchungscode" Type="Byte" Nullable="false" />
+          <Property Name="Tagebuch" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="Änderungsdatum" Type="DateTime" Precision="3" />
+          <Property Name="Eigentümer" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Projektzweige">
+          <Key>
+            <PropertyRef Name="Nummer" />
+          </Key>
+          <Property Name="Nummer" Type="Int32" Nullable="false" />
+          <Property Name="Projekt" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Kennung" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Typ" Type="Byte" Nullable="false" />
+          <Property Name="Kurztext" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Beschreibung" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Thema" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="Stichwörter" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Kommentar" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Kurzname" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+          <Property Name="Name1" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="Name2" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="Name3" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="Straße" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PLZ" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Ort" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Briefanrede" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Rechnungsadresse" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+          <Property Name="Lieferadresse" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+          <Property Name="LieferadresseName1" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="LieferadresseName2" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="LieferadresseName3" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="LieferadresseStraße" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="LieferadressePLZ" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="LieferadresseOrt" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Pauschalsumme" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="Zuschlagsbetrag" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="Zuschlagssatz" Type="Double" />
+          <Property Name="Kosten" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="Kostensatz" Type="Double" />
+          <Property Name="Provisionssatz" Type="Double" />
+          <Property Name="Sicherheitseinbehalt" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="Sicherheitssatz" Type="Double" />
+          <Property Name="Steuerart" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+          <Property Name="Interimsgegenkonto" Type="Int32" />
+          <Property Name="Kostenstelle" Type="Int32" />
+          <Property Name="Zahlungsart" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Zahlungsmittel" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Zahlungsweise" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+          <Property Name="Sicherheitsbasissatz" Type="Double" />
+          <Property Name="Vertreter" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Versandtext" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Zeichen" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Maske" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+          <Property Name="Vergabenummer" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Vorgangsart" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="Druckstatus" Type="Byte" Nullable="false" />
+          <Property Name="Dezimalstellen" Type="Byte" />
+          <Property Name="Status" Type="Byte" Nullable="false" />
+          <Property Name="Belegnummer" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+          <Property Name="Zusammenstellungen" Type="Byte" />
+          <Property Name="Sicherheitsleistung" Type="Byte" Nullable="false" />
+          <Property Name="Anlage" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="EKFaktor0" Type="Double" />
+          <Property Name="EKFaktor1" Type="Double" />
+          <Property Name="EKFaktor2" Type="Double" />
+          <Property Name="EKFaktor3" Type="Double" />
+          <Property Name="EKFaktor4" Type="Double" />
+          <Property Name="EKFaktor5" Type="Double" />
+          <Property Name="EKFaktor6" Type="Double" />
+          <Property Name="EKFaktor7" Type="Double" />
+          <Property Name="VKFaktor0" Type="Double" />
+          <Property Name="VKFaktor1" Type="Double" />
+          <Property Name="VKFaktor2" Type="Double" />
+          <Property Name="VKFaktor3" Type="Double" />
+          <Property Name="VKFaktor4" Type="Double" />
+          <Property Name="VKFaktor5" Type="Double" />
+          <Property Name="VKFaktor6" Type="Double" />
+          <Property Name="VKFaktor7" Type="Double" />
+          <Property Name="Zuschlag0" Type="Double" />
+          <Property Name="Zuschlag1" Type="Double" />
+          <Property Name="Zuschlag2" Type="Double" />
+          <Property Name="Zuschlag3" Type="Double" />
+          <Property Name="Zuschlag4" Type="Double" />
+          <Property Name="Zuschlag5" Type="Double" />
+          <Property Name="Zuschlag6" Type="Double" />
+          <Property Name="Zuschlag7" Type="Double" />
+          <Property Name="Zeitfaktor" Type="Double" />
+          <Property Name="Zeitvorgabefaktor" Type="Double" />
+          <Property Name="Kalkulationszuschlag" Type="Double" />
+          <Property Name="Preiszuschlag" Type="Double" />
+          <Property Name="Mindestertrag" Type="Double" />
+          <Property Name="Zeitgewichtungsfaktor" Type="Double" />
+          <Property Name="Preiscode" Type="Byte" />
+          <Property Name="Steuercode" Type="Byte" Nullable="false" />
+          <Property Name="Zeitgruppe" Type="Byte" Nullable="false" />
+          <Property Name="Lohnzuschlag" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+          <Property Name="Lohnkostenpreis" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="Lohnerlöspreis" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="Sollkosten0" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="Sollkosten1" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="Sollkosten2" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="Sollkosten3" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="Sollkosten4" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="Sollkosten5" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="Sollkosten6" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="Sollkosten7" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="Sonderzuschlag0" Type="Double" />
+          <Property Name="Sonderzuschlag1" Type="Double" />
+          <Property Name="Sonderzuschlag2" Type="Double" />
+          <Property Name="Sonderzuschlag3" Type="Double" />
+          <Property Name="Sonderzuschlag4" Type="Double" />
+          <Property Name="Sonderzuschlag5" Type="Double" />
+          <Property Name="Sonderzuschlag6" Type="Double" />
+          <Property Name="Sonderzuschlag7" Type="Double" />
+          <Property Name="Sonderzuschlag8" Type="Double" />
+          <Property Name="Sonderzuschlag9" Type="Double" />
+          <Property Name="Sonderzuschlag10" Type="Double" />
+          <Property Name="Sonderzuschlag11" Type="Double" />
+          <Property Name="Sonderzuschlag12" Type="Double" />
+          <Property Name="Sonderzuschlag13" Type="Double" />
+          <Property Name="Sonderzuschlag14" Type="Double" />
+          <Property Name="Sonderzuschlag15" Type="Double" />
+          <Property Name="Nettosumme0" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="Nettosumme1" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="Nettosumme2" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="Nettosumme3" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="Nettosumme4" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="Nettosumme5" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="Nettosumme6" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="Nettosumme7" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="Optionen" Type="Int32" />
+          <Property Name="Textspeicherung" Type="Byte" Nullable="false" />
+          <Property Name="Priorität" Type="Byte" />
+          <Property Name="Folgenummer" Type="Int16" />
+          <Property Name="Lagerhaltung" Type="Byte" Nullable="false" />
+          <Property Name="Bearbeitungsmodus" Type="Byte" Nullable="false" />
+          <Property Name="Auftragsnummer" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+          <Property Name="Lager" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Fremdbelegnummer" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+          <Property Name="Quellbelegnummer" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+          <Property Name="Nettobetrag" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="Bruttobetrag" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="Schätzzeit" Type="Double" />
+          <Property Name="Abrechnungszeit" Type="Double" />
+          <Property Name="Sollzeit" Type="Double" />
+          <Property Name="Fertigstellungsgrad" Type="Double" />
+          <Property Name="Zuschlagschance" Type="Double" />
+          <Property Name="Datensatzcursor" Type="Int32" />
+          <Property Name="Angebotsabgabe" Type="DateTime" Precision="3" />
+          <Property Name="Zuschlagsfrist" Type="DateTime" Precision="3" />
+          <Property Name="Termin" Type="DateTime" Precision="3" />
+          <Property Name="Valutadatum" Type="DateTime" Precision="3" />
+          <Property Name="Sicherheitsfrist" Type="DateTime" Precision="3" />
+          <Property Name="Belegdatum" Type="DateTime" Precision="3" />
+          <Property Name="Fertigstellungsdatum" Type="DateTime" Precision="3" />
+          <Property Name="Notierungsdatum" Type="DateTime" Precision="3" />
+          <Property Name="Druckdatum" Type="DateTime" Precision="3" />
+          <Property Name="Abrechnungsdatum" Type="DateTime" Precision="3" />
+          <Property Name="Abschlußdatum" Type="DateTime" Precision="3" />
+          <Property Name="Ablaufdatum" Type="DateTime" Precision="3" />
+          <Property Name="Änderungsdatum" Type="DateTime" Precision="3" />
+          <Property Name="Erstanlagedatum" Type="DateTime" Precision="3" />
+          <Property Name="Bearbeiter" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Eigentümer" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Projektmerkmale">
+          <Key>
+            <PropertyRef Name="Nummer" />
+            <PropertyRef Name="Merkmal" />
+          </Key>
+          <Property Name="Nummer" Type="Int32" Nullable="false" />
+          <Property Name="Merkmal" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Datentyp" Type="Int32" Nullable="false" />
+          <Property Name="Wert" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="wtsModelStoreContainer" CdmEntityContainer="wtsEntities">
+          <EntitySetMapping Name="Adressens">
+            <EntityTypeMapping TypeName="wtsModel.Adressen">
+              <MappingFragment StoreEntitySet="Adressen">
+                <ScalarProperty Name="Kurzname" ColumnName="Kurzname" />
+                <ScalarProperty Name="Name1" ColumnName="Name1" />
+                <ScalarProperty Name="Name2" ColumnName="Name2" />
+                <ScalarProperty Name="Name3" ColumnName="Name3" />
+                <ScalarProperty Name="Straße" ColumnName="Straße" />
+                <ScalarProperty Name="PLZ" ColumnName="PLZ" />
+                <ScalarProperty Name="Ort" ColumnName="Ort" />
+                <ScalarProperty Name="Postfach" ColumnName="Postfach" />
+                <ScalarProperty Name="PPZ" ColumnName="PPZ" />
+                <ScalarProperty Name="Postfachort" ColumnName="Postfachort" />
+                <ScalarProperty Name="Nummer" ColumnName="Nummer" />
+                <ScalarProperty Name="Postanschrift" ColumnName="Postanschrift" />
+                <ScalarProperty Name="Ländercode" ColumnName="Ländercode" />
+                <ScalarProperty Name="Briefanrede" ColumnName="Briefanrede" />
+                <ScalarProperty Name="Telefon" ColumnName="Telefon" />
+                <ScalarProperty Name="Telefax" ColumnName="Telefax" />
+                <ScalarProperty Name="Kommunikation" ColumnName="Kommunikation" />
+                <ScalarProperty Name="Gruppe" ColumnName="Gruppe" />
+                <ScalarProperty Name="Info" ColumnName="Info" />
+                <ScalarProperty Name="Typ" ColumnName="Typ" />
+                <ScalarProperty Name="Divers" ColumnName="Divers" />
+                <ScalarProperty Name="Herkunft" ColumnName="Herkunft" />
+                <ScalarProperty Name="Branche" ColumnName="Branche" />
+                <ScalarProperty Name="Mobiltelefon" ColumnName="Mobiltelefon" />
+                <ScalarProperty Name="Autotelefon" ColumnName="Autotelefon" />
+                <ScalarProperty Name="Internetadresse" ColumnName="Internetadresse" />
+                <ScalarProperty Name="BLZ" ColumnName="BLZ" />
+                <ScalarProperty Name="Bankname" ColumnName="Bankname" />
+                <ScalarProperty Name="Bankkonto" ColumnName="Bankkonto" />
+                <ScalarProperty Name="Vertreter" ColumnName="Vertreter" />
+                <ScalarProperty Name="Zahlungsart" ColumnName="Zahlungsart" />
+                <ScalarProperty Name="Zahlungsmittel" ColumnName="Zahlungsmittel" />
+                <ScalarProperty Name="Versandtext" ColumnName="Versandtext" />
+                <ScalarProperty Name="ILN" ColumnName="ILN" />
+                <ScalarProperty Name="Bankkontoinhaber" ColumnName="Bankkontoinhaber" />
+                <ScalarProperty Name="Fahrtzone" ColumnName="Fahrtzone" />
+                <ScalarProperty Name="Archivunterordner" ColumnName="Archivunterordner" />
+                <ScalarProperty Name="SperrkontoBLZ" ColumnName="SperrkontoBLZ" />
+                <ScalarProperty Name="Sperrkontobankname" ColumnName="Sperrkontobankname" />
+                <ScalarProperty Name="Sperrkontonummer" ColumnName="Sperrkontonummer" />
+                <ScalarProperty Name="Preiscode" ColumnName="Preiscode" />
+                <ScalarProperty Name="Steuercode" ColumnName="Steuercode" />
+                <ScalarProperty Name="Mahncode" ColumnName="Mahncode" />
+                <ScalarProperty Name="Grundrabatt" ColumnName="Grundrabatt" />
+                <ScalarProperty Name="Kosten" ColumnName="Kosten" />
+                <ScalarProperty Name="Kostensatz" ColumnName="Kostensatz" />
+                <ScalarProperty Name="Kalkulationszuschlag" ColumnName="Kalkulationszuschlag" />
+                <ScalarProperty Name="Preiszuschlag" ColumnName="Preiszuschlag" />
+                <ScalarProperty Name="Kalkulationsart" ColumnName="Kalkulationsart" />
+                <ScalarProperty Name="Konto" ColumnName="Konto" />
+                <ScalarProperty Name="Sammelkonto" ColumnName="Sammelkonto" />
+                <ScalarProperty Name="Sachkonto" ColumnName="Sachkonto" />
+                <ScalarProperty Name="UStID" ColumnName="UStID" />
+                <ScalarProperty Name="Kreditlimit" ColumnName="Kreditlimit" />
+                <ScalarProperty Name="Kreditsperre" ColumnName="Kreditsperre" />
+                <ScalarProperty Name="Ausgeblendet" ColumnName="Ausgeblendet" />
+                <ScalarProperty Name="Geschlecht" ColumnName="Geschlecht" />
+                <ScalarProperty Name="Umsatzdatum" ColumnName="Umsatzdatum" />
+                <ScalarProperty Name="Erstkontakt" ColumnName="Erstkontakt" />
+                <ScalarProperty Name="Mahndruckdatum" ColumnName="Mahndruckdatum" />
+                <ScalarProperty Name="Zahlungsdatum" ColumnName="Zahlungsdatum" />
+                <ScalarProperty Name="Löschdatum" ColumnName="Löschdatum" />
+                <ScalarProperty Name="Änderungsdatum" ColumnName="Änderungsdatum" />
+                <ScalarProperty Name="Erstanlagedatum" ColumnName="Erstanlagedatum" />
+                <ScalarProperty Name="Bearbeiter" ColumnName="Bearbeiter" />
+                <ScalarProperty Name="Eigentümer" ColumnName="Eigentümer" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Buchungens">
+            <EntityTypeMapping TypeName="wtsModel.Buchungen">
+              <MappingFragment StoreEntitySet="Buchungen">
+                <ScalarProperty Name="Nummer" ColumnName="Nummer" />
+                <ScalarProperty Name="Typ" ColumnName="Typ" />
+                <ScalarProperty Name="Belegnummer" ColumnName="Belegnummer" />
+                <ScalarProperty Name="Projekt" ColumnName="Projekt" />
+                <ScalarProperty Name="Personal" ColumnName="Personal" />
+                <ScalarProperty Name="Kasse" ColumnName="Kasse" />
+                <ScalarProperty Name="Fremdbelegnummer" ColumnName="Fremdbelegnummer" />
+                <ScalarProperty Name="Auftragsnummer" ColumnName="Auftragsnummer" />
+                <ScalarProperty Name="Unternehmensbereich" ColumnName="Unternehmensbereich" />
+                <ScalarProperty Name="Kurzname" ColumnName="Kurzname" />
+                <ScalarProperty Name="Name1" ColumnName="Name1" />
+                <ScalarProperty Name="Name2" ColumnName="Name2" />
+                <ScalarProperty Name="Name3" ColumnName="Name3" />
+                <ScalarProperty Name="Straße" ColumnName="Straße" />
+                <ScalarProperty Name="PLZ" ColumnName="PLZ" />
+                <ScalarProperty Name="Ort" ColumnName="Ort" />
+                <ScalarProperty Name="BLZ" ColumnName="BLZ" />
+                <ScalarProperty Name="Bankname" ColumnName="Bankname" />
+                <ScalarProperty Name="Bankkonto" ColumnName="Bankkonto" />
+                <ScalarProperty Name="Steuersatz" ColumnName="Steuersatz" />
+                <ScalarProperty Name="Skontosatz1" ColumnName="Skontosatz1" />
+                <ScalarProperty Name="Skontosatz2" ColumnName="Skontosatz2" />
+                <ScalarProperty Name="Skontotage1" ColumnName="Skontotage1" />
+                <ScalarProperty Name="Skontotage2" ColumnName="Skontotage2" />
+                <ScalarProperty Name="Zieltage" ColumnName="Zieltage" />
+                <ScalarProperty Name="Zahlungsart" ColumnName="Zahlungsart" />
+                <ScalarProperty Name="Zahlungsmittel" ColumnName="Zahlungsmittel" />
+                <ScalarProperty Name="Zahlungsweise" ColumnName="Zahlungsweise" />
+                <ScalarProperty Name="Hausbanksachkonto" ColumnName="Hausbanksachkonto" />
+                <ScalarProperty Name="Mahnstufe" ColumnName="Mahnstufe" />
+                <ScalarProperty Name="Mahncode" ColumnName="Mahncode" />
+                <ScalarProperty Name="Verrechnungsart" ColumnName="Verrechnungsart" />
+                <ScalarProperty Name="Fortschreibungen" ColumnName="Fortschreibungen" />
+                <ScalarProperty Name="Buchungsart" ColumnName="Buchungsart" />
+                <ScalarProperty Name="Tagebuch" ColumnName="Tagebuch" />
+                <ScalarProperty Name="Buchungstext" ColumnName="Buchungstext" />
+                <ScalarProperty Name="UStID" ColumnName="UStID" />
+                <ScalarProperty Name="Steuerart" ColumnName="Steuerart" />
+                <ScalarProperty Name="Umsatzgruppe" ColumnName="Umsatzgruppe" />
+                <ScalarProperty Name="Gesperrt" ColumnName="Gesperrt" />
+                <ScalarProperty Name="Kostenstelle" ColumnName="Kostenstelle" />
+                <ScalarProperty Name="Bewertungsgrad" ColumnName="Bewertungsgrad" />
+                <ScalarProperty Name="Betrag" ColumnName="Betrag" />
+                <ScalarProperty Name="Steuerbetrag" ColumnName="Steuerbetrag" />
+                <ScalarProperty Name="Skontofähig" ColumnName="Skontofähig" />
+                <ScalarProperty Name="Skontobetrag1" ColumnName="Skontobetrag1" />
+                <ScalarProperty Name="Skontobetrag2" ColumnName="Skontobetrag2" />
+                <ScalarProperty Name="Zahlbetrag" ColumnName="Zahlbetrag" />
+                <ScalarProperty Name="Zahlungsbetrag" ColumnName="Zahlungsbetrag" />
+                <ScalarProperty Name="Zahlungssumme" ColumnName="Zahlungssumme" />
+                <ScalarProperty Name="Mahngebühren" ColumnName="Mahngebühren" />
+                <ScalarProperty Name="Verzugszinsen" ColumnName="Verzugszinsen" />
+                <ScalarProperty Name="Ausgleichsbetrag" ColumnName="Ausgleichsbetrag" />
+                <ScalarProperty Name="Sicherheitseinbehalt" ColumnName="Sicherheitseinbehalt" />
+                <ScalarProperty Name="Sicherheitsleistung" ColumnName="Sicherheitsleistung" />
+                <ScalarProperty Name="Bruttoabzüge" ColumnName="Bruttoabzüge" />
+                <ScalarProperty Name="Buchungsperiode" ColumnName="Buchungsperiode" />
+                <ScalarProperty Name="Belegdatum" ColumnName="Belegdatum" />
+                <ScalarProperty Name="Zieldatum" ColumnName="Zieldatum" />
+                <ScalarProperty Name="Valutadatum" ColumnName="Valutadatum" />
+                <ScalarProperty Name="Skontodatum1" ColumnName="Skontodatum1" />
+                <ScalarProperty Name="Skontodatum2" ColumnName="Skontodatum2" />
+                <ScalarProperty Name="Zahldatum" ColumnName="Zahldatum" />
+                <ScalarProperty Name="Zahlungsdatum" ColumnName="Zahlungsdatum" />
+                <ScalarProperty Name="Mahndatum" ColumnName="Mahndatum" />
+                <ScalarProperty Name="Mahndruckdatum" ColumnName="Mahndruckdatum" />
+                <ScalarProperty Name="Journaldatum" ColumnName="Journaldatum" />
+                <ScalarProperty Name="Druckdatum" ColumnName="Druckdatum" />
+                <ScalarProperty Name="Buchhaltungsdatum" ColumnName="Buchhaltungsdatum" />
+                <ScalarProperty Name="Löschdatum" ColumnName="Löschdatum" />
+                <ScalarProperty Name="Änderungsdatum" ColumnName="Änderungsdatum" />
+                <ScalarProperty Name="Erstanlagedatum" ColumnName="Erstanlagedatum" />
+                <ScalarProperty Name="Bearbeiter" ColumnName="Bearbeiter" />
+                <ScalarProperty Name="Eigentümer" ColumnName="Eigentümer" />
+                <ScalarProperty Name="Sicherheitsfrist" ColumnName="Sicherheitsfrist" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Zahlungsartens">
+            <EntityTypeMapping TypeName="wtsModel.Zahlungsarten">
+              <MappingFragment StoreEntitySet="Zahlungsarten">
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Gruppe" ColumnName="Gruppe" />
+                <ScalarProperty Name="Kurztext" ColumnName="Kurztext" />
+                <ScalarProperty Name="Beschreibung" ColumnName="Beschreibung" />
+                <ScalarProperty Name="Skontosatz1" ColumnName="Skontosatz1" />
+                <ScalarProperty Name="Skontosatz2" ColumnName="Skontosatz2" />
+                <ScalarProperty Name="Skontotage1" ColumnName="Skontotage1" />
+                <ScalarProperty Name="Skontotage2" ColumnName="Skontotage2" />
+                <ScalarProperty Name="Zieltage" ColumnName="Zieltage" />
+                <ScalarProperty Name="Zieltagemodus" ColumnName="Zieltagemodus" />
+                <ScalarProperty Name="Anweisungsautomatik" ColumnName="Anweisungsautomatik" />
+                <ScalarProperty Name="Gebühreneinzug" ColumnName="Gebühreneinzug" />
+                <ScalarProperty Name="Skontomodus" ColumnName="Skontomodus" />
+                <ScalarProperty Name="Zahlungsfrist" ColumnName="Zahlungsfrist" />
+                <ScalarProperty Name="Verzugsmahnstufe" ColumnName="Verzugsmahnstufe" />
+                <ScalarProperty Name="Verzugszinsen" ColumnName="Verzugszinsen" />
+                <ScalarProperty Name="Verzugsmodus" ColumnName="Verzugsmodus" />
+                <ScalarProperty Name="Mahntage1" ColumnName="Mahntage1" />
+                <ScalarProperty Name="Mahntage2" ColumnName="Mahntage2" />
+                <ScalarProperty Name="Mahntage3" ColumnName="Mahntage3" />
+                <ScalarProperty Name="Mahngebühr1" ColumnName="Mahngebühr1" />
+                <ScalarProperty Name="Mahngebühr2" ColumnName="Mahngebühr2" />
+                <ScalarProperty Name="Mahngebühr3" ColumnName="Mahngebühr3" />
+                <ScalarProperty Name="Provisionsschmälerung" ColumnName="Provisionsschmälerung" />
+                <ScalarProperty Name="Fälligkeitszuschlag" ColumnName="Fälligkeitszuschlag" />
+                <ScalarProperty Name="Externname" ColumnName="Externname" />
+                <ScalarProperty Name="Änderungsdatum" ColumnName="Änderungsdatum" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Buchungsartens">
+            <EntityTypeMapping TypeName="wtsModel.Buchungsarten">
+              <MappingFragment StoreEntitySet="Buchungsarten">
+                <ScalarProperty Name="Eigentümer" ColumnName="Eigentümer" />
+                <ScalarProperty Name="Änderungsdatum" ColumnName="Änderungsdatum" />
+                <ScalarProperty Name="Tagebuch" ColumnName="Tagebuch" />
+                <ScalarProperty Name="Buchungscode" ColumnName="Buchungscode" />
+                <ScalarProperty Name="Beschreibung" ColumnName="Beschreibung" />
+                <ScalarProperty Name="Kurztext" ColumnName="Kurztext" />
+                <ScalarProperty Name="Gruppe" ColumnName="Gruppe" />
+                <ScalarProperty Name="Typ" ColumnName="Typ" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Projektzweiges">
+            <EntityTypeMapping TypeName="wtsModel.Projektzweige">
+              <MappingFragment StoreEntitySet="Projektzweige">
+                <ScalarProperty Name="Eigentümer" ColumnName="Eigentümer" />
+                <ScalarProperty Name="Bearbeiter" ColumnName="Bearbeiter" />
+                <ScalarProperty Name="Erstanlagedatum" ColumnName="Erstanlagedatum" />
+                <ScalarProperty Name="Änderungsdatum" ColumnName="Änderungsdatum" />
+                <ScalarProperty Name="Ablaufdatum" ColumnName="Ablaufdatum" />
+                <ScalarProperty Name="Abschlußdatum" ColumnName="Abschlußdatum" />
+                <ScalarProperty Name="Abrechnungsdatum" ColumnName="Abrechnungsdatum" />
+                <ScalarProperty Name="Druckdatum" ColumnName="Druckdatum" />
+                <ScalarProperty Name="Notierungsdatum" ColumnName="Notierungsdatum" />
+                <ScalarProperty Name="Fertigstellungsdatum" ColumnName="Fertigstellungsdatum" />
+                <ScalarProperty Name="Belegdatum" ColumnName="Belegdatum" />
+                <ScalarProperty Name="Sicherheitsfrist" ColumnName="Sicherheitsfrist" />
+                <ScalarProperty Name="Valutadatum" ColumnName="Valutadatum" />
+                <ScalarProperty Name="Termin" ColumnName="Termin" />
+                <ScalarProperty Name="Zuschlagsfrist" ColumnName="Zuschlagsfrist" />
+                <ScalarProperty Name="Angebotsabgabe" ColumnName="Angebotsabgabe" />
+                <ScalarProperty Name="Datensatzcursor" ColumnName="Datensatzcursor" />
+                <ScalarProperty Name="Zuschlagschance" ColumnName="Zuschlagschance" />
+                <ScalarProperty Name="Fertigstellungsgrad" ColumnName="Fertigstellungsgrad" />
+                <ScalarProperty Name="Sollzeit" ColumnName="Sollzeit" />
+                <ScalarProperty Name="Abrechnungszeit" ColumnName="Abrechnungszeit" />
+                <ScalarProperty Name="Schätzzeit" ColumnName="Schätzzeit" />
+                <ScalarProperty Name="Bruttobetrag" ColumnName="Bruttobetrag" />
+                <ScalarProperty Name="Nettobetrag" ColumnName="Nettobetrag" />
+                <ScalarProperty Name="Quellbelegnummer" ColumnName="Quellbelegnummer" />
+                <ScalarProperty Name="Fremdbelegnummer" ColumnName="Fremdbelegnummer" />
+                <ScalarProperty Name="Lager" ColumnName="Lager" />
+                <ScalarProperty Name="Auftragsnummer" ColumnName="Auftragsnummer" />
+                <ScalarProperty Name="Bearbeitungsmodus" ColumnName="Bearbeitungsmodus" />
+                <ScalarProperty Name="Lagerhaltung" ColumnName="Lagerhaltung" />
+                <ScalarProperty Name="Folgenummer" ColumnName="Folgenummer" />
+                <ScalarProperty Name="Priorität" ColumnName="Priorität" />
+                <ScalarProperty Name="Textspeicherung" ColumnName="Textspeicherung" />
+                <ScalarProperty Name="Optionen" ColumnName="Optionen" />
+                <ScalarProperty Name="Nettosumme7" ColumnName="Nettosumme7" />
+                <ScalarProperty Name="Nettosumme6" ColumnName="Nettosumme6" />
+                <ScalarProperty Name="Nettosumme5" ColumnName="Nettosumme5" />
+                <ScalarProperty Name="Nettosumme4" ColumnName="Nettosumme4" />
+                <ScalarProperty Name="Nettosumme3" ColumnName="Nettosumme3" />
+                <ScalarProperty Name="Nettosumme2" ColumnName="Nettosumme2" />
+                <ScalarProperty Name="Nettosumme1" ColumnName="Nettosumme1" />
+                <ScalarProperty Name="Nettosumme0" ColumnName="Nettosumme0" />
+                <ScalarProperty Name="Sonderzuschlag15" ColumnName="Sonderzuschlag15" />
+                <ScalarProperty Name="Sonderzuschlag14" ColumnName="Sonderzuschlag14" />
+                <ScalarProperty Name="Sonderzuschlag13" ColumnName="Sonderzuschlag13" />
+                <ScalarProperty Name="Sonderzuschlag12" ColumnName="Sonderzuschlag12" />
+                <ScalarProperty Name="Sonderzuschlag11" ColumnName="Sonderzuschlag11" />
+                <ScalarProperty Name="Sonderzuschlag10" ColumnName="Sonderzuschlag10" />
+                <ScalarProperty Name="Sonderzuschlag9" ColumnName="Sonderzuschlag9" />
+                <ScalarProperty Name="Sonderzuschlag8" ColumnName="Sonderzuschlag8" />
+                <ScalarProperty Name="Sonderzuschlag7" ColumnName="Sonderzuschlag7" />
+                <ScalarProperty Name="Sonderzuschlag6" ColumnName="Sonderzuschlag6" />
+                <ScalarProperty Name="Sonderzuschlag5" ColumnName="Sonderzuschlag5" />
+                <ScalarProperty Name="Sonderzuschlag4" ColumnName="Sonderzuschlag4" />
+                <ScalarProperty Name="Sonderzuschlag3" ColumnName="Sonderzuschlag3" />
+                <ScalarProperty Name="Sonderzuschlag2" ColumnName="Sonderzuschlag2" />
+                <ScalarProperty Name="Sonderzuschlag1" ColumnName="Sonderzuschlag1" />
+                <ScalarProperty Name="Sonderzuschlag0" ColumnName="Sonderzuschlag0" />
+                <ScalarProperty Name="Sollkosten7" ColumnName="Sollkosten7" />
+                <ScalarProperty Name="Sollkosten6" ColumnName="Sollkosten6" />
+                <ScalarProperty Name="Sollkosten5" ColumnName="Sollkosten5" />
+                <ScalarProperty Name="Sollkosten4" ColumnName="Sollkosten4" />
+                <ScalarProperty Name="Sollkosten3" ColumnName="Sollkosten3" />
+                <ScalarProperty Name="Sollkosten2" ColumnName="Sollkosten2" />
+                <ScalarProperty Name="Sollkosten1" ColumnName="Sollkosten1" />
+                <ScalarProperty Name="Sollkosten0" ColumnName="Sollkosten0" />
+                <ScalarProperty Name="Lohnerlöspreis" ColumnName="Lohnerlöspreis" />
+                <ScalarProperty Name="Lohnkostenpreis" ColumnName="Lohnkostenpreis" />
+                <ScalarProperty Name="Lohnzuschlag" ColumnName="Lohnzuschlag" />
+                <ScalarProperty Name="Zeitgruppe" ColumnName="Zeitgruppe" />
+                <ScalarProperty Name="Steuercode" ColumnName="Steuercode" />
+                <ScalarProperty Name="Preiscode" ColumnName="Preiscode" />
+                <ScalarProperty Name="Zeitgewichtungsfaktor" ColumnName="Zeitgewichtungsfaktor" />
+                <ScalarProperty Name="Mindestertrag" ColumnName="Mindestertrag" />
+                <ScalarProperty Name="Preiszuschlag" ColumnName="Preiszuschlag" />
+                <ScalarProperty Name="Kalkulationszuschlag" ColumnName="Kalkulationszuschlag" />
+                <ScalarProperty Name="Zeitvorgabefaktor" ColumnName="Zeitvorgabefaktor" />
+                <ScalarProperty Name="Zeitfaktor" ColumnName="Zeitfaktor" />
+                <ScalarProperty Name="Zuschlag7" ColumnName="Zuschlag7" />
+                <ScalarProperty Name="Zuschlag6" ColumnName="Zuschlag6" />
+                <ScalarProperty Name="Zuschlag5" ColumnName="Zuschlag5" />
+                <ScalarProperty Name="Zuschlag4" ColumnName="Zuschlag4" />
+                <ScalarProperty Name="Zuschlag3" ColumnName="Zuschlag3" />
+                <ScalarProperty Name="Zuschlag2" ColumnName="Zuschlag2" />
+                <ScalarProperty Name="Zuschlag1" ColumnName="Zuschlag1" />
+                <ScalarProperty Name="Zuschlag0" ColumnName="Zuschlag0" />
+                <ScalarProperty Name="VKFaktor7" ColumnName="VKFaktor7" />
+                <ScalarProperty Name="VKFaktor6" ColumnName="VKFaktor6" />
+                <ScalarProperty Name="VKFaktor5" ColumnName="VKFaktor5" />
+                <ScalarProperty Name="VKFaktor4" ColumnName="VKFaktor4" />
+                <ScalarProperty Name="VKFaktor3" ColumnName="VKFaktor3" />
+                <ScalarProperty Name="VKFaktor2" ColumnName="VKFaktor2" />
+                <ScalarProperty Name="VKFaktor1" ColumnName="VKFaktor1" />
+                <ScalarProperty Name="VKFaktor0" ColumnName="VKFaktor0" />
+                <ScalarProperty Name="EKFaktor7" ColumnName="EKFaktor7" />
+                <ScalarProperty Name="EKFaktor6" ColumnName="EKFaktor6" />
+                <ScalarProperty Name="EKFaktor5" ColumnName="EKFaktor5" />
+                <ScalarProperty Name="EKFaktor4" ColumnName="EKFaktor4" />
+                <ScalarProperty Name="EKFaktor3" ColumnName="EKFaktor3" />
+                <ScalarProperty Name="EKFaktor2" ColumnName="EKFaktor2" />
+                <ScalarProperty Name="EKFaktor1" ColumnName="EKFaktor1" />
+                <ScalarProperty Name="EKFaktor0" ColumnName="EKFaktor0" />
+                <ScalarProperty Name="Anlage" ColumnName="Anlage" />
+                <ScalarProperty Name="Sicherheitsleistung" ColumnName="Sicherheitsleistung" />
+                <ScalarProperty Name="Zusammenstellungen" ColumnName="Zusammenstellungen" />
+                <ScalarProperty Name="Belegnummer" ColumnName="Belegnummer" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Dezimalstellen" ColumnName="Dezimalstellen" />
+                <ScalarProperty Name="Druckstatus" ColumnName="Druckstatus" />
+                <ScalarProperty Name="Vorgangsart" ColumnName="Vorgangsart" />
+                <ScalarProperty Name="Vergabenummer" ColumnName="Vergabenummer" />
+                <ScalarProperty Name="Maske" ColumnName="Maske" />
+                <ScalarProperty Name="Zeichen" ColumnName="Zeichen" />
+                <ScalarProperty Name="Versandtext" ColumnName="Versandtext" />
+                <ScalarProperty Name="Vertreter" ColumnName="Vertreter" />
+                <ScalarProperty Name="Sicherheitsbasissatz" ColumnName="Sicherheitsbasissatz" />
+                <ScalarProperty Name="Zahlungsweise" ColumnName="Zahlungsweise" />
+                <ScalarProperty Name="Zahlungsmittel" ColumnName="Zahlungsmittel" />
+                <ScalarProperty Name="Zahlungsart" ColumnName="Zahlungsart" />
+                <ScalarProperty Name="Kostenstelle" ColumnName="Kostenstelle" />
+                <ScalarProperty Name="Interimsgegenkonto" ColumnName="Interimsgegenkonto" />
+                <ScalarProperty Name="Steuerart" ColumnName="Steuerart" />
+                <ScalarProperty Name="Sicherheitssatz" ColumnName="Sicherheitssatz" />
+                <ScalarProperty Name="Sicherheitseinbehalt" ColumnName="Sicherheitseinbehalt" />
+                <ScalarProperty Name="Provisionssatz" ColumnName="Provisionssatz" />
+                <ScalarProperty Name="Kostensatz" ColumnName="Kostensatz" />
+                <ScalarProperty Name="Kosten" ColumnName="Kosten" />
+                <ScalarProperty Name="Zuschlagssatz" ColumnName="Zuschlagssatz" />
+                <ScalarProperty Name="Zuschlagsbetrag" ColumnName="Zuschlagsbetrag" />
+                <ScalarProperty Name="Pauschalsumme" ColumnName="Pauschalsumme" />
+                <ScalarProperty Name="LieferadresseOrt" ColumnName="LieferadresseOrt" />
+                <ScalarProperty Name="LieferadressePLZ" ColumnName="LieferadressePLZ" />
+                <ScalarProperty Name="LieferadresseStraße" ColumnName="LieferadresseStraße" />
+                <ScalarProperty Name="LieferadresseName3" ColumnName="LieferadresseName3" />
+                <ScalarProperty Name="LieferadresseName2" ColumnName="LieferadresseName2" />
+                <ScalarProperty Name="LieferadresseName1" ColumnName="LieferadresseName1" />
+                <ScalarProperty Name="Lieferadresse" ColumnName="Lieferadresse" />
+                <ScalarProperty Name="Rechnungsadresse" ColumnName="Rechnungsadresse" />
+                <ScalarProperty Name="Briefanrede" ColumnName="Briefanrede" />
+                <ScalarProperty Name="Ort" ColumnName="Ort" />
+                <ScalarProperty Name="PLZ" ColumnName="PLZ" />
+                <ScalarProperty Name="Straße" ColumnName="Straße" />
+                <ScalarProperty Name="Name3" ColumnName="Name3" />
+                <ScalarProperty Name="Name2" ColumnName="Name2" />
+                <ScalarProperty Name="Name1" ColumnName="Name1" />
+                <ScalarProperty Name="Kurzname" ColumnName="Kurzname" />
+                <ScalarProperty Name="Kommentar" ColumnName="Kommentar" />
+                <ScalarProperty Name="Stichwörter" ColumnName="Stichwörter" />
+                <ScalarProperty Name="Thema" ColumnName="Thema" />
+                <ScalarProperty Name="Beschreibung" ColumnName="Beschreibung" />
+                <ScalarProperty Name="Kurztext" ColumnName="Kurztext" />
+                <ScalarProperty Name="Typ" ColumnName="Typ" />
+                <ScalarProperty Name="Kennung" ColumnName="Kennung" />
+                <ScalarProperty Name="Projekt" ColumnName="Projekt" />
+                <ScalarProperty Name="Nummer" ColumnName="Nummer" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Projektmerkmales">
+            <EntityTypeMapping TypeName="wtsModel.Projektmerkmale">
+              <MappingFragment StoreEntitySet="Projektmerkmale">
+                <ScalarProperty Name="Wert" ColumnName="Wert" />
+                <ScalarProperty Name="Datentyp" ColumnName="Datentyp" />
+                <ScalarProperty Name="Merkmal" ColumnName="Merkmal" />
+                <ScalarProperty Name="Nummer" ColumnName="Nummer" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

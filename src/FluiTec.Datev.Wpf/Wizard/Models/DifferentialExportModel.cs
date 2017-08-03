@@ -25,26 +25,12 @@ namespace FluiTec.Datev.Wpf.Wizard
 			Title = "Differenzieller Export";
 			Description = "Dient der Einschränkung der Exportdaten durch einen vorherigen Export";
 			Content = new DifferentialExportPage();
-			Exports = ServiceLocator.Current.GetInstance<IExportService>().GetExports();
-			CurrentExport = Exports.FirstOrDefault();
 			IsValid = true; // null for CurrentExport is perfectly valid
 		}
 
 		#endregion
 
 		#region Properties
-
-		/// <summary>	Gets or sets the exports. </summary>
-		/// <value>	The exports. </value>
-		public ObservableCollection<ExportModel> Exports
-		{
-			get => _exports;
-			set
-			{
-				_exports = value;
-				OnPropertyChanged();
-			}
-		}
 
 		/// <summary>	Gets or sets the current export. </summary>
 		/// <value>	The current export. </value>

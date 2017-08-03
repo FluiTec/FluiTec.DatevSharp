@@ -53,8 +53,8 @@ namespace FluiTec.Datev.Models.Validators
 			RuleFor(booking => booking)
 				.Must(booking => booking.BasicVolumeCurrencySymbol == null || booking.BasicVolume.HasValue)
 				.WithMessage(errorMessage: "If BasicVolumeCurrencySymbol is used, BasicVolume can not be NULL!");
-			RuleFor(booking => booking.AccountNumber).Length(accountLength).NotNull();
-			RuleFor(booking => booking.ContraAccountNumber).Length(accountLength - 1).NotNull();
+			RuleFor(booking => booking.AccountNumber).MinimumLength(accountLength-1).MaximumLength(accountLength).NotNull();
+			RuleFor(booking => booking.ContraAccountNumber).MinimumLength(accountLength - 1).MaximumLength(accountLength).NotNull();
 			RuleFor(booking => booking.TaxKey).Length(exactLength: 2);
 			RuleFor(booking => booking.Date).NotNull();
 			RuleFor(booking => booking.DocumentField1).Length(min: 0, max: 12);

@@ -13,8 +13,8 @@
         <StackPanel>
             <Image Source="/Resources/Log_500.png" MaxHeight="125"></Image>
             <Label Margin="0,0,0,10" Content="Dieses Programm ermöglicht den Export von DATEV-Daten" />
-            <GroupBox Header="Bereits getätigte Exporte" Margin="5,5,5,5" BorderBrush="LightGray">
-                <ListView ItemsSource="{Binding Exports}" Margin="10,20,10,10" BorderThickness="0" VerticalAlignment="Stretch">
+			<GroupBox Header="Bereits getätigte Exporte" Margin="5,5,5,5" BorderBrush="LightGray" DataContext="{Binding Source={StaticResource Locator}, Path=Exports}">
+				<ListView ItemsSource="{Binding Exports}" Margin="10,20,10,10" BorderThickness="0" VerticalAlignment="Stretch">
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <StackPanel Orientation="Horizontal">

@@ -11,5 +11,11 @@
     <Setting Name="ConsultantFileName" Type="System.String" Scope="Application">
       <Value Profile="(Default)">consultant.xml</Value>
     </Setting>
+    <Setting Name="ExportsFolder" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Exports\</Value>
+    </Setting>
+    <Setting Name="CopyExportsTopDesktop" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

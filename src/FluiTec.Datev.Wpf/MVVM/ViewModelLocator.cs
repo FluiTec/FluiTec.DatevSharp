@@ -17,11 +17,14 @@ namespace FluiTec.Datev.Wpf.MVVM
 
 			SimpleIoc.Default.Register<MainViewModel>();
 			SimpleIoc.Default.Register<ExportViewModel>();
+	        SimpleIoc.Default.Register<ExportsViewModel>();
 		}
 
         public MainViewModel Main => ServiceLocator.Current.GetInstance<MainViewModel>();
 
 		public ExportViewModel Export => ServiceLocator.Current.GetInstance<ExportViewModel>();
+
+	    public ExportsViewModel Exports => ServiceLocator.Current.GetInstance<ExportsViewModel>();
 
 		public static void Cleanup()
         {

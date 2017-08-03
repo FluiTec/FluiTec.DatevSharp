@@ -62,6 +62,11 @@ namespace FluiTec.Datev.Models
 			return sb.ToString();
 		}
 
+		public string GetExportFileName()
+		{
+			return $"EXTF_{Header.DataCategory.Name}_{Header.Created:yyyy_MM_dd_HH_mm_ss}.csv".Replace(oldValue: "/", newValue: "_");
+		}
+
 		#endregion
 	}
 }
