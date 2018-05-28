@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26430.16
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FluiTec.Datev.Models", "FluiTec.Datev.Models\FluiTec.Datev.Models.csproj", "{2D87FFE8-7C53-49C6-BA2C-E910E8488FEA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FluiTec.DatevSharp", "FluiTec.DatevSharp\FluiTec.DatevSharp.csproj", "{F2112277-A274-4BFD-8BCE-B815C34DCD85}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FluiTec.Datev.Wpf", "FluiTec.Datev.Wpf\FluiTec.Datev.Wpf.csproj", "{0B15CFFB-AC44-4288-BA0C-568E7A17C33A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FluiTec.DatevSharp.CoreConsoleSample", "FluiTec.DatevSharp.CoreConsoleSample\FluiTec.DatevSharp.CoreConsoleSample.csproj", "{26A19FB8-BF1B-414C-95D9-2B1B7EA8F1AF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,16 +13,19 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{2D87FFE8-7C53-49C6-BA2C-E910E8488FEA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2D87FFE8-7C53-49C6-BA2C-E910E8488FEA}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2D87FFE8-7C53-49C6-BA2C-E910E8488FEA}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2D87FFE8-7C53-49C6-BA2C-E910E8488FEA}.Release|Any CPU.Build.0 = Release|Any CPU
-		{0B15CFFB-AC44-4288-BA0C-568E7A17C33A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0B15CFFB-AC44-4288-BA0C-568E7A17C33A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0B15CFFB-AC44-4288-BA0C-568E7A17C33A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0B15CFFB-AC44-4288-BA0C-568E7A17C33A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F2112277-A274-4BFD-8BCE-B815C34DCD85}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F2112277-A274-4BFD-8BCE-B815C34DCD85}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F2112277-A274-4BFD-8BCE-B815C34DCD85}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F2112277-A274-4BFD-8BCE-B815C34DCD85}.Release|Any CPU.Build.0 = Release|Any CPU
+		{26A19FB8-BF1B-414C-95D9-2B1B7EA8F1AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{26A19FB8-BF1B-414C-95D9-2B1B7EA8F1AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{26A19FB8-BF1B-414C-95D9-2B1B7EA8F1AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{26A19FB8-BF1B-414C-95D9-2B1B7EA8F1AF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BFAE6A80-0959-499D-B40F-05DB56BCA946}
 	EndGlobalSection
 EndGlobal

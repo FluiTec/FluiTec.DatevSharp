@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <Title>DatevSharp</Title>
+    <TargetFrameworks>net452;net461;netstandard2.0</TargetFrameworks>
+    <PackageLicenseUrl>https://github.com/IInvocation/DatevSharp/blob/master/LICENSE</PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/IInvocation/DatevSharp</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/IInvocation/DatevSharp</RepositoryUrl>
+    <RepositoryType>Library</RepositoryType>
+    <PackageTags>C# CSharp Datev</PackageTags>
+    <Description>Simple, clean library that enables validation and export of DATEV-conform data in typical, type-safe C#-Code.</Description>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Authors>Achim Schnell</Authors>
+    <Company>Achim Schnell</Company>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FluentValidation" Version="7.5.2" />
+  </ItemGroup>
+
+</Project>
