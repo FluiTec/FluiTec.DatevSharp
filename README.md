@@ -8,4 +8,15 @@
 
 ### What can you expect ###
 The only thing this repository provides - is a clean library for validating and exporting DATEV-conform data in typical type-safe C#-Code.
-(WPF-Code is unfinished and probably wont ever be finished)
+
+### Sample ###
+This project, contains a small sample of how to export sample booking data
+
+### Nuget ###
+https://www.nuget.org/packages/FluiTec.DatevSharp/
+PM> Install-Package FluiTec.DatevSharp
+
+### Framework ###
+* NET 4.5.2
+* NET 4.6.1
+* NETSTANDARD 2.0
