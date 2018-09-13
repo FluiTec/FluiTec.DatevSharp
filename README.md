@@ -1,6 +1,6 @@
-# README #
+![Build status](https://ci.appveyor.com/api/projects/status/rn7y6bm4gn9o6yqa?svg=true)
 
-## DatevSharp ##
+# DatevSharp #
 
 ### What is this repository for? ###
 
