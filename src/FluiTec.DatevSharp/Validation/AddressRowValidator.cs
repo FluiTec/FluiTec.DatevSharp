@@ -25,6 +25,8 @@ namespace FluiTec.DatevSharp.Validation
 			RuleFor(address => address.FirstName_Person).Length(0, 30);
 			RuleFor(address => address.NameExtension1).Length(0, 50);
 			RuleFor(address => address.NameExtension2).Length(0, 36);
+            RuleFor(address => address.TransportAddition).Length(0, 50);
+            RuleFor(address => address.AddressAddition).Length(0, 36);
 			RuleFor(address => address.AddressType).GreaterThanOrEqualTo(0).LessThanOrEqualTo(3);
 
 			var validPostalTypes = new[] { "STR", "PF", "GK" };
