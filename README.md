@@ -1,4 +1,4 @@
-![Build status](https://ci.appveyor.com/api/projects/status/rn7y6bm4gn9o6yqa?svg=true)
+[![Build status](https://ci.appveyor.com/api/projects/status/rn7y6bm4gn9o6yqa?svg=true)](https://ci.appveyor.com/project/IInvocation/datevsharp)
 ![Nuget version](https://img.shields.io/nuget/v/FluiTec.DatevSharp.svg)
 
 # DatevSharp #
