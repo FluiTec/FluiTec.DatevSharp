@@ -86,7 +86,7 @@ namespace FluiTec.DatevSharp.Rows.BookingRow
 		///
 		/// <value> The document field 1. </value>
 		/// <remarks>
-		/// MaxLength=12         
+		/// MaxLength=36         
 		/// </remarks>
 		public string DocumentField1 { get; set; }
 

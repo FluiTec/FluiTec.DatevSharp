@@ -37,7 +37,7 @@ namespace FluiTec.DatevSharp.Validation
 			RuleFor(booking => booking.ContraAccountNumber).Length(accountLength - 1).NotNull();
 			RuleFor(booking => booking.TaxKey).Length(2);
 			RuleFor(booking => booking.Date).NotNull();
-			RuleFor(booking => booking.DocumentField1).Length(0, 12);
+			RuleFor(booking => booking.DocumentField1).Length(0, 36);
 			RuleFor(booking => booking.DocumentField2).Length(0, 12);
 			RuleFor(booking => booking.CashDiscount)
 				.Must(bv => bv == null || (bv > 0 && bv < 9999999999.99m))
