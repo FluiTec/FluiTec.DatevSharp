@@ -70,7 +70,7 @@ namespace FluiTec.DatevSharp.Rows.BookingRow
 		///
 		/// <value> The tax key. </value>
 		/// <remarks>
-		/// BU-Schlüssel, MaxLength=2         
+		/// BU-Schlüssel, Length=2-4         
 		/// </remarks>
 		public string TaxKey { get; set; }
 

@@ -35,7 +35,7 @@ namespace FluiTec.DatevSharp.Validation
 				.WithMessage("If BasicVolumeCurrencySymbol is used, BasicVolume can not be NULL!");
 			RuleFor(booking => booking.AccountNumber).Length(accountLength).NotNull();
 			RuleFor(booking => booking.ContraAccountNumber).Length(accountLength - 1).NotNull();
-			RuleFor(booking => booking.TaxKey).Length(2);
+			RuleFor(booking => booking.TaxKey).Length(2, 4);
 			RuleFor(booking => booking.Date).NotNull();
 			RuleFor(booking => booking.DocumentField1).Length(0, 36);
 			RuleFor(booking => booking.DocumentField2).Length(0, 12);
