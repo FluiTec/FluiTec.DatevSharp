@@ -1,4 +1,6 @@
-﻿namespace FluiTec.DatevSharp.Helpers
+﻿using System.Text.RegularExpressions;
+
+namespace FluiTec.DatevSharp.Helpers
 {
 	/// <summary>   A string helper. </summary>
 	public static class StringHelper
@@ -10,7 +12,7 @@
 		/// <returns>   str as a string. </returns>
 		public static string ToDatev(this string str)
 		{
-			return string.IsNullOrWhiteSpace(str) ? "\"\"" : $"\"{str}\"";
+			return string.IsNullOrWhiteSpace(str) ? "\"\"" : Regex.Replace($"\"{str}\"", @"\r\n?|\n", "");
 		}
 	}
 }
