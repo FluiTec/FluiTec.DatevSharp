@@ -208,7 +208,7 @@ namespace FluiTec.DatevSharp
 				case 16:
 					return new AddressRowValidator(ImpersonalAccountsLength + 1);
 				case 21:
-			        return new BookingRowValidator(ImpersonalAccountsLength + 1);
+			        return new BookingRowValidator(ImpersonalAccountsLength);
 				case 46:
 			        return new TermsOfPaymentRowValidator();
 				default:

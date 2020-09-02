@@ -10,18 +10,17 @@ namespace FluiTec.DatevSharp.Validation
     /// <summary>   A booking validator. </summary>
 	public class BookingRowValidator : AbstractValidator<BookingRow>, IValidator<IDatevRow>
     {
-	    /// <summary>   Default constructor. </summary>
-        ///
-        /// <param name="accountLength">    Length of the account. </param>
-		public BookingRowValidator(int accountLength)
+		/// <summary>   Default constructor. </summary>
+		/// <param name="impersonalAccountsLength">    Length of the account. </param>
+		public BookingRowValidator(int impersonalAccountsLength)
         {
-	        AddBasicRules(accountLength);
+	        AddBasicRules(impersonalAccountsLength);
 			AddBookingInfoRules();
 			AddMiscRuls();
 	        AddAdditionInfoRules();
         }
 
-	    private void AddBasicRules(int accountLength)
+	    private void AddBasicRules(int impersonalAccountsLength)
 	    {
 		    RuleFor(booking => booking.Volume).GreaterThan(0);
 			RuleFor(booking => booking.Volume).LessThanOrEqualTo(9999999999.99m); // avoid havin length>13
@@ -33,8 +32,11 @@ namespace FluiTec.DatevSharp.Validation
 			RuleFor(booking => booking)
 				.Must(booking => booking.BasicVolumeCurrencySymbol == null || booking.BasicVolume.HasValue)
 				.WithMessage("If BasicVolumeCurrencySymbol is used, BasicVolume can not be NULL!");
-			RuleFor(booking => booking.AccountNumber).Length(accountLength).NotNull();
-			RuleFor(booking => booking.ContraAccountNumber).Length(accountLength - 1).NotNull();
+			RuleFor(booking => booking.AccountNumber).Length(impersonalAccountsLength, impersonalAccountsLength + 1).NotNull();
+			RuleFor(booking => booking.ContraAccountNumber).Length(impersonalAccountsLength, impersonalAccountsLength + 1).NotNull();
+            RuleFor(booking => booking)
+                .Must(b => b.AccountNumber.Length + b.ContraAccountNumber.Length <= impersonalAccountsLength * 2 + 1)
+                .WithMessage("Booking from one PersonalAccountNumber to another PersonalAccountNumber is forbidden!");
 			RuleFor(booking => booking.TaxKey).Length(2, 4);
 			RuleFor(booking => booking.Date).NotNull();
 			RuleFor(booking => booking.DocumentField1).Length(0, 36);
