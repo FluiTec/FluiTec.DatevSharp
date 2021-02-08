@@ -37,7 +37,7 @@ namespace FluiTec.DatevSharp.Validation
             RuleFor(booking => booking)
                 .Must(b => b.AccountNumber.Length + b.ContraAccountNumber.Length <= impersonalAccountsLength * 2 + 1)
                 .WithMessage("Booking from one PersonalAccountNumber to another PersonalAccountNumber is forbidden!");
-			RuleFor(booking => booking.TaxKey).Length(2, 4);
+			RuleFor(booking => booking.TaxKey).Length(1, 4);
 			RuleFor(booking => booking.Date).NotNull();
 			RuleFor(booking => booking.DocumentField1).Length(0, 36);
 			RuleFor(booking => booking.DocumentField2).Length(0, 12);
