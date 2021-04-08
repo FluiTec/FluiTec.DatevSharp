@@ -7,9 +7,13 @@ namespace FluiTec.DatevSharp.CoreConsoleSample
 {
     class Program
     {
-        private static readonly DateTime ExportStartDate = new DateTime(2021, 4, 2);
+        private static readonly DateTime ExportStartDate = new DateTime(2017, 2, 15);
 
-        private static readonly DateTime ExportEndDate = new DateTime(2021, 4, 7);
+        private static readonly DateTime ExportEndDate = new DateTime(2017, 2, 28);
+
+        private static readonly DateTime SampleBookingDate = new DateTime(2017, 2, 16);
+
+        private static readonly DateTime SampleDeliveryDate = new DateTime(2017, 2, 15);
 
         static void Main(string[] args)
         {
@@ -39,10 +43,9 @@ namespace FluiTec.DatevSharp.CoreConsoleSample
                 Header = new DatevHeader
                 {
                     DataCategory = DataCategories.Bookings, // <-- this defines we are going to export bookings (bills you got or wrote)
-                    StartOfBusinessYear = new DateTime(2021, 1, 1),
-                    Source = "JR", // <-- defines we're using an erp-system
-                    ConsultantNumber = 128609, // <-- unique number of the consultant within the datev-organization
-                    ClientNumber = 500, // <-- your unique number of your enterprise within the consultant
+                    Source = "RE", // <-- defines we're using an erp-system
+                    ConsultantNumber = 00001, // <-- unique number of the consultant within the datev-organization
+                    ClientNumber = 00001, // <-- your unique number of your enterprise within the consultant
                     BookingsFrom = ExportStartDate, // <-- Defines the StartDate/Time of your export
                     BookingsTill = ExportEndDate // <-- Defines the EndDate/Time of your export
                 }
@@ -56,100 +59,22 @@ namespace FluiTec.DatevSharp.CoreConsoleSample
         // add sample booking data to our file
         static void AddSampleBookingData(DatevFile file)
         {
-            file.Rows.Add(new BookingRow
-            {
-                Claim = "H",
-                Volume = Math.Round(Math.Abs(3468.75m), 2),
-                AccountNumber = "70075",
-                ContraAccountNumber = "5400",
-                Date = new DateTime(2021, 1, 14),
-                BookingText = "Eingangsrechnung zu TP 3.1",
-                DocumentField1 = "48405",
-                DocumentField2 = "",
-                CountryCodeAndTaxId = null
-            });
+            decimal value = 50m; // 50 €
+            string accountNumber = "10001"; // customers number in your erp
 
+            // bill we wrote
             file.Rows.Add(new BookingRow
             {
-                Claim = "H",
-                Volume = Math.Round(Math.Abs(4111.78m), 2),
-                AccountNumber = "70075",
-                ContraAccountNumber = "5200",
-                TaxKey = "90",
-                Date = new DateTime(2021, 2, 28),
-                BookingText = "Eingangsrechnung zu TP 3.2",
-                DocumentField1 = "33254",
-                DocumentField2 = "",
-                CountryCodeAndTaxId = null
-            });
-
-            file.Rows.Add(new BookingRow
-            {
-                Claim = "H",
-                Volume = Math.Round(Math.Abs(120m), 2),
-                AccountNumber = "70186",
-                ContraAccountNumber = "6660",
-                Date = new DateTime(2021, 2, 15),
-                BookingText = "Eingangsrechnung zu TP 3.3 Pos 1",
-                DocumentField1 = "RE4711",
-                DocumentField2 = "",
-                CountryCodeAndTaxId = null
-            });
-
-            file.Rows.Add(new BookingRow
-            {
-                Claim = "H",
-                Volume = Math.Round(Math.Abs(30m), 2),
-                AccountNumber = "70186",
-                ContraAccountNumber = "5400",
-                Date = new DateTime(2021, 2, 15),
-                BookingText = "Eingangsrechnung zu TP 3.3 Pos 2",
-                DocumentField1 = "RE4711",
-                DocumentField2 = "",
-                CountryCodeAndTaxId = null
-            });
-
-            file.Rows.Add(new BookingRow
-            {
-                Claim = "H",
-                Volume = Math.Round(Math.Abs(773.50m), 2),
-                AccountNumber = "70200",
-                ContraAccountNumber = "5400",
-                Date = new DateTime(2021, 3, 1),
-                ActivityDate = new DateTime(2021, 2, 28),
-                BookingText = "Eingangsrechnung zu TP 3.4",
-                DocumentField1 = "2020ME114",
-                DocumentField2 = "",
-                CountryCodeAndTaxId = null
-            });
-
-            file.Rows.Add(new BookingRow
-            {
-                Claim = "S",
-                Volume = Math.Round(Math.Abs(3468.75m), 2),
-                AccountNumber = "70075",
-                ContraAccountNumber = "5400",
-                Date = new DateTime(2021, 1, 14),
-                BookingText = "Eingangsrechnung zu TP 3.5 - GU zu 3.1",
-                DocumentField1 = "48405",
-                DocumentField2 = "",
-                CountryCodeAndTaxId = null,
-                GeneralInversion = "1"
-            });
-
-            file.Rows.Add(new BookingRow
-            {
-                Claim = "S",
-                Volume = Math.Round(Math.Abs(4111.78m), 2),
-                AccountNumber = "70075",
-                ContraAccountNumber = "5200",
-                TaxKey = "90",
-                Date = new DateTime(2021, 2, 28),
-                BookingText = "Eingangsrechnung zu TP 3.5 - GU zu 3.2",
-                DocumentField1 = "33254",
-                DocumentField2 = "",
-                CountryCodeAndTaxId = null,
-                GeneralInversion = "1"
+                Volume = Math.Round(Math.Abs(value), 2), // 50 €
+                AccountNumber = value > 0m ? accountNumber : "8400",
+                ContraAccountNumber = value > 0m ? "8400" : accountNumber,
+                TaxKey = "10",
+                Date = SampleBookingDate,
+                BookingText = "your bookings text",
+                DocumentField1 = "500000", // <-- your unique booking number
+                DocumentField2 = "NETTO14", // <-- the name of the payment-condition you synchronized with your consultant
+                CountryCodeAndTaxId = null, // null / your customers UstId
+                ActivityDate = SampleDeliveryDate,
             });
         }
     }
