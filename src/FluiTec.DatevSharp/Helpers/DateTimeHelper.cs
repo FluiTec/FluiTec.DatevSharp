@@ -62,13 +62,13 @@ namespace FluiTec.DatevSharp.Helpers
 	    }
 
         /// <summary>
-        /// A DateTime extension method that converts a dateTime to a short datev sate.
+        /// A DateTime extension method that converts a dateTime to a short datev date.
         /// </summary>
         ///
         /// <param name="dateTime"> The dateTime to act on. </param>
         ///
         /// <returns>   dateTime as a string. </returns>
-	    public static string ToShortDatevSate(this DateTime dateTime)
+	    public static string ToShortDatevDate(this DateTime dateTime)
 	    {
 		    return dateTime.ToString("ddMM");
 	    }

@@ -5,17 +5,17 @@ namespace FluiTec.DatevSharp
 		/// <summary>   Gets or sets the number.  </summary>
 		///
 		/// <value> The number. </value>
-		public int Number { get; private set; }
+		public int Number { get; }
 
 		/// <summary>   Gets or sets the name. </summary>
 		///
 		/// <value> The name. </value>
-		public string Name { get; private set; }
+		public string Name { get; }
 
 		/// <summary>   Gets or sets the version. </summary>
 		///
 		/// <value> The version. </value>
-		public int Version { get; private set; }
+		public int Version { get; }
 
 		/// <summary>   Constructor. </summary>
 		///
