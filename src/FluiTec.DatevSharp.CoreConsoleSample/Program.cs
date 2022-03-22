@@ -5,7 +5,7 @@ using FluiTec.DatevSharp.Rows.BookingRow;
 
 namespace FluiTec.DatevSharp.CoreConsoleSample
 {
-    class Program
+    internal class Program
     {
         private static readonly DateTime ExportStartDate = new DateTime(2017, 2, 15);
 
@@ -15,7 +15,7 @@ namespace FluiTec.DatevSharp.CoreConsoleSample
 
         private static readonly DateTime SampleDeliveryDate = new DateTime(2017, 2, 15);
 
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
             // make sure we can use CodePage 1252
             // only necessary using NetCore (real .NET already has cp 1252 loaded)
@@ -36,7 +36,7 @@ namespace FluiTec.DatevSharp.CoreConsoleSample
         }
 
         // create our datev-"file" (in memory) defining it's basic properties
-        static DatevFile CreateBookingFile()
+        private static DatevFile CreateBookingFile()
         {
             var file = new DatevFile
             {
@@ -59,8 +59,8 @@ namespace FluiTec.DatevSharp.CoreConsoleSample
         // add sample booking data to our file
         static void AddSampleBookingData(DatevFile file)
         {
-            decimal value = 50m; // 50 €
-            string accountNumber = "10001"; // customers number in your erp
+            var value = 50m; // 50 €
+            var accountNumber = "10001"; // customers number in your erp
 
             // bill we wrote
             file.Rows.Add(new BookingRow

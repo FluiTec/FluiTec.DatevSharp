@@ -1,4 +1,4 @@
-﻿namespace FluiTec.DatevSharp.Rows.Headers
+﻿namespace FluiTec.DatevSharp.Rows.BookingRow
 {
 	public class BookingHeaderRow : Interfaces.IDatevRow
 	{

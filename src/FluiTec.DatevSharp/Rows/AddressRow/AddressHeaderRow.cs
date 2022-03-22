@@ -1,4 +1,4 @@
-﻿namespace FluiTec.DatevSharp.Rows.Headers
+﻿namespace FluiTec.DatevSharp.Rows.AddressRow
 {
 	/// <summary>   The address header row. </summary>
 	public class AddressHeaderRow : Interfaces.IDatevRow

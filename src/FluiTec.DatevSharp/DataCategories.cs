@@ -1,6 +1,8 @@
 using System;
 using FluiTec.DatevSharp.Interfaces;
-using FluiTec.DatevSharp.Rows.Headers;
+using FluiTec.DatevSharp.Rows.AddressRow;
+using FluiTec.DatevSharp.Rows.BookingRow;
+using FluiTec.DatevSharp.Rows.TermsOfPaymentRow;
 
 namespace FluiTec.DatevSharp
 {

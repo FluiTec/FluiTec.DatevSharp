@@ -1,4 +1,5 @@
-﻿using FluiTec.DatevSharp.Helpers;
+﻿using FluiTec.DatevSharp.Attributes;
+using FluiTec.DatevSharp.Helpers;
 
 namespace FluiTec.DatevSharp.Rows.AddressRow
 {
@@ -22,6 +23,7 @@ namespace FluiTec.DatevSharp.Rows.AddressRow
 
 		/// <summary>   Gets or sets the account number. </summary>
 		/// <value> The account number. </value>
+        [DatevField(1, new []{1,2,3,4,5})]
 		public int AccountNumber { get; set; }
 
 		/// <summary>   Gets or sets the salutation. </summary>

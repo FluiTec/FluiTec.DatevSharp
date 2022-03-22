@@ -1,4 +1,4 @@
-﻿namespace FluiTec.DatevSharp.Rows.Headers
+﻿namespace FluiTec.DatevSharp.Rows.TermsOfPaymentRow
 {
 	/// <summary>   The terms of payment header row. </summary>
 	public class TermsOfPaymentHeaderRow : Interfaces.IDatevRow
