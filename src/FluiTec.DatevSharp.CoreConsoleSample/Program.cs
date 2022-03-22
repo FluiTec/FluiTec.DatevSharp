@@ -59,8 +59,8 @@ namespace FluiTec.DatevSharp.CoreConsoleSample
         // add sample booking data to our file
         private static void AddSampleBookingData(DatevFile file)
         {
-            var value = 50m; // 50 €
-            var accountNumber = "10001"; // customers number in your erp
+            const decimal value = 50m; // 50 €
+            const string accountNumber = "10001"; // customers number in your erp
 
             // bill we wrote
             file.Rows.Add(new BookingRow
