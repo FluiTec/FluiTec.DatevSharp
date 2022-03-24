@@ -18,4 +18,10 @@
     <ProjectReference Include="..\FluiTec.DatevSharp\FluiTec.DatevSharp.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Rows\AddressRow\" />
+    <Folder Include="Rows\BookingRow\" />
+    <Folder Include="Rows\TermsOfPaymentRow\" />
+  </ItemGroup>
+
 </Project>

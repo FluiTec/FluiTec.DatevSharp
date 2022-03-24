@@ -28,6 +28,13 @@
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Remove="Formats\CsvFormatProperties.cs" />
+    <EmbeddedResource Remove="Formats\Field.cs" />
+    <EmbeddedResource Remove="Formats\Format.cs" />
+    <EmbeddedResource Remove="Formats\FormatDescription.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="FluentValidation" Version="7.5.2" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
   </ItemGroup>

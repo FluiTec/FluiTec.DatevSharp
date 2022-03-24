@@ -1,7 +1,8 @@
 using System;
 using System.IO;
-using System.Xml;
 using System.Xml.Linq;
+using System.Xml.Serialization;
+using FluiTec.DatevSharp.Formats;
 using Newtonsoft.Json;
 
 namespace FluiTec.DatevSharp
@@ -11,7 +12,8 @@ namespace FluiTec.DatevSharp
     /// </summary>
     public class DataCategoryVersion
     {
-        private XDocument _format;
+        private XDocument _formatDocument;
+        private FormatDescription _formatDescription;
 
         /// <summary>
         /// Gets the version.
@@ -41,27 +43,50 @@ namespace FluiTec.DatevSharp
         public string File { get; }
 
         /// <summary>
-        /// Gets the format to use.
+        /// Gets the format document.
         /// </summary>
         ///
+        /// <exception cref="InvalidOperationException">    Thrown when the requested operation is
+        ///                                                 invalid. </exception>
+        ///
         /// <value>
-        /// The format.
+        /// The format document.
         /// </value>
-        public XDocument Format
+        public XDocument FormatDocument
         {
             get
             {
-                if (_format != null) return _format;
+                if (_formatDocument != null) return _formatDocument;
 
                 var asm = typeof(DataCategories).Assembly;
                 using (var mapResource = asm.GetManifestResourceStream(File))
                 using (var sr = new StreamReader(mapResource ?? throw new InvalidOperationException()))
                 {
                     var xml = sr.ReadToEnd();
-                    _format = XDocument.Parse(xml);
+                    _formatDocument = XDocument.Parse(xml);
                 }
 
-                return _format;
+                return _formatDocument;
+            }
+        }
+
+        /// <summary>
+        /// Gets information describing the format.
+        /// </summary>
+        ///
+        /// <value>
+        /// Information describing the format.
+        /// </value>
+        public FormatDescription FormatDescription
+        {
+            get
+            {
+                if (_formatDescription != null) return _formatDescription;
+
+                var serializer = new XmlSerializer(typeof(FormatDescription));
+                _formatDescription = (FormatDescription)serializer.Deserialize(FormatDocument.CreateReader());
+
+                return _formatDescription;
             }
         }
 
