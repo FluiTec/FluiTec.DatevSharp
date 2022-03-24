@@ -1,4 +1,7 @@
 using System;
+using System.IO;
+using System.Xml;
+using System.Xml.Linq;
 using Newtonsoft.Json;
 
 namespace FluiTec.DatevSharp
@@ -8,6 +11,8 @@ namespace FluiTec.DatevSharp
     /// </summary>
     public class DataCategoryVersion
     {
+        private XDocument _format;
+
         /// <summary>
         /// Gets the version.
         /// </summary>
@@ -34,6 +39,31 @@ namespace FluiTec.DatevSharp
         /// The file.
         /// </value>
         public string File { get; }
+
+        /// <summary>
+        /// Gets the format to use.
+        /// </summary>
+        ///
+        /// <value>
+        /// The format.
+        /// </value>
+        public XDocument Format
+        {
+            get
+            {
+                if (_format != null) return _format;
+
+                var asm = typeof(DataCategories).Assembly;
+                using (var mapResource = asm.GetManifestResourceStream(File))
+                using (var sr = new StreamReader(mapResource ?? throw new InvalidOperationException()))
+                {
+                    var xml = sr.ReadToEnd();
+                    _format = XDocument.Parse(xml);
+                }
+
+                return _format;
+            }
+        }
 
         /// <summary>
         /// Constructor.

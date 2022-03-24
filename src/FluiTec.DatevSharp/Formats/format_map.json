@@ -28,7 +28,7 @@
       {
         "Version": "5",
         "DatevVersion": "700",
-        "File": "FluiTec.DatevSharp.Format_Debitoren_Kreditoren.xml"
+        "File": "FluiTec.DatevSharp.Formats.XML.Addresses.Format_Debitoren_Kreditoren.xml"
       }
     ]
   },
