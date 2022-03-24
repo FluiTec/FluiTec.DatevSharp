@@ -1,4 +1,4 @@
-﻿namespace FluiTec.DatevSharp.Formats
+﻿namespace FluiTec.DatevSharp.Formats.Serialization
 {
     /// <summary>
     /// A CSV format properties.

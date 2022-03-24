@@ -2,7 +2,7 @@ using System;
 using System.IO;
 using System.Xml.Linq;
 using System.Xml.Serialization;
-using FluiTec.DatevSharp.Formats;
+using FluiTec.DatevSharp.Formats.Serialization;
 using Newtonsoft.Json;
 
 namespace FluiTec.DatevSharp

@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Xml.Serialization;
 
-namespace FluiTec.DatevSharp.Formats
+namespace FluiTec.DatevSharp.Formats.Serialization
 {
     /// <summary>
     /// Description of the format.

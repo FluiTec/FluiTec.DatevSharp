@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 
 namespace FluiTec.DatevSharp.Attributes
 {
@@ -16,29 +15,50 @@ namespace FluiTec.DatevSharp.Attributes
         /// <value>
         /// The field number. (base: 1)
         /// </value>
-        public int FieldNumber { get; }
+        public int FieldOrdinalNumber { get; }
 
         /// <summary>
-        /// Gets the valid versions.
+        /// Gets the valid from version.
         /// </summary>
         ///
         /// <value>
-        /// The valid versions.
+        /// The valid from version.
         /// </value>
-        public IEnumerable<int> ValidVersions { get; }
+        public int ValidFromVersion { get; }
+
+        /// <summary>
+        /// Gets the valid till version.
+        /// </summary>
+        ///
+        /// <value>
+        /// The valid till version.
+        /// </value>
+        public int? ValidTillVersion { get; }
 
         /// <summary>
         /// Constructor.
         /// </summary>
         ///
-        /// <param name="fieldNumber">      The field number. (base: 1) </param>
-        /// <param name="validVersions">    The valid versions. </param>
-        // ReSharper disable ParameterTypeCanBeEnumerable.Local
-        public DatevField(int fieldNumber, int[] validVersions)
-        // ReSharper restore ParameterTypeCanBeEnumerable.Local
+        /// <param name="fieldOrdinalNumber">   The field number. </param>
+        /// <param name="validFromVersion">     The valid from version. </param>
+        public DatevField(int fieldOrdinalNumber, int validFromVersion) : this(fieldOrdinalNumber, validFromVersion,
+            null)
         {
-            FieldNumber = fieldNumber;
-            ValidVersions = validVersions;
+
+        }
+
+        /// <summary>
+        /// Constructor.
+        /// </summary>
+        ///
+        /// <param name="fieldOrdinalNumber">   The field number. </param>
+        /// <param name="validFromVersion">     The valid from version. </param>
+        /// <param name="validTillVersion">     The valid till version. </param>
+        public DatevField(int fieldOrdinalNumber, int validFromVersion, int? validTillVersion)
+        {
+            FieldOrdinalNumber = fieldOrdinalNumber;
+            ValidFromVersion = validFromVersion;
+            ValidTillVersion = validTillVersion;
         }
     }
 }
