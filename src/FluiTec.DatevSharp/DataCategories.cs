@@ -1,48 +1,83 @@
 using System;
+using System.IO;
+using System.Linq;
 using FluiTec.DatevSharp.Interfaces;
 using FluiTec.DatevSharp.Rows.AddressRow;
 using FluiTec.DatevSharp.Rows.BookingRow;
 using FluiTec.DatevSharp.Rows.TermsOfPaymentRow;
+using Newtonsoft.Json;
 
 namespace FluiTec.DatevSharp
 {
 	/// <summary>   A data categories. </summary>
-	public static class DataCategories
-	{
-		/// <summary>   The bookings. </summary>
-		public static DataCategory Bookings => new DataCategory(21, "Buchungsstapel", 7);
+	public sealed class DataCategories
+    {
+        private const string BookingsName = "Bookings";
+        private const string AddressName = "Addresses";
+        private const string TermsOfPaymentName = "TermsOfPayment";
 
-		/// <summary>   The recurring bookings. </summary>
-		public static DataCategory RecurringBookings => new DataCategory(65, "Wiederkehrende Buchungen", 2);
+        // Explicit static constructor to tell C# compiler
+        // not to mark type as beforefieldinit
+        static DataCategories()
+        {
+            var asm = typeof(DataCategories).Assembly;
+			using (var mapResource = asm.GetManifestResourceStream("FluiTec.DatevSharp.Formats.format_map.json"))
+            using (var sr = new StreamReader(mapResource ?? throw new InvalidOperationException()))
+            using (var jr = new JsonTextReader(sr))
+            {
+                var serializer = new JsonSerializer();
+                var categories = serializer.Deserialize<DataCategory[]>(jr);
+                BookingCategory = (categories ?? throw new InvalidOperationException()).Single(c => c.Name == BookingsName);
+                AddressCategory = (categories ?? throw new InvalidOperationException()).Single(c => c.Name == AddressName);
+                TermsOfPaymentCategory = (categories ?? throw new InvalidOperationException()).Single(c => c.Name == TermsOfPaymentName);
+            }
+        }
 
-		/// <summary>   The booking text constants. </summary>
-		public static DataCategory BookingTextConstants => new DataCategory(67, "Buchungstextkonstanten", 1);
+		/// <summary>
+		/// Constructor that prevents a default instance of this class from being created.
+		/// </summary>
+		private DataCategories()
+        {
+        }
 
-		/// <summary>   List of names of the nominal accounts. </summary>
-		public static DataCategory NominalAccountNames => new DataCategory(20, "Kontenbeschriftungen", 2);
+        /// <summary>
+        /// Gets the instance.
+        /// </summary>
+        ///
+        /// <value>
+        /// The instance.
+        /// </value>
+        // ReSharper disable once UnusedMember.Global
+        public static DataCategories Instance { get; } = new DataCategories();
 
-		/// <summary>   The account notes. </summary>
-		public static DataCategory AccountNotes => new DataCategory(47, "Konto-Notizen", 1);
+        /// <summary>
+        /// Gets or sets the category the booking belongs to.
+        /// </summary>
+        ///
+        /// <value>
+        /// The booking category.
+        /// </value>
+        public static DataCategory BookingCategory { get; }
 
-		/// <summary>   The addresses. </summary>
-		public static DataCategory Addresses => new DataCategory(16, "Debitoren/Kreditoren", 4);
+        /// <summary>
+        /// Gets the category the address belongs to.
+        /// </summary>
+        ///
+        /// <value>
+        /// The address category.
+        /// </value>
+        public static DataCategory AddressCategory { get; }
 
-		/// <summary>   The text keys. </summary>
-		public static DataCategory TextKeys => new DataCategory(44, "Textschlüssel", 2);
+        /// <summary>
+        /// Gets the category the terms of payment belongs to.
+        /// </summary>
+        ///
+        /// <value>
+        /// The terms of payment category.
+        /// </value>
+        public static DataCategory TermsOfPaymentCategory { get; }
 
-		/// <summary>   The terms of payment. </summary>
-		public static DataCategory TermsOfPayment => new DataCategory(46, "Zahlungsbedingungen", 2);
-
-		/// <summary>   The misc addresses. </summary>
-		public static DataCategory MiscAddresses => new DataCategory(48, " Diverse Adressen", 2);
-
-		/// <summary>   The system bookings. </summary>
-		public static DataCategory SystemBookings => new DataCategory(63, "Anlagenbuchführung – Buchungssatzvorlagen", 1);
-
-		/// <summary>   The system branches. </summary>
-		public static DataCategory SystemBranches => new DataCategory(62, "Anlagenbuchführung – Filialen", 1);
-
-		/// <summary>   Gets header row. </summary>
+        /// <summary>   Gets header row. </summary>
 		///
 		/// <param name="category"> The category. </param>
 		///
@@ -52,30 +87,12 @@ namespace FluiTec.DatevSharp
 			switch (category.Number)
 			{
 				case 16: // Debitoren/Kreditoren
-					switch (category.Version)
-					{
-						case 4:
-							return new AddressHeaderRow();
-						default:
-							throw new NotImplementedException();
-					}
+                    return new AddressHeaderRow();
 				case 21: // Buchungsstapel
-					switch (category.Version)
-					{
-						case 7:
-							return new BookingHeaderRow();
-						default:
-							throw new NotImplementedException();
-					}
+                    return new BookingHeaderRow();
 				case 46: // Zahlungsbedingungen
-					switch (category.Version)
-					{
-						case 2:
-							return new TermsOfPaymentHeaderRow();
-						default:
-							throw new NotImplementedException();
-					}
-				default:
+                    return new TermsOfPaymentHeaderRow();
+                default:
 					throw new NotImplementedException();
 			}
 		}

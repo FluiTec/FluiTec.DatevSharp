@@ -11,16 +11,33 @@ namespace FluiTec.DatevSharp
     /// <summary>   A datev header. </summary>
 	public class DatevHeader : IDatevRow
 	{
-		#region BasicHeaderProperties
+        private DataCategory _dataCategory;
+
+        #region BasicHeaderProperties
 
 		/// <summary>   Identifier for the format. Static: "EXTF"</summary>
 		public string FormatIdentifier => "EXTF";
 
-        /// <summary>   The version of the export file. </summary>
-		public int Version => 510;
-
         /// <summary>   Category the data belongs to. </summary>
-		public DataCategory DataCategory { get; set; }
+        public DataCategory DataCategory
+        {
+            get => _dataCategory;
+            set
+            {
+                _dataCategory = value;
+                if (DataVersion == null)
+                    DataVersion = _dataCategory.DefaultVersion;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the data version.
+        /// </summary>
+        ///
+        /// <value>
+        /// The data version.
+        /// </value>
+        public DataCategoryVersion DataVersion { get; set; }
 
         /// <summary>   Gets or sets the Date/Time of the created. </summary>
         ///
@@ -189,33 +206,13 @@ namespace FluiTec.DatevSharp
 		public string ToRow()
         {
 	        return
-		        $"{FormatIdentifier.ToDatev()};{Version};{DataCategory.Number};{DataCategory.Name.ToDatev()};{DataCategory.Version};" +
+		        $"{FormatIdentifier.ToDatev()};{DataVersion.DatevVersion};{DataCategory.Number};{DataCategory.DatevName.ToDatev()};{DataVersion.Version};" +
 		        $"{Created.ToDatevDateTime()};{Imported};{Source.ToDatev()};{ExportedBy.ToDatev()};{ImportedBy.ToDatev()};" +
 		        $"{ConsultantNumber};{ClientNumber};{StartOfBusinessYear.ToDatevDate()};{ImpersonalAccountsLength};" +
 		        $"{BookingsFrom.ToDatevDate()};{BookingsTill.ToDatevDate()};{Description.ToDatev()};{DictationShortName.ToDatev()};" +
 		        $"{BookingType};{BillingIntention};{Fixing.ToDatev()};{CurrencySymbol.ToDatev()};;;;;;;;;";
         }
 
-        /// <summary>   Gets the validator needed for the given format. </summary>
-        ///
-        /// <returns>   The validator for the given format. </returns>
-	    public IValidator<IDatevRow> GetValidator()
-	    {
-		    if (DataCategory == null)
-				throw new NoNullAllowedException($"{nameof(DataCategory)} must not be null for this method to succeed.");
-	        switch (DataCategory.Number)
-	        {
-				case 16:
-					return new AddressRowValidator(ImpersonalAccountsLength + 1);
-				case 21:
-			        return new BookingRowValidator(ImpersonalAccountsLength);
-				case 46:
-			        return new TermsOfPaymentRowValidator();
-				default:
-					throw new ArgumentException($"{nameof(DataCategory)} with value {DataCategory.Number} is not implemented yet.");
-	        }
-	    }
- 
-		#endregion
+        #endregion
 	}
 }

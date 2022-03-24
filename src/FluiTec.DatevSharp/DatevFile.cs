@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Text;
+using FluentValidation;
 using FluentValidation.Results;
 using FluiTec.DatevSharp.Interfaces;
 using FluiTec.DatevSharp.Validation;
@@ -72,8 +74,25 @@ namespace FluiTec.DatevSharp
         /// </remarks>
 	    public string GetName()
 	    {
-            return $"EXTF_{Header.DataCategory.Name}_{Header.Created:yyyy_MM_dd_HH_mm_ss}.csv".Replace("/", "_");
+            return $"EXTF_{Header.DataCategory.DatevName}_{Header.Created:yyyy_MM_dd_HH_mm_ss}.csv".Replace("/", "_");
         }
+
+        /// <summary>   Gets the validator needed for the given format. </summary>
+        ///
+        /// <returns>   The validator for the given format. </returns>
+        public IValidator<IDatevRow> GetValidator()
+        {
+            if (Header.DataCategory == null)
+                throw new NoNullAllowedException($"{nameof(DataCategory)} must not be null for this method to succeed.");
+            if (Header.DataCategory.Number == DataCategories.BookingCategory.Number)
+                return new BookingRowValidator(Header.ImpersonalAccountsLength);
+			if (Header.DataCategory.Number == DataCategories.AddressCategory.Number)
+                return new AddressRowValidator(Header.ImpersonalAccountsLength + 1);
+            if (Header.DataCategory.Number == DataCategories.TermsOfPaymentCategory.Number)
+                return new TermsOfPaymentRowValidator();
+
+            throw new ArgumentException($"{nameof(DataCategory)} with value {Header.DataCategory.Number} is not implemented yet.");
+		}
 
 		#endregion
 	}

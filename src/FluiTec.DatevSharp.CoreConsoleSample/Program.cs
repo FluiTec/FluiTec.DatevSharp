@@ -7,14 +7,17 @@ namespace FluiTec.DatevSharp.CoreConsoleSample
 {
     internal class Program
     {
+        private static readonly DateTime StartOfBusinessYear = new DateTime(2017, 1, 1);
         private static readonly DateTime ExportStartDate = new DateTime(2017, 2, 15);
-
         private static readonly DateTime ExportEndDate = new DateTime(2017, 2, 28);
-
         private static readonly DateTime SampleBookingDate = new DateTime(2017, 2, 16);
-
         private static readonly DateTime SampleDeliveryDate = new DateTime(2017, 2, 15);
 
+        /// <summary>
+        /// Main entry-point for this application.
+        /// </summary>
+        ///
+        /// <param name="args"> An array of command-line argument strings. </param>
         private static void Main(string[] args)
         {
             // make sure we can use CodePage 1252
@@ -42,10 +45,12 @@ namespace FluiTec.DatevSharp.CoreConsoleSample
             {
                 Header = new DatevHeader
                 {
-                    DataCategory = DataCategories.Bookings, // <-- this defines we are going to export bookings (bills you got or wrote)
+                    DataCategory = DataCategories.BookingCategory, // <-- this defines we are going to export bookings (bills you got or wrote)
+                    DataVersion = DataCategories.BookingCategory.DefaultVersion, // <-- this defines the version we're going to use (optional as setting Category sets the version)
+                    StartOfBusinessYear = StartOfBusinessYear, // <-- optional, by omitting this you set the current year
                     Source = "RE", // <-- defines we're using an erp-system
-                    ConsultantNumber = 00001, // <-- unique number of the consultant within the datev-organization
-                    ClientNumber = 00001, // <-- your unique number of your enterprise within the consultant
+                    ConsultantNumber = 1001, // <-- unique number of the consultant within the datev-organization
+                    ClientNumber = 1001, // <-- your unique number of your enterprise within the consultant
                     BookingsFrom = ExportStartDate, // <-- Defines the StartDate/Time of your export
                     BookingsTill = ExportEndDate // <-- Defines the EndDate/Time of your export
                 }

@@ -1,0 +1,121 @@
+[
+  {
+    "Name": "Addresses",
+    "DatevName": "Debitoren",
+    "Number": "16",
+    "DefaultVersionNumber": "4",
+    "Versions": [
+      {
+        "Version": "1",
+        "DatevVersion": "510",
+        "File": "FluiTec.DatevSharp.Formats.XML.Addresses.Format_Debitoren_Kreditoren_210.xml"
+      },
+      {
+        "Version": "2",
+        "DatevVersion": "510",
+        "File": "FluiTec.DatevSharp.Formats.XML.Addresses.Format_Debitoren_Kreditoren_311.xml"
+      },
+      {
+        "Version": "3",
+        "DatevVersion": "510",
+        "File": "FluiTec.DatevSharp.Formats.XML.Addresses.Format_Debitoren_Kreditoren_430.xml"
+      },
+      {
+        "Version": "4",
+        "DatevVersion": "510",
+        "File": "FluiTec.DatevSharp.Formats.XML.Addresses.Format_Debitoren_Kreditoren_530.xml"
+      },
+      {
+        "Version": "5",
+        "DatevVersion": "700",
+        "File": "FluiTec.DatevSharp.Format_Debitoren_Kreditoren.xml"
+      }
+    ]
+  },
+  {
+    "Name": "TermsOfPayment",
+    "DatevName": "Zahlungsbedingungen",
+    "Number": "46",
+    "DefaultVersionNumber": "2",
+    "Versions": [
+      {
+        "Version": "1",
+        "DatevVersion": "510",
+        "File": "FluiTec.DatevSharp.Formats.XML.TermsOfPayment.Format_Zahlungsbedingungen_311.xml"
+      },
+      {
+        "Version": "2",
+        "DatevVersion": "510",
+        "File": "FluiTec.DatevSharp.Formats.XML.TermsOfPayment.Format_Zahlungsbedingungen.xml"
+      }
+    ]
+  },
+  {
+    "Name": "Bookings",
+    "DatevName": "Buchungsstapel",
+    "Number": "21",
+    "DefaultVersionNumber": "7",
+    "Versions": [
+      {
+        "Version": "1",
+        "DatevVersion": "510",
+        "File": "FluiTec.DatevSharp.Formats.XML.Bookings.Format_Buchungsstapel_141.xml"
+      },
+      {
+        "Version": "2",
+        "DatevVersion": "510",
+        "File": "FluiTec.DatevSharp.Formats.XML.Bookings.Format_Buchungsstapel_300.xml"
+      },
+      {
+        "Version": "3",
+        "DatevVersion": "510",
+        "File": "FluiTec.DatevSharp.Formats.XML.Bookings.Format_Buchungsstapel_310.xml"
+      },
+      {
+        "Version": "4",
+        "DatevVersion": "510",
+        "File": "FluiTec.DatevSharp.Formats.XML.Bookings.Format_Buchungsstapel_420.xml"
+      },
+      {
+        "Version": "5",
+        "DatevVersion": "510",
+        "File": "FluiTec.DatevSharp.Formats.XML.Bookings.Format_Buchungsstapel_440.xml"
+      },
+      {
+        "Version": "6",
+        "DatevVersion": "510",
+        "File": "FluiTec.DatevSharp.Formats.XML.Bookings.Format_Buchungsstapel_500.xml"
+      },
+      {
+        "Version": "7",
+        "DatevVersion": "510",
+        "File": "FluiTec.DatevSharp.Formats.XML.Bookings.Format_Buchungsstapel_530.xml"
+      },
+      {
+        "Version": "8",
+        "DatevVersion": "700",
+        "File": "FluiTec.DatevSharp.Formats.XML.Bookings.Format_Buchungsstapel_610.xml"
+      },
+      {
+        "Version": "9",
+        "DatevVersion": "700",
+        "File": "FluiTec.DatevSharp.Formats.XML.Bookings.Format_Buchungsstapel_820.xml"
+      },
+      {
+        "Version": "10",
+        "DatevVersion": "700",
+        "File": "FluiTec.DatevSharp.Formats.XML.Bookings.Format_Buchungsstapel_910.xml"
+      },
+      {
+        "Version": "11",
+        "DatevVersion": "700",
+        "File": "FluiTec.DatevSharp.Formats.XML.Bookings.Format_Buchungsstapel_928.xml"
+      },
+      {
+        "Version": "12",
+        "DatevVersion": "700",
+        "File": "FluiTec.DatevSharp.Formats.XML.Bookings.Format_Buchungsstapel.xml"
+      }
+    ]
+  }
+]

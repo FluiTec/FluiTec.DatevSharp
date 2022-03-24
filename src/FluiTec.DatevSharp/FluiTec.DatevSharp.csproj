@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <Title>DatevSharp</Title>
@@ -15,11 +15,21 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="FluentValidation" Version="7.5.2" />
+    <None Remove="Formats\format_map.json" />
+    <None Remove="Formats\XML\Addresses\Format_Debitoren_Kreditoren.xml" />
+    <None Remove="Formats\XML\format_map.json" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Attributes\" />
+    <EmbeddedResource Include="Formats\*" />
+    <EmbeddedResource Include="Formats\XML\Addresses\*" />
+    <EmbeddedResource Include="Formats\XML\Bookings\*" />
+    <EmbeddedResource Include="Formats\XML\TermsOfPayment\*" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FluentValidation" Version="7.5.2" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
   </ItemGroup>
 
 </Project>

@@ -1,0 +1,98 @@
+{
+  "Categories": [
+    {
+      "Name": "Addresses",
+      "Number": "16",
+      "Versions": [
+        {
+          "Version": "1",
+          "File": "Formats/XML/Addresses/Format_Debitoren_Kreditoren_210.xml"
+        },
+        {
+          "Version": "2",
+          "File": "Formats/XML/Addresses/Format_Debitoren_Kreditoren_311.xml"
+        },
+        {
+          "Version": "3",
+          "File": "Formats/XML/Addresses/Format_Debitoren_Kreditoren_430.xml"
+        },
+        {
+          "Version": "4",
+          "File": "Formats/XML/Addresses/Format_Debitoren_Kreditoren_530.xml"
+        },
+        {
+          "Version": "5",
+          "File": "Format_Debitoren_Kreditoren.xml"
+        }
+      ]
+    },
+    {
+      "Name": "TermsOfPayment",
+      "Number": "46",
+      "Versions": [
+        {
+          "Version": "1",
+          "File": "Formats/XML/TermsOfPayment/Format_Zahlungsbedingungen_311.xml"
+        },
+        {
+          "Version": "2",
+          "File": "Formats/XML/TermsOfPayment/Format_Zahlungsbedingungen.xml"
+        }
+      ]
+    },
+    {
+      "Name": "Bookings",
+      "Number": "21",
+      "Versions": [
+        {
+          "Version": "1",
+          "File": "Formats/XML/Bookings/Format_Buchungsstapel_141.xml"
+        },
+        {
+          "Version": "2",
+          "File": "Formats/XML/Bookings/Format_Buchungsstapel_300.xml"
+        },
+        {
+          "Version": "3",
+          "File": "Formats/XML/Bookings/Format_Buchungsstapel_310.xml"
+        },
+        {
+          "Version": "4",
+          "File": "Formats/XML/Bookings/Format_Buchungsstapel_420.xml"
+        },
+        {
+          "Version": "5",
+          "File": "Formats/XML/Bookings/Format_Buchungsstapel_440.xml"
+        },
+        {
+          "Version": "6",
+          "File": "Formats/XML/Bookings/Format_Buchungsstapel_500.xml"
+        },
+        {
+          "Version": "7",
+          "File": "Formats/XML/Bookings/Format_Buchungsstapel_530.xml"
+        },
+        {
+          "Version": "8",
+          "File": "Formats/XML/Bookings/Format_Buchungsstapel_610.xml"
+        },
+        {
+          "Version": "9",
+          "File": "Formats/XML/Bookings/Format_Buchungsstapel_820.xml"
+        },
+        {
+          "Version": "10",
+          "File": "Formats/XML/Bookings/Format_Buchungsstapel_910.xml"
+        },
+        {
+          "Version": "11",
+          "File": "Formats/XML/Bookings/Format_Buchungsstapel_928.xml"
+        },
+        {
+          "Version": "12",
+          "File": "Formats/XML/Bookings/Format_Buchungsstapel.xml"
+        }
+      ]
+    }
+  ]
+}
