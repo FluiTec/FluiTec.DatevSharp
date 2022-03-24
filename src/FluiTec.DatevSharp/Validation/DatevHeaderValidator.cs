@@ -17,7 +17,7 @@ namespace FluiTec.DatevSharp.Validation
 			RuleFor(header => header.StartOfBusinessYear).LessThanOrEqualTo(header => header.Created);
 			RuleFor(header => header.ImpersonalAccountsLength).GreaterThan(0).LessThanOrEqualTo(9);
 
-			var bookingNumber = DataCategories.BookingCategory.Number;
+			var bookingNumber = DataCategories.Instance.BookingCategory.Number;
 			// booking only properties
 			When(header => header.DataCategory.Number == bookingNumber, () => RuleFor(header => header.BookingsFrom).NotNull());
 			When(header => header.DataCategory.Number == bookingNumber, () => RuleFor(header => header.BookingsTill).NotNull());

@@ -1,10 +1,6 @@
 using System;
 using System.IO;
 using System.Linq;
-using FluiTec.DatevSharp.Interfaces;
-using FluiTec.DatevSharp.Rows.AddressRow;
-using FluiTec.DatevSharp.Rows.BookingRow;
-using FluiTec.DatevSharp.Rows.TermsOfPaymentRow;
 using Newtonsoft.Json;
 
 namespace FluiTec.DatevSharp
@@ -18,26 +14,27 @@ namespace FluiTec.DatevSharp
 
         // Explicit static constructor to tell C# compiler
         // not to mark type as beforefieldinit
-        static DataCategories()
-        {
-            var asm = typeof(DataCategories).Assembly;
-			using (var mapResource = asm.GetManifestResourceStream("FluiTec.DatevSharp.Formats.format_map.json"))
-            using (var sr = new StreamReader(mapResource ?? throw new InvalidOperationException()))
-            using (var jr = new JsonTextReader(sr))
-            {
-                var serializer = new JsonSerializer();
-                var categories = serializer.Deserialize<DataCategory[]>(jr);
-                BookingCategory = (categories ?? throw new InvalidOperationException()).Single(c => c.Name == BookingsName);
-                AddressCategory = (categories ?? throw new InvalidOperationException()).Single(c => c.Name == AddressName);
-                TermsOfPaymentCategory = (categories ?? throw new InvalidOperationException()).Single(c => c.Name == TermsOfPaymentName);
-            }
-        }
+        static DataCategories() { }
 
 		/// <summary>
 		/// Constructor that prevents a default instance of this class from being created.
 		/// </summary>
 		private DataCategories()
         {
+            var asm = typeof(DataCategories).Assembly;
+            using (var mapResource = asm.GetManifestResourceStream("FluiTec.DatevSharp.Formats.format_map.json"))
+            using (var sr = new StreamReader(mapResource ?? throw new InvalidOperationException()))
+            using (var jr = new JsonTextReader(sr))
+            {
+                var serializer = new JsonSerializer();
+                var categories = serializer.Deserialize<DataCategory[]>(jr);
+
+                if (categories == null) throw new InvalidOperationException("format_map.json not parsed correctly!");
+
+                BookingCategory = categories.Single(c => c.Name == BookingsName);
+                AddressCategory = categories.Single(c => c.Name == AddressName);
+                TermsOfPaymentCategory = categories.Single(c => c.Name == TermsOfPaymentName);
+            }
         }
 
         /// <summary>
@@ -57,7 +54,7 @@ namespace FluiTec.DatevSharp
         /// <value>
         /// The booking category.
         /// </value>
-        public static DataCategory BookingCategory { get; }
+        public DataCategory BookingCategory { get; }
 
         /// <summary>
         /// Gets the category the address belongs to.
@@ -66,7 +63,7 @@ namespace FluiTec.DatevSharp
         /// <value>
         /// The address category.
         /// </value>
-        public static DataCategory AddressCategory { get; }
+        public DataCategory AddressCategory { get; }
 
         /// <summary>
         /// Gets the category the terms of payment belongs to.
@@ -75,6 +72,6 @@ namespace FluiTec.DatevSharp
         /// <value>
         /// The terms of payment category.
         /// </value>
-        public static DataCategory TermsOfPaymentCategory { get; }
+        public DataCategory TermsOfPaymentCategory { get; }
     }
 }

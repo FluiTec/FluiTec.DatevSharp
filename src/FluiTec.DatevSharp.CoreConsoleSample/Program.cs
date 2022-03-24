@@ -45,8 +45,8 @@ namespace FluiTec.DatevSharp.CoreConsoleSample
             {
                 Header = new DatevHeader
                 {
-                    DataCategory = DataCategories.BookingCategory, // <-- this defines we are going to export bookings (bills you got or wrote)
-                    DataVersion = DataCategories.BookingCategory.DefaultVersion, // <-- this defines the version we're going to use (optional as setting Category sets the version)
+                    DataCategory = DataCategories.Instance.BookingCategory, // <-- this defines we are going to export bookings (bills you got or wrote)
+                    DataVersion = DataCategories.Instance.BookingCategory.DefaultVersion, // <-- this defines the version we're going to use (optional as setting Category sets the version)
                     StartOfBusinessYear = StartOfBusinessYear, // <-- optional, by omitting this you set the current year
                     Source = "RE", // <-- defines we're using an erp-system
                     ConsultantNumber = 1001, // <-- unique number of the consultant within the datev-organization

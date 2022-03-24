@@ -87,11 +87,11 @@ namespace FluiTec.DatevSharp
         {
             if (Header.DataCategory == null)
                 throw new NoNullAllowedException($"{nameof(DataCategory)} must not be null for this method to succeed.");
-            if (Header.DataCategory.Number == DataCategories.BookingCategory.Number)
+            if (Header.DataCategory.Number == DataCategories.Instance.BookingCategory.Number)
                 return new BookingRowValidator(Header.ImpersonalAccountsLength);
-			if (Header.DataCategory.Number == DataCategories.AddressCategory.Number)
+			if (Header.DataCategory.Number == DataCategories.Instance.AddressCategory.Number)
                 return new AddressRowValidator(Header.ImpersonalAccountsLength + 1);
-            if (Header.DataCategory.Number == DataCategories.TermsOfPaymentCategory.Number)
+            if (Header.DataCategory.Number == DataCategories.Instance.TermsOfPaymentCategory.Number)
                 return new TermsOfPaymentRowValidator();
 
             throw new ArgumentException($"{nameof(DataCategory)} with value {Header.DataCategory.Number} is not implemented yet.");
@@ -104,17 +104,13 @@ namespace FluiTec.DatevSharp
         /// <returns>   The header row. </returns>
         public static IDatevRow GetHeaderRow(DataCategory category)
         {
-            switch (category.Number)
-            {
-                case 16: // Debitoren/Kreditoren
-                    return new AddressHeaderRow();
-                case 21: // Buchungsstapel
-                    return new BookingHeaderRow();
-                case 46: // Zahlungsbedingungen
-                    return new TermsOfPaymentHeaderRow();
-                default:
-                    throw new NotImplementedException();
-            }
+            if (category.Number == DataCategories.Instance.AddressCategory.Number)
+                return new AddressHeaderRow();
+            if (category.Number == DataCategories.Instance.BookingCategory.Number)
+                return new BookingHeaderRow();
+            if (category.Number == DataCategories.Instance.TermsOfPaymentCategory.Number)
+                return new TermsOfPaymentHeaderRow();
+            throw new NotImplementedException();
         }
 
 		#endregion
