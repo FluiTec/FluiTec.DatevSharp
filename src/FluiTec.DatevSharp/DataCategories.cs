@@ -76,25 +76,5 @@ namespace FluiTec.DatevSharp
         /// The terms of payment category.
         /// </value>
         public static DataCategory TermsOfPaymentCategory { get; }
-
-        /// <summary>   Gets header row. </summary>
-		///
-		/// <param name="category"> The category. </param>
-		///
-		/// <returns>   The header row. </returns>
-		public static IDatevRow GetHeaderRow(DataCategory category)
-		{
-			switch (category.Number)
-			{
-				case 16: // Debitoren/Kreditoren
-                    return new AddressHeaderRow();
-				case 21: // Buchungsstapel
-                    return new BookingHeaderRow();
-				case 46: // Zahlungsbedingungen
-                    return new TermsOfPaymentHeaderRow();
-                default:
-					throw new NotImplementedException();
-			}
-		}
-	}
+    }
 }

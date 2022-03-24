@@ -5,6 +5,9 @@ using System.Text;
 using FluentValidation;
 using FluentValidation.Results;
 using FluiTec.DatevSharp.Interfaces;
+using FluiTec.DatevSharp.Rows.AddressRow;
+using FluiTec.DatevSharp.Rows.BookingRow;
+using FluiTec.DatevSharp.Rows.TermsOfPaymentRow;
 using FluiTec.DatevSharp.Validation;
 
 namespace FluiTec.DatevSharp
@@ -58,7 +61,7 @@ namespace FluiTec.DatevSharp
 
 			var sb = new StringBuilder();
 			sb.Append(Header.ToRow());
-			sb.Append(Environment.NewLine + DataCategories.GetHeaderRow(Header.DataCategory).ToRow());
+			sb.Append(Environment.NewLine + GetHeaderRow(Header.DataCategory).ToRow());
 			foreach (var row in Rows)
 				sb.Append(Environment.NewLine + row.ToRow());
 			return sb.ToString();
@@ -93,6 +96,26 @@ namespace FluiTec.DatevSharp
 
             throw new ArgumentException($"{nameof(DataCategory)} with value {Header.DataCategory.Number} is not implemented yet.");
 		}
+
+        /// <summary>   Gets header row. </summary>
+        ///
+        /// <param name="category"> The category. </param>
+        ///
+        /// <returns>   The header row. </returns>
+        public static IDatevRow GetHeaderRow(DataCategory category)
+        {
+            switch (category.Number)
+            {
+                case 16: // Debitoren/Kreditoren
+                    return new AddressHeaderRow();
+                case 21: // Buchungsstapel
+                    return new BookingHeaderRow();
+                case 46: // Zahlungsbedingungen
+                    return new TermsOfPaymentHeaderRow();
+                default:
+                    throw new NotImplementedException();
+            }
+        }
 
 		#endregion
 	}
