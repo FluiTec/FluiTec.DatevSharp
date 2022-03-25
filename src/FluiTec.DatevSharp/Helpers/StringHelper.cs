@@ -25,7 +25,7 @@ namespace FluiTec.DatevSharp.Helpers
         {
             return string.IsNullOrWhiteSpace(str)
                 ? "\"\""
-                : "\"" + System.Text.RegularExpressions.Regex.Replace(str, Regex, m => ReplaceMap[m.Value]) + "\"";
+                : $"\"{System.Text.RegularExpressions.Regex.Replace(str, Regex, m => ReplaceMap[m.Value])}\"";
         }
     }
 }
