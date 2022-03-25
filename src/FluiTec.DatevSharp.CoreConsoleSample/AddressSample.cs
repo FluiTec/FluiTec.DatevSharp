@@ -49,7 +49,10 @@ namespace FluiTec.DatevSharp.CoreConsoleSample
             file.Rows.Add(new AddressRow
             {
                 AccountNumber = 100001,
-                Name_Enterprise = "Firma Müller",
+                Name_Enterprise = "Möbel Mustermann",
+                Name_Enterprise_Extension = "Schreinerei",
+                AddressType = 2, //<--Enterprise
+                ShortName = "mustermann möbel",
 
             });
         }

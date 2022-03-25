@@ -6,7 +6,7 @@ namespace FluiTec.DatevSharp.Attributes
     /// A datev field.
     /// </summary>
     [AttributeUsage(AttributeTargets.Property)]
-    public class DatevField : Attribute
+    public class DatevFieldAttribute : Attribute
     {
         /// <summary>
         /// Gets the field number. (base: 1)
@@ -41,7 +41,7 @@ namespace FluiTec.DatevSharp.Attributes
         ///
         /// <param name="fieldOrdinalNumber">   The field number. </param>
         /// <param name="validFromVersion">     The valid from version. </param>
-        public DatevField(int fieldOrdinalNumber, int validFromVersion) : this(fieldOrdinalNumber, validFromVersion,
+        public DatevFieldAttribute(int fieldOrdinalNumber, int validFromVersion) : this(fieldOrdinalNumber, validFromVersion,
             null)
         {
 
@@ -54,7 +54,7 @@ namespace FluiTec.DatevSharp.Attributes
         /// <param name="fieldOrdinalNumber">   The field number. </param>
         /// <param name="validFromVersion">     The valid from version. </param>
         /// <param name="validTillVersion">     The valid till version. </param>
-        public DatevField(int fieldOrdinalNumber, int validFromVersion, int? validTillVersion)
+        public DatevFieldAttribute(int fieldOrdinalNumber, int validFromVersion, int? validTillVersion)
         {
             FieldOrdinalNumber = fieldOrdinalNumber;
             ValidFromVersion = validFromVersion;
