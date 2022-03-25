@@ -10,7 +10,6 @@ namespace FluiTec.DatevSharp.Helpers
             {"\r\n", " " },
             {"\n", " " },
             {"\"",  "\"\""},
-            {"\"", "\"\""},
             {";", ","}
         };
 

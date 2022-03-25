@@ -1,6 +1,4 @@
-﻿using FluiTec.DatevSharp.Rows.AddressRow;
-
-namespace FluiTec.DatevSharp.Rows.TermsOfPaymentRow
+﻿namespace FluiTec.DatevSharp.Rows.TermsOfPaymentRow
 {
 	/// <summary>   The terms of payment header row. </summary>
 	public class TermsOfPaymentHeaderRow : HeaderRow

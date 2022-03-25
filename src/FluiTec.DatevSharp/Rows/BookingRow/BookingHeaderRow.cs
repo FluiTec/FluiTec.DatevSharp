@@ -1,6 +1,4 @@
-﻿using FluiTec.DatevSharp.Rows.AddressRow;
-
-namespace FluiTec.DatevSharp.Rows.BookingRow
+﻿namespace FluiTec.DatevSharp.Rows.BookingRow
 {
 	public class BookingHeaderRow : HeaderRow
 	{

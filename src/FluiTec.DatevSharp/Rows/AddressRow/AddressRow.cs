@@ -1,17 +1,18 @@
 ﻿using FluiTec.DatevSharp.Attributes;
 using FluiTec.DatevSharp.Helpers;
+using FluiTec.DatevSharp.Interfaces;
 using FluiTec.DatevSharp.Rows.Enums;
 
 namespace FluiTec.DatevSharp.Rows.AddressRow
 {
 	/// <summary>   The address row. </summary>
-	public class AddressRow : DataRow
+	public class AddressRow : IDatevRow
 	{
 		#region Methods
 
-		/// <summary>   Converts this object to a row. </summary>
+        /// <summary>   Converts this object to a row. </summary>
 		/// <returns>   This object as a string. </returns>
-		public override string ToRow()
+		public string ToRow()
 		{
 			return
 				$"{AccountNumber.ToDatev()};{Name_Enterprise.ToDatev()};{Name_Enterprise_Extension.ToDatev()};{Name_Person.ToDatev()};{FirstName_Person.ToDatev()};{Name.ToDatev()};{AddressType.ValueToDatev()};" +
