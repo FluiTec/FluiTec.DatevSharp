@@ -5,25 +5,25 @@ using FluiTec.DatevSharp.Rows.Enums;
 namespace FluiTec.DatevSharp.Rows.AddressRow
 {
 	/// <summary>   The address row. </summary>
-	public class AddressRow : Interfaces.IDatevRow
+	public class AddressRow : DataRow
 	{
 		#region Methods
 
 		/// <summary>   Converts this object to a row. </summary>
 		/// <returns>   This object as a string. </returns>
-		public string ToRow()
+		public override string ToRow()
 		{
 			return
 				$"{AccountNumber.ToDatev()};{Name_Enterprise.ToDatev()};{Name_Enterprise_Extension.ToDatev()};{Name_Person.ToDatev()};{FirstName_Person.ToDatev()};{Name.ToDatev()};{AddressType.ValueToDatev()};" +
 				$"{ShortName.ToDatev()};\"\";\"\";{Salutation.ToDatev()};\"\";\"\";\"\";{PostalAddressType.ToDatev()};{Street.ToDatev()};{PostBox.ToDatev()};{ZipCode.ToDatev()};{City.ToDatev()};\"\";{TransportAddition.ToDatev()};{AddressAddition.ToDatev()};\"\";\"\";\"\";{MarkerCorrespondenceAddress.ToDatev()};;;\"\";\"\";\"\";\"\";\"\";\"\";\"\";\"\";\"\";\"\";\"\";\"\";\"\";\"\";\"\";\"\";\"\";\"\";\"\";\"\";{MarkerMainBankingAccount1.ToDatev()};;;\"\";\"\";\"\";\"\";\"\";\"\";\"\";\"\";\"\";;;\"\";\"\";\"\";\"\";\"\";\"\";\"\";\"\";\"\";;;\"\";\"\";\"\";\"\";\"\";\"\";\"\";\"\";\"\";;;\"\";\"\";\"\";\"\";\"\";\"\";\"\";\"\";\"\";;;\"\";\"\";\"\";\"\";\"\";\"\";\"\";\"\";\"\";;;\"\";;;;;;;;;;;;;;;;;;;;;;;;;;\"\";\"\";;\"\";\"\";\"\";\"\";\"\";\"\";\"\";\"\";\"\";\"\";\"\";\"\";\"\";\"\";\"\";\"\";\"\";\"\";\"\";\"\";\"\";\"\";\"\";\"\";\"\";\"\";\"\";;;\"\";\"\";\"\";\"\";\"\";\"\";\"\";\"\";\"\";;;\"\";\"\";\"\";\"\";\"\";\"\";\"\";\"\";\"\";;;\"\";\"\";\"\";\"\";\"\";\"\";\"\";\"\";\"\";;;\"\";\"\";\"\";\"\";\"\";\"\";\"\";\"\";\"\";;;\"\";\"\";\"\";\"\";\"\";\"\";\"\";\"\";\"\";;;\"\";;\"\";\"\";\"\";\"\";\"\";\"\";\"\";\"\";\"\";\"\";;;;;;;;;;;;";
 		}
 
-		#endregion
+        #endregion
 
-		#region Properties
+        #region Properties
 
-		/// <summary>   Gets or sets the account number. </summary>
-		/// <value> The account number. </value>
+        /// <summary>   Gets or sets the account number. </summary>
+        /// <value> The account number. </value>
         [DatevField(0, 1)]
 		public int AccountNumber { get; set; }
 

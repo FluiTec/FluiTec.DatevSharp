@@ -1,5 +1,6 @@
 ﻿using System;
 using FluiTec.DatevSharp.Rows.AddressRow;
+using FluiTec.DatevSharp.Rows.Enums;
 
 namespace FluiTec.DatevSharp.CoreConsoleSample
 {
