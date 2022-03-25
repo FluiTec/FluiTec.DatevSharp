@@ -16,6 +16,9 @@ namespace FluiTec.DatevSharp.CoreConsoleSample
         private static readonly DateTime SampleBookingDate = new DateTime(2017, 2, 16);
         private static readonly DateTime SampleDeliveryDate = new DateTime(2017, 2, 15);
 
+        /// <summary>
+        /// Executes the booking sample.
+        /// </summary>
         public void RunSample()
         {
             var datev = CreateBookingFile();

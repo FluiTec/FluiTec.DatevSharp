@@ -10,9 +10,7 @@ namespace FluiTec.DatevSharp.CoreConsoleSample
         /// <summary>
         /// Main entry-point for this application.
         /// </summary>
-        ///
-        /// <param name="args"> An array of command-line argument strings. </param>
-        private static void Main(string[] args)
+        private static void Main()
         {
             // make sure we can use CodePage 1252
             // only necessary using NetCore (real .NET already has cp 1252 loaded)
@@ -20,6 +18,9 @@ namespace FluiTec.DatevSharp.CoreConsoleSample
 
             // run the booking sample
             new BookingSample().RunSample();
+
+            // run the address sample
+            new AddressSample().RunSample();
         }
     }
 }

@@ -71,9 +71,9 @@ namespace FluiTec.DatevSharp.Rows.AddressRow
         /// <value> The type of the address. </value>
         /// <remarks>
         ///     MaxLength=1, PossibleValues= 1-3 incl.
-        ///     1=Undefined
-        ///     2=Person
-        ///     3=Enterprise
+        ///     0=Undefined
+        ///     1=Person
+        ///     2=Enterprise
         /// </remarks>
         [DatevField(6, 1)]
         public int AddressType { get; set; }
