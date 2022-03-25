@@ -1,4 +1,5 @@
-﻿using FluiTec.DatevSharp.Attributes;
+﻿using System;
+using FluiTec.DatevSharp.Attributes;
 using FluiTec.DatevSharp.Helpers;
 
 namespace FluiTec.DatevSharp.Rows.AddressRow
@@ -13,7 +14,7 @@ namespace FluiTec.DatevSharp.Rows.AddressRow
 		public string ToRow()
 		{
 			return
-				$"{AccountNumber.ToDatev()};{Name_Enterprise.ToDatev()};{Name_Enterprise_Extension.ToDatev()};{Name_Person.ToDatev()};{FirstName_Person.ToDatev()};{Name.ToDatev()};{AddressType.ToString().ToDatev()};" +
+				$"{AccountNumber.ToDatev()};{Name_Enterprise.ToDatev()};{Name_Enterprise_Extension.ToDatev()};{Name_Person.ToDatev()};{FirstName_Person.ToDatev()};{Name.ToDatev()};{Convert.ToInt32(AddressType).ToString().ToDatev()};" +
 				$"{ShortName.ToDatev()};\"\";\"\";{Salutation.ToDatev()};\"\";\"\";\"\";{PostalAddressType.ToDatev()};{Street.ToDatev()};{PostBox.ToDatev()};{ZipCode.ToDatev()};{City.ToDatev()};\"\";{TransportAddition.ToDatev()};{AddressAddition.ToDatev()};\"\";\"\";\"\";{MarkerCorrespondenceAddress.ToDatev()};;;\"\";\"\";\"\";\"\";\"\";\"\";\"\";\"\";\"\";\"\";\"\";\"\";\"\";\"\";\"\";\"\";\"\";\"\";\"\";\"\";{MarkerMainBankingAccount1.ToDatev()};;;\"\";\"\";\"\";\"\";\"\";\"\";\"\";\"\";\"\";;;\"\";\"\";\"\";\"\";\"\";\"\";\"\";\"\";\"\";;;\"\";\"\";\"\";\"\";\"\";\"\";\"\";\"\";\"\";;;\"\";\"\";\"\";\"\";\"\";\"\";\"\";\"\";\"\";;;\"\";\"\";\"\";\"\";\"\";\"\";\"\";\"\";\"\";;;\"\";;;;;;;;;;;;;;;;;;;;;;;;;;\"\";\"\";;\"\";\"\";\"\";\"\";\"\";\"\";\"\";\"\";\"\";\"\";\"\";\"\";\"\";\"\";\"\";\"\";\"\";\"\";\"\";\"\";\"\";\"\";\"\";\"\";\"\";\"\";\"\";;;\"\";\"\";\"\";\"\";\"\";\"\";\"\";\"\";\"\";;;\"\";\"\";\"\";\"\";\"\";\"\";\"\";\"\";\"\";;;\"\";\"\";\"\";\"\";\"\";\"\";\"\";\"\";\"\";;;\"\";\"\";\"\";\"\";\"\";\"\";\"\";\"\";\"\";;;\"\";\"\";\"\";\"\";\"\";\"\";\"\";\"\";\"\";;;\"\";;\"\";\"\";\"\";\"\";\"\";\"\";\"\";\"\";\"\";\"\";;;;;;;;;;;;";
 		}
 
