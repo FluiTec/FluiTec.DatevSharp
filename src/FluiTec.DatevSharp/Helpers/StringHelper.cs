@@ -9,7 +9,9 @@ namespace FluiTec.DatevSharp.Helpers
         {
             {"\r\n", " " },
             {"\n", " " },
-            {"\"",  "\"\""}
+            {"\"",  "\"\""},
+            {"\"", "\"\""},
+            {";", ","}
         };
 
         private static readonly string Regex = string.Join("|", ReplaceMap.Keys);
