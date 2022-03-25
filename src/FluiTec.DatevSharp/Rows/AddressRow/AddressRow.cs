@@ -70,13 +70,10 @@ namespace FluiTec.DatevSharp.Rows.AddressRow
         /// <summary>   Gets or sets the type of the address. </summary>
         /// <value> The type of the address. </value>
         /// <remarks>
-        ///     MaxLength=1, PossibleValues= 1-3 incl.
-        ///     0=Undefined
-        ///     1=Person
-        ///     2=Enterprise
+        ///     MaxLength=1, PossibleValues= 0-2 incl.
         /// </remarks>
         [DatevField(6, 1)]
-        public int AddressType { get; set; }
+        public AddressType AddressType { get; set; }
 
         /// <summary>   Gets or sets the name of the short. </summary>
         /// <value> The name of the short. </value>

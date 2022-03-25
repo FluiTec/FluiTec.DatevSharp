@@ -51,9 +51,8 @@ namespace FluiTec.DatevSharp.CoreConsoleSample
                 AccountNumber = 100001,
                 Name_Enterprise = "Möbel Mustermann",
                 Name_Enterprise_Extension = "Schreinerei",
-                AddressType = 2, //<--Enterprise
-                ShortName = "mustermann möbel",
-
+                AddressType = AddressType.Enterprise,
+                ShortName = "mustermann möbel"
             });
         }
     }
