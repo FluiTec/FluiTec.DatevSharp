@@ -1,26 +1,14 @@
 ﻿using FluiTec.DatevSharp.Attributes;
-using FluiTec.DatevSharp.Helpers;
 using FluiTec.DatevSharp.Interfaces;
 using FluiTec.DatevSharp.Rows.Enums;
+using FluiTec.DatevSharp.Rows.Maps;
 
 namespace FluiTec.DatevSharp.Rows.AddressRow
 {
 	/// <summary>   The address row. </summary>
+    [DatevRow(typeof(AddressMap), typeof(HeaderRow))]
 	public class AddressRow : IDatevRow
-	{
-		#region Methods
-
-        /// <summary>   Converts this object to a row. </summary>
-		/// <returns>   This object as a string. </returns>
-		public string ToRow()
-		{
-			return
-				$"{AccountNumber.ToDatev()};{Name_Enterprise.ToDatev()};{Name_Enterprise_Extension.ToDatev()};{Name_Person.ToDatev()};{FirstName_Person.ToDatev()};{Name.ToDatev()};{AddressType.ValueToDatev()};" +
-				$"{ShortName.ToDatev()};\"\";\"\";{Salutation.ToDatev()};\"\";\"\";\"\";{PostalAddressType.ToDatev()};{Street.ToDatev()};{PostBox.ToDatev()};{ZipCode.ToDatev()};{City.ToDatev()};\"\";{TransportAddition.ToDatev()};{AddressAddition.ToDatev()};\"\";\"\";\"\";{MarkerCorrespondenceAddress.ToDatev()};;;\"\";\"\";\"\";\"\";\"\";\"\";\"\";\"\";\"\";\"\";\"\";\"\";\"\";\"\";\"\";\"\";\"\";\"\";\"\";\"\";{MarkerMainBankingAccount1.ToDatev()};;;\"\";\"\";\"\";\"\";\"\";\"\";\"\";\"\";\"\";;;\"\";\"\";\"\";\"\";\"\";\"\";\"\";\"\";\"\";;;\"\";\"\";\"\";\"\";\"\";\"\";\"\";\"\";\"\";;;\"\";\"\";\"\";\"\";\"\";\"\";\"\";\"\";\"\";;;\"\";\"\";\"\";\"\";\"\";\"\";\"\";\"\";\"\";;;\"\";;;;;;;;;;;;;;;;;;;;;;;;;;\"\";\"\";;\"\";\"\";\"\";\"\";\"\";\"\";\"\";\"\";\"\";\"\";\"\";\"\";\"\";\"\";\"\";\"\";\"\";\"\";\"\";\"\";\"\";\"\";\"\";\"\";\"\";\"\";\"\";;;\"\";\"\";\"\";\"\";\"\";\"\";\"\";\"\";\"\";;;\"\";\"\";\"\";\"\";\"\";\"\";\"\";\"\";\"\";;;\"\";\"\";\"\";\"\";\"\";\"\";\"\";\"\";\"\";;;\"\";\"\";\"\";\"\";\"\";\"\";\"\";\"\";\"\";;;\"\";\"\";\"\";\"\";\"\";\"\";\"\";\"\";\"\";;;\"\";;\"\";\"\";\"\";\"\";\"\";\"\";\"\";\"\";\"\";\"\";;;;;;;;;;;;";
-		}
-
-        #endregion
-
+    {
         #region Properties
 
         /// <summary>   Gets or sets the account number. </summary>

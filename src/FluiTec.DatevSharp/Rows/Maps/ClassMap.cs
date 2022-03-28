@@ -11,7 +11,7 @@ namespace FluiTec.DatevSharp.Rows.Maps
     /// </summary>
     ///
     /// <typeparam name="T">    Generic type parameter. </typeparam>
-    public class ClassMap<T> where T : Interfaces.IDatevRow
+    public class ClassMap<T> : ClassMap
     {
         /// <summary>
         /// Gets the members.
@@ -20,14 +20,14 @@ namespace FluiTec.DatevSharp.Rows.Maps
         /// <value>
         /// The members.
         /// </value>
-        public List<MemberOutputMap<T>> Members { get; }
+        public List<MemberOutputMap<T>> GenericMembers { get; }
 
         /// <summary>
         /// Default constructor.
         /// </summary>
         public ClassMap()
         {
-            Members = new List<MemberOutputMap<T>>();
+            GenericMembers = new List<MemberOutputMap<T>>();
         }
 
         /// <summary>
@@ -40,7 +40,10 @@ namespace FluiTec.DatevSharp.Rows.Maps
         protected void Map<TProperty>(Expression<Func<T, TProperty>> expression, Func<T, string> datevOutput)
         {
             var members = ExpressionHelper.GetMembers(expression);
-            Members.Add(new MemberOutputMap<T>(members.Pop(), datevOutput));
+            var member = new MemberOutputMap<T>(members.Pop(), datevOutput);
+
+            Members.Add(member);
+            GenericMembers.Add(member);
         }
 
         /// <summary>
@@ -52,7 +55,47 @@ namespace FluiTec.DatevSharp.Rows.Maps
         /// <returns>
         /// The found ordinal number.
         /// </returns>
-        public MemberOutputMap<T> FindByOrdinalNumber(int ordinalNumber)
+        public MemberOutputMap<T> FindGenericByOrdinalNumber(int ordinalNumber)
+        {
+            return GenericMembers
+                .FirstOrDefault(m => m.FieldAttributes
+                    .Any(a => a.FieldOrdinalNumber == ordinalNumber));
+        }
+    }
+
+    /// <summary>
+    /// Map of class.
+    /// </summary>
+    public abstract class ClassMap : IClassMap
+    {
+        /// <summary>
+        /// Gets the members.
+        /// </summary>
+        ///
+        /// <value>
+        /// The members.
+        /// </value>
+        // ReSharper disable once UnassignedGetOnlyAutoProperty
+        public List<MemberOutputMap> Members { get; }
+
+        /// <summary>
+        /// Specialized default constructor for use only by derived class.
+        /// </summary>
+        protected ClassMap()
+        {
+            Members = new List<MemberOutputMap>();
+        }
+
+        /// <summary>
+        /// Searches for the first ordinal number.
+        /// </summary>
+        ///
+        /// <param name="ordinalNumber">    The ordinal number. </param>
+        ///
+        /// <returns>
+        /// The found ordinal number.
+        /// </returns>
+        public MemberOutputMap FindByOrdinalNumber(int ordinalNumber)
         {
             return Members
                 .FirstOrDefault(m => m.FieldAttributes

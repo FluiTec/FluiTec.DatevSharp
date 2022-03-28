@@ -6,7 +6,7 @@ namespace FluiTec.DatevSharp.Rows
     /// <summary>
     /// A header row.
     /// </summary>
-    public abstract class HeaderRow : Interfaces.IDatevRow, Interfaces.IVersionDatevRow
+    public class HeaderRow : Interfaces.IDatevRow, Interfaces.IVersionDatevRow
     {
         /// <summary>
         /// Converts this object to a row.
@@ -15,7 +15,7 @@ namespace FluiTec.DatevSharp.Rows
         /// <returns>
         /// This object as a string.
         /// </returns>
-        public abstract string ToRow();
+        public virtual string ToRow() => string.Empty;
 
         /// <summary>
         /// Converts this object to a row.

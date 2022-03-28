@@ -1,9 +1,9 @@
 [
   {
     "Name": "Addresses",
-    "DatevName": "Debitoren",
+    "DatevName": "Debitoren/Kreditoren",
     "Number": "16",
-    "DefaultVersionNumber": "4",
+    "DefaultVersionNumber": "5",
     "Versions": [
       {
         "Version": "1",

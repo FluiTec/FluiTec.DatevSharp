@@ -1,6 +1,6 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace FluiTec.DatevSharp.Tests;
+namespace FluiTec.DatevSharp.Tests.Categories;
 
 [TestClass]
 public class DataCategoriesTests

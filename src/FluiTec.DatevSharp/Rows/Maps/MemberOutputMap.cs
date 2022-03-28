@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Reflection;
+using FluentValidation.Internal;
 using FluiTec.DatevSharp.Attributes;
 
 namespace FluiTec.DatevSharp.Rows.Maps
@@ -10,7 +11,33 @@ namespace FluiTec.DatevSharp.Rows.Maps
     /// </summary>
     ///
     /// <typeparam name="T">    Generic type parameter. </typeparam>
-    public class MemberOutputMap<T>
+    public class MemberOutputMap<T> : MemberOutputMap
+    {
+        /// <summary>
+        /// Gets the datev output.
+        /// </summary>
+        ///
+        /// <value>
+        /// A function delegate that yields a string.
+        /// </value>
+        public Func<T, string> GenericDatevOutput { get; }
+
+        /// <summary>
+        /// Constructor.
+        /// </summary>
+        ///
+        /// <param name="member">       The member. </param>
+        /// <param name="datevOutput">  A function delegate that yields a string. </param>
+        public MemberOutputMap(MemberInfo member, Func<T, string> datevOutput) : base(member, datevOutput.CoerceToNonGeneric())
+        {
+            GenericDatevOutput = datevOutput;
+        }
+    }
+
+    /// <summary>
+    /// Map of member outputs.
+    /// </summary>
+    public class MemberOutputMap : IMemberOutputMap
     {
         /// <summary>
         /// Gets the member.
@@ -37,19 +64,19 @@ namespace FluiTec.DatevSharp.Rows.Maps
         /// <value>
         /// A function delegate that yields a string.
         /// </value>
-        public Func<T, string> DatevOutput { get; }
+        public Func<object, string> DatevOutput { get; }
 
         /// <summary>
         /// Constructor.
         /// </summary>
         ///
-        /// <param name="member">       The member. </param>
-        /// <param name="datevOutput">  A function delegate that yields a string. </param>
-        public MemberOutputMap(MemberInfo member, Func<T, string> datevOutput)
+        /// <param name="member">           The member. </param>
+        /// <param name="objDatevOutput">   The object datev output. </param>
+        public MemberOutputMap(MemberInfo member, Func<object, string> objDatevOutput)
         {
             Member = member;
             FieldAttributes = member.GetCustomAttributes<DatevFieldAttribute>();
-            DatevOutput = datevOutput;
+            DatevOutput = objDatevOutput;
         }
     }
 }

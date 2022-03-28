@@ -1,13 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Linq;
 using System.Text;
 using FluentValidation;
 using FluentValidation.Results;
+using FluiTec.DatevSharp.Helpers;
 using FluiTec.DatevSharp.Interfaces;
-using FluiTec.DatevSharp.Rows.AddressRow;
-using FluiTec.DatevSharp.Rows.BookingRow;
-using FluiTec.DatevSharp.Rows.TermsOfPaymentRow;
 using FluiTec.DatevSharp.Validation;
 
 namespace FluiTec.DatevSharp
@@ -61,9 +60,19 @@ namespace FluiTec.DatevSharp
 
 			var sb = new StringBuilder();
 			sb.Append(Header.ToRow());
-			sb.Append(Environment.NewLine + GetHeaderRow(Header.DataCategory).ToRow());
-			foreach (var row in Rows)
-				sb.Append(Environment.NewLine + row.ToRow());
+			sb.Append(Environment.NewLine + GetHeaderRow(Header.DataCategory.RowType).ToRow(Header.DataVersion));
+            var map = Header.DataCategory.RowType.GetDatevMetadata().GetMap();
+            foreach (var row in Rows)
+            {
+                sb.AppendLine();
+                foreach (var field in Header.DataVersion.FormatDescription.Fields.OrderBy(f => f.OrdinalNumber))
+                {
+                    var memberMap = map.FindByOrdinalNumber(field.OrdinalNumber);
+                    sb.Append(memberMap != null ? $"{memberMap.DatevOutput(row)};" : field.FormatType == "Text" ? "\"\";" : ";");
+                }
+
+                sb.Remove(sb.Length - 1, 1);
+            }
 			return sb.ToString();
 		}
 
@@ -97,20 +106,18 @@ namespace FluiTec.DatevSharp
             throw new ArgumentException($"{nameof(DataCategory)} with value {Header.DataCategory.Number} is not implemented yet.");
 		}
 
-        /// <summary>   Gets header row. </summary>
+        /// <summary>
+        /// Gets header row.
+        /// </summary>
         ///
-        /// <param name="category"> The category. </param>
+        /// <param name="rowType">  Type of the row. </param>
         ///
-        /// <returns>   The header row. </returns>
-        public static IDatevRow GetHeaderRow(DataCategory category)
+        /// <returns>
+        /// The header row.
+        /// </returns>
+        public static IVersionDatevRow GetHeaderRow(Type rowType)
         {
-            if (category.Number == DataCategories.Instance.AddressCategory.Number)
-                return new AddressHeaderRow();
-            if (category.Number == DataCategories.Instance.BookingCategory.Number)
-                return new BookingHeaderRow();
-            if (category.Number == DataCategories.Instance.TermsOfPaymentCategory.Number)
-                return new TermsOfPaymentHeaderRow();
-            throw new NotImplementedException();
+            return rowType.GetDatevMetadata().GetHeader();
         }
 
 		#endregion

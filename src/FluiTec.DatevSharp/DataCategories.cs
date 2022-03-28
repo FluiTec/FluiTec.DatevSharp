@@ -1,6 +1,9 @@
 using System;
 using System.IO;
 using System.Linq;
+using FluiTec.DatevSharp.Rows.AddressRow;
+using FluiTec.DatevSharp.Rows.BookingRow;
+using FluiTec.DatevSharp.Rows.TermsOfPaymentRow;
 using Newtonsoft.Json;
 
 namespace FluiTec.DatevSharp
@@ -32,8 +35,13 @@ namespace FluiTec.DatevSharp
                 if (categories == null) throw new InvalidOperationException("format_map.json not parsed correctly!");
 
                 BookingCategory = categories.Single(c => c.Name == BookingsName);
+                BookingCategory.RowType = typeof(BookingRow);
+
                 AddressCategory = categories.Single(c => c.Name == AddressName);
+                AddressCategory.RowType = typeof(AddressRow);
+
                 TermsOfPaymentCategory = categories.Single(c => c.Name == TermsOfPaymentName);
+                TermsOfPaymentCategory.RowType = typeof(TermsOfPaymentRow);
             }
         }
 

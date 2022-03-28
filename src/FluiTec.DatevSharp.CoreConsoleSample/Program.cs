@@ -17,7 +17,7 @@ namespace FluiTec.DatevSharp.CoreConsoleSample
             Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
 
             // run the booking sample
-            new BookingSample().RunSample();
+            //new BookingSample().RunSample();
 
             // run the address sample
             new AddressSample().RunSample();
