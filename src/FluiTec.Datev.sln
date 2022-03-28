@@ -7,7 +7,14 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FluiTec.DatevSharp", "FluiT
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FluiTec.DatevSharp.CoreConsoleSample", "FluiTec.DatevSharp.CoreConsoleSample\FluiTec.DatevSharp.CoreConsoleSample.csproj", "{26A19FB8-BF1B-414C-95D9-2B1B7EA8F1AF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FluiTec.DatevSharp.Tests", "FluiTec.DatevSharp.Tests\FluiTec.DatevSharp.Tests.csproj", "{47793243-9ED5-48C6-99CD-41B3363C5380}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FluiTec.DatevSharp.Tests", "FluiTec.DatevSharp.Tests\FluiTec.DatevSharp.Tests.csproj", "{47793243-9ED5-48C6-99CD-41B3363C5380}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{B6B2EC4F-FE7D-4BB5-82FB-6F9663B822B0}"
+	ProjectSection(SolutionItems) = preProject
+		..\.gitignore = ..\.gitignore
+		..\LICENSE = ..\LICENSE
+		..\README.md = ..\README.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
