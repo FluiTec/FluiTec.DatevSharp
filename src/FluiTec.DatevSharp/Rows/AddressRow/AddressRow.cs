@@ -9,8 +9,6 @@ namespace FluiTec.DatevSharp.Rows.AddressRow
     [DatevRow(typeof(AddressMap), typeof(HeaderRow))]
 	public class AddressRow : IDatevRow
     {
-        #region Properties
-
         /// <summary>   Gets or sets the account number. </summary>
         /// <value> The account number. </value>
         [DatevField(0, 1)]
@@ -165,7 +163,5 @@ namespace FluiTec.DatevSharp.Rows.AddressRow
         /// </value>
         [DatevField(48,1)]
         public string MarkerMainBankingAccount1 => "1";
-
-        #endregion
     }
 }

@@ -5,7 +5,7 @@ namespace FluiTec.DatevSharp.Attributes
     /// <summary>
     /// A datev field.
     /// </summary>
-    [AttributeUsage(AttributeTargets.Property)]
+    [AttributeUsage(AttributeTargets.Property, AllowMultiple = true)]
     public class DatevFieldAttribute : Attribute
     {
         /// <summary>

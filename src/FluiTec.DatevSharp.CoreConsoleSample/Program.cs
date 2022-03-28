@@ -17,13 +17,13 @@ namespace FluiTec.DatevSharp.CoreConsoleSample
             Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
 
             // run the booking sample
-            //new BookingSample().RunSample();
+            new BookingSample().RunSample();
 
             // run the address sample
             //new AddressSample().RunSample();
             
             // run the terms of payment sample
-            new TermsOfPaymentSample().RunSample();
+            //new TermsOfPaymentSample().RunSample();
         }
     }
 }

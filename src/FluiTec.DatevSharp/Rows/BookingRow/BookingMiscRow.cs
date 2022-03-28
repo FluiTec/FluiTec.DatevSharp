@@ -1,4 +1,5 @@
 ﻿using System;
+using FluiTec.DatevSharp.Attributes;
 
 namespace FluiTec.DatevSharp.Rows.BookingRow
 {
@@ -10,6 +11,7 @@ namespace FluiTec.DatevSharp.Rows.BookingRow
 		/// <remarks>
 		/// MaxLenght=8         
 		/// </remarks>
+        [DatevField(36,1)]
 		public string CostCenter1 { get; set; }
 
 		/// <summary>   Gets the cost center 2. </summary>
@@ -18,6 +20,7 @@ namespace FluiTec.DatevSharp.Rows.BookingRow
 		/// <remarks>
 		/// MaxLenght=8         
 		/// </remarks>
+        [DatevField(37, 1)]
 		public string CostCenter2 { get; set; }
 
 		/// <summary>   Gets or sets the cost amount. </summary>
@@ -26,6 +29,7 @@ namespace FluiTec.DatevSharp.Rows.BookingRow
 		/// <remarks>
 		/// May be NULL, >0 and less than max
 		/// </remarks>
+        [DatevField(38,1)]
 		public decimal? CostAmount { get; set; }
 
 		/// <summary>   Gets or sets the identifier of the country code and tax. </summary>
@@ -34,6 +38,7 @@ namespace FluiTec.DatevSharp.Rows.BookingRow
 		/// <remarks>
 		/// MaxLength=15         
 		/// </remarks>
+        [DatevField(39,1)]
 		public string CountryCodeAndTaxId { get; set; }
 
 		/// <summary>   Gets or sets the euro tax. </summary>
@@ -42,7 +47,8 @@ namespace FluiTec.DatevSharp.Rows.BookingRow
 		/// <remarks>
 		/// NULL, >0 lte: 99.99         
 		/// </remarks>
-		public decimal? EuroTax { get; set; }
+		[DatevField(40,1)]
+        public decimal? EuroTax { get; set; }
 
 		/// <summary>   Gets or sets the type of the different tax. </summary>
 		///
@@ -54,6 +60,7 @@ namespace FluiTec.DatevSharp.Rows.BookingRow
 		/// P = Pauschalierung(z.B.für Land- und Forstwirtschaft)
 		/// S = Soll-Versteuerung
 		/// </remarks>
+        [DatevField(41, 1)]
 		public string DifferentTaxType { get; set; }
 
 		/// <summary>   Gets or sets the intention ll. </summary>
@@ -62,6 +69,7 @@ namespace FluiTec.DatevSharp.Rows.BookingRow
 		/// <remarks>
 		/// MaxLength=3         
 		/// </remarks>
+        [DatevField(42, 1)]
 		public int? IntentionLL { get; set; }
 
 		/// <summary>   Gets or sets the function ll. </summary>
@@ -70,6 +78,7 @@ namespace FluiTec.DatevSharp.Rows.BookingRow
 		/// <remarks>
 		/// MaxLength=3         
 		/// </remarks>
+        [DatevField(43, 1)]
 		public int? FunctionLL { get; set; }
 
 		/// <summary>   Gets or sets the type of the bu 49 function. </summary>
@@ -78,6 +87,7 @@ namespace FluiTec.DatevSharp.Rows.BookingRow
 		/// <remarks>
 		/// MaxLength=1         
 		/// </remarks>
+        [DatevField(44, 1)]
 		public int? BU49FunctionType { get; set; }
 
 		/// <summary>   Gets or sets the bu 49 function number. </summary>
@@ -86,6 +96,7 @@ namespace FluiTec.DatevSharp.Rows.BookingRow
 		/// <remarks>
 		/// MaxLength=2         
 		/// </remarks>
+        [DatevField(45, 1)]
 		public int? BU49FunctionNumber { get; set; }
 
 		/// <summary>   Gets or sets the bu 49 function addition. </summary>
@@ -94,6 +105,7 @@ namespace FluiTec.DatevSharp.Rows.BookingRow
 		/// <remarks>
 		/// MaxLength=3         
 		/// </remarks>
+        [DatevField(46, 1)]
 		public int? BU49FunctionAddition { get; set; }
 
         /// <summary>   Gets or sets the amount. </summary>
@@ -102,46 +114,52 @@ namespace FluiTec.DatevSharp.Rows.BookingRow
 		/// <remarks>
         /// MaxLength=8         
         /// </remarks>
+        [DatevField(87,1)]
 		public int? Amount { get; set; }
 
-        /// <summary>   Gets or sets the weight. </summary>
-        ///
-        /// <value> The weight. </value>
+		/// <summary>   Gets or sets the weight. </summary>
+		///
+		/// <value> The weight. </value>
 		/// <remarks>
-        /// MaxLength=11         
-        /// </remarks>
-		public decimal? Weight { get; set; }
+		/// MaxLength=11         
+		/// </remarks>
+		[DatevField(88, 1)]
+        public decimal? Weight { get; set; }
 
-        /// <summary>   Gets or sets the type of the claim. </summary>
-        ///
-        /// <value> The type of the claim. </value>
+		/// <summary>   Gets or sets the type of the claim. </summary>
+		///
+		/// <value> The type of the claim. </value>
 		/// <remarks>
-        /// MaxLength=10         
-        /// </remarks>
-		public string ClaimType { get; set; }
+		/// MaxLength=10         
+		/// </remarks>
+		[DatevField(90, 2)]
+        public string ClaimType { get; set; }
 
-        /// <summary>   Gets or sets the Date/Time of the communal year. </summary>
-        ///
-        /// <value> The communal year. </value>
-        /// <remarks>
-        /// MaxLength=4         
-        /// </remarks>
-		public DateTime? CommunalYear { get; set; }
-
-        /// <summary>   Gets or sets the Date/Time of the communal due year. </summary>
-        ///
-        /// <value> The communal due year. </value>
+		/// <summary>   Gets or sets the Date/Time of the communal year. </summary>
+		///
+		/// <value> The communal year. </value>
 		/// <remarks>
-        /// MaxLength=4         
-        /// </remarks>
-		public DateTime? CommunalDueYear { get; set; }
+		/// MaxLength=4         
+		/// </remarks>
+		[DatevField(91, 2)]
+        public DateTime? CommunalYear { get; set; }
 
-        /// <summary>   Gets or sets the order number. </summary>
-        ///
-        /// <value> The order number. </value>
+		/// <summary>   Gets or sets the Date/Time of the communal due year. </summary>
+		///
+		/// <value> The communal due year. </value>
 		/// <remarks>
-        /// MaxLength=30         
-        /// </remarks>
+		/// MaxLength=4         
+		/// </remarks>
+		[DatevField(92, 3)]
+        public DateTime? CommunalDueYear { get; set; }
+
+		/// <summary>   Gets or sets the order number. </summary>
+		///
+		/// <value> The order number. </value>
+		/// <remarks>
+		/// MaxLength=30         
+		/// </remarks>
+		[DatevField(94, 4)]
 		public string OrderNumber { get; set; }
 
         /// <summary>   Gets or sets the tax key prepayment. </summary>
@@ -150,6 +168,7 @@ namespace FluiTec.DatevSharp.Rows.BookingRow
 		/// <remarks>
         /// MaxLength=2         
         /// </remarks>
+        [DatevField(96,4)]
 		public int? TaxKeyPrepayment { get; set; }
 
         /// <summary>   Gets or sets the country code pre payment. </summary>
@@ -158,92 +177,35 @@ namespace FluiTec.DatevSharp.Rows.BookingRow
 		/// <remarks>
         /// MaxLength=2         
         /// </remarks>
-		public string CountryCodePrePayment { get; set; }
+		[DatevField(97,4)]
+        public string CountryCodePrePayment { get; set; }
 
-        /// <summary>   Gets or sets the intention ll prepayment. </summary>
-        ///
-        /// <value> The intention ll prepayment. </value>
+		/// <summary>   Gets or sets the intention ll prepayment. </summary>
+		///
+		/// <value> The intention ll prepayment. </value>
 		/// <remarks>
-        /// MaxLength=3         
-        /// </remarks>
-		public int? IntentionLLPrepayment { get; set; }
+		/// MaxLength=3         
+		/// </remarks>
+		[DatevField(98, 4)]
+        public int? IntentionLLPrepayment { get; set; }
 
-        /// <summary>   Gets or sets the tax prepayment. </summary>
-        ///
-        /// <value> The tax prepayment. </value>
+		/// <summary>   Gets or sets the tax prepayment. </summary>
+		///
+		/// <value> The tax prepayment. </value>
 		/// <remarks>
-        /// MaxLength=5         
-        /// </remarks>
-		public decimal? EuroTaxPrepayment { get; set; }
+		/// MaxLength=5         
+		/// </remarks>
+		[DatevField(99, 4)]
+        public decimal? EuroTaxPrepayment { get; set; }
 
-        /// <summary>   Gets or sets the account number prepayment. </summary>
-        ///
-        /// <value> The account number prepayment. </value>
+		/// <summary>   Gets or sets the account number prepayment. </summary>
+		///
+		/// <value> The account number prepayment. </value>
 		/// <remarks>
-        /// MaxLength=9         
-        /// </remarks>
-		public string AccountNumberPrepayment { get; set; }
-
-        /// <summary>   Gets or sets the cost date. </summary>
-        ///
-        /// <value> The cost date. </value>
-		/// <remarks>
-        /// MaxLength=6         
-        /// </remarks>
-		public DateTime? CostDate { get; set; }
-
-        /// <summary>   Gets or sets the sepa reference. </summary>
-        ///
-        /// <value> The sepa reference. </value>
-		/// <remarks>
-        /// MaxLength=35         
-        /// </remarks>
-		public string SepaReference { get; set; }
-
-        /// <summary>   Gets or sets the participant number. </summary>
-        ///
-        /// <value> The participant number. </value>
-		/// <remarks>
-        /// MaxLength=4         
-        /// </remarks>
-		public int? ParticipantNumber { get; set; }
-
-        /// <summary>   Gets or sets the identification number. </summary>
-        ///
-        /// <value> The identification number. </value>
-		/// <remarks>
-        /// MaxLength=11         
-        /// </remarks>
-		public string IdentificationNumber { get; set; }
-
-        /// <summary>   Gets or sets the painter number. </summary>
-        ///
-        /// <value> The painter number. </value>
-		/// <remarks>
-        /// MaxLength=20         
-        /// </remarks>
-		public string PainterNumber { get; set; }
-
-        /// <summary>   Gets or sets the Date/Time of the batch block till. </summary>
-        ///
-        /// <value> The batch block till. </value>
-		public DateTime? BatchBlockTill { get; set; }
-
-        /// <summary>   Gets or sets the so bil intention. </summary>
-        ///
-        /// <value> The so bil intention. </value>
-		/// <remarks>
-        /// MaxLength=30         
-        /// </remarks>
-		public string SoBilIntention { get; set; }
-
-        /// <summary>   Gets or sets the so bil key. </summary>
-        ///
-        /// <value> The so bil key. </value>
-		/// <remarks>
-        /// MaxLength=2         
-        /// </remarks>
-		public int? SoBilKey { get; set; }
+		/// MaxLength=9         
+		/// </remarks>
+		[DatevField(100, 4)]
+        public string AccountNumberPrepayment { get; set; }
 
         /// <summary>   Gets or sets a unique identifier of the booking. </summary>
         ///
@@ -254,6 +216,76 @@ namespace FluiTec.DatevSharp.Rows.BookingRow
         /// if documented by the consultant. Empty Guid's (default) will be exported
         /// as an empty string.
         /// </remarks>
+        [DatevField(102, 4)]
         public Guid BookingGuid { get; set; }
-	}
+
+		/// <summary>   Gets or sets the cost date. </summary>
+		///
+		/// <value> The cost date. </value>
+		/// <remarks>
+		/// MaxLength=6         
+		/// </remarks>
+        [DatevField(103, 4)]
+		public DateTime? CostDate { get; set; }
+
+		/// <summary>   Gets or sets the sepa reference. </summary>
+		///
+		/// <value> The sepa reference. </value>
+		/// <remarks>
+		/// MaxLength=35         
+		/// </remarks>
+		[DatevField(104, 4)]
+        public string SepaReference { get; set; }
+
+		/// <summary>   Gets or sets the participant number. </summary>
+		///
+		/// <value> The participant number. </value>
+		/// <remarks>
+		/// MaxLength=4         
+		/// </remarks>
+		[DatevField(107, 5)]
+        public int? ParticipantNumber { get; set; }
+
+		/// <summary>   Gets or sets the identification number. </summary>
+		///
+		/// <value> The identification number. </value>
+		/// <remarks>
+		/// MaxLength=11         
+		/// </remarks>
+		[DatevField(108, 5)]
+        public string IdentificationNumber { get; set; }
+
+		/// <summary>   Gets or sets the painter number. </summary>
+		///
+		/// <value> The painter number. </value>
+		/// <remarks>
+		/// MaxLength=20         
+		/// </remarks>
+		[DatevField(109, 5)]
+        public string PainterNumber { get; set; }
+
+		/// <summary>   Gets or sets the Date/Time of the batch block till. </summary>
+		///
+		/// <value> The batch block till. </value>
+		[DatevField(110, 6)]
+		public DateTime? BatchBlockTill { get; set; }
+
+		/// <summary>   Gets or sets the so bil intention. </summary>
+		///
+		/// <value> The so bil intention. </value>
+		/// <remarks>
+		/// MaxLength=30         
+		/// </remarks>
+		[DatevField(111, 6)]
+        public string SoBilIntention { get; set; }
+
+		/// <summary>   Gets or sets the so bil key. </summary>
+		///
+		/// <value> The so bil key. </value>
+		/// <remarks>
+		/// MaxLength=2         
+		/// </remarks>
+		[DatevField(112, 6)]
+        public int? SoBilKey { get; set; }
+    }
 }

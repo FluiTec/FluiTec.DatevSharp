@@ -1,5 +1,4 @@
 ﻿using FluiTec.DatevSharp.Attributes;
-using FluiTec.DatevSharp.Helpers;
 using FluiTec.DatevSharp.Rows.Maps;
 
 namespace FluiTec.DatevSharp.Rows.TermsOfPaymentRow
@@ -10,26 +9,7 @@ namespace FluiTec.DatevSharp.Rows.TermsOfPaymentRow
 	[DatevRow(typeof(TermsOfPaymentMap), typeof(HeaderRow))]
 	public class TermsOfPaymentRow : Interfaces.IDatevRow
 	{
-		#region IDatevRow
-
-		/// <summary>   Converts this object to a row. </summary>
-		/// <returns>   This object as a string. </returns>
-		public string ToRow()
-		{
-			return
-				$"{Number.ToDatev()};{Name.ToDatev()};{DueType.ToDatev()};{CashDiscount1Percent.ToDatev()};{CashDiscount1Days.ToDatev()};{CashDiscount2Percent.ToDatev()};" +
-				$"{CashDiscount2Days.ToDatev()};{Days.ToDatev()};;;;;;;;;;;;;;;;;;;;;;\"\";";
-		}
-
-		#endregion
-
-		#region Constructors
-
-		#endregion
-
-		#region Properties
-
-		/// <summary>   Gets or sets the number of.  </summary>
+        /// <summary>   Gets or sets the number of.  </summary>
 		/// <value> The number. </value>
 		/// <remarks>
 		///     MaxLength=3, MinLength=2
@@ -83,7 +63,5 @@ namespace FluiTec.DatevSharp.Rows.TermsOfPaymentRow
 		/// <value> The days. </value>
 		[DatevField(7, 1)]
 		public int? Days { get; set; }
-
-		#endregion
 	}
 }

@@ -1,4 +1,5 @@
 ﻿using System;
+using FluiTec.DatevSharp.Attributes;
 
 namespace FluiTec.DatevSharp.Rows.BookingRow
 {
@@ -10,6 +11,7 @@ namespace FluiTec.DatevSharp.Rows.BookingRow
 		/// <remarks>
 		/// MaxLength=13
 		/// </remarks>
+        [DatevField(0,1)]
 		public decimal Volume { get; set; }
 
 		/// <summary>   Gets or sets the claim. </summary>
@@ -18,6 +20,7 @@ namespace FluiTec.DatevSharp.Rows.BookingRow
 		/// <remarks>
 		/// S/H (Soll/Haben)         
 		/// </remarks>
+        [DatevField(1,1)]
 		public string Claim { get; set; }
 
 		/// <summary>   Gets or sets the currency symbol. </summary>
@@ -26,6 +29,7 @@ namespace FluiTec.DatevSharp.Rows.BookingRow
 		/// <remarks>
 		/// MaxLength=3, ISO 4217, see https://msdn.microsoft.com/de-de/library/system.globalization.regioninfo.isocurrencysymbol(v=vs.110).aspx
 		/// </remarks>
+        [DatevField(2,1)]
 		public string CurrencySymbol { get; set; }
 
 		/// <summary>   Gets or sets the exchange rage. </summary>
@@ -34,11 +38,13 @@ namespace FluiTec.DatevSharp.Rows.BookingRow
 		/// <remarks>
 		/// Must be either NULL OR > 0         
 		/// </remarks>
+        [DatevField(3,1)]
 		public decimal? ExchangeRage { get; set; }
 
 		/// <summary>   Gets or sets the basic volume. </summary>
 		///
 		/// <value> The basic volume. </value>
+        [DatevField(4,1)]
 		public decimal? BasicVolume { get; set; }
 
 		/// <summary>   Gets or sets the basic volume currency symbol. </summary>
@@ -48,6 +54,7 @@ namespace FluiTec.DatevSharp.Rows.BookingRow
 		/// Can be NULL
 		/// MaxLength=3, ISO 4217, see https://msdn.microsoft.com/de-de/library/system.globalization.regioninfo.isocurrencysymbol(v=vs.110).aspx
 		/// </remarks>
+        [DatevField(5,1)]
 		public string BasicVolumeCurrencySymbol { get; set; }
 
 		/// <summary>   Gets or sets the account number. </summary>
@@ -56,6 +63,7 @@ namespace FluiTec.DatevSharp.Rows.BookingRow
 		/// <remarks>
 		/// MaxLength=9         
 		/// </remarks>
+        [DatevField(6,1)]
 		public string AccountNumber { get; set; }
 
 		/// <summary>   Gets or sets the contra account number. </summary>
@@ -64,6 +72,7 @@ namespace FluiTec.DatevSharp.Rows.BookingRow
 		/// <remarks>
 		/// MaxLength=9         
 		/// </remarks>
+        [DatevField(7,1)]
 		public string ContraAccountNumber { get; set; }
 
 		/// <summary>   Gets or sets the tax key. </summary>
@@ -72,6 +81,7 @@ namespace FluiTec.DatevSharp.Rows.BookingRow
 		/// <remarks>
 		/// BU-Schlüssel, Length=2-4         
 		/// </remarks>
+        [DatevField(8,1)]
 		public string TaxKey { get; set; }
 
 		/// <summary>   Gets or sets the Date/Time of the date. </summary>
@@ -80,6 +90,7 @@ namespace FluiTec.DatevSharp.Rows.BookingRow
 		/// <remarks>
 		/// Not Null         
 		/// </remarks>
+        [DatevField(9,1)]
 		public DateTime? Date { get; set; }
 
 		/// <summary>   Gets or sets the document field 1. </summary>
@@ -88,6 +99,7 @@ namespace FluiTec.DatevSharp.Rows.BookingRow
 		/// <remarks>
 		/// MaxLength=36         
 		/// </remarks>
+        [DatevField(10,1)]
 		public string DocumentField1 { get; set; }
 
 		/// <summary>   Gets or sets the document field 2. </summary>
@@ -96,6 +108,7 @@ namespace FluiTec.DatevSharp.Rows.BookingRow
 		/// <remarks>
 		/// MaxLength=12         
 		/// </remarks>
+        [DatevField(11,1)]
 		public string DocumentField2 { get; set; }
 
 		/// <summary>   Gets or sets the cash discount. </summary>
@@ -104,43 +117,32 @@ namespace FluiTec.DatevSharp.Rows.BookingRow
 		/// <remarks>
 		/// Must not be 0, NULL however is allowed         
 		/// </remarks>
+        [DatevField(12,1)]
 		public decimal? CashDiscount { get; set; }
 
-        /// <summary>   Gets or sets the type of the cash discount. </summary>
+        /// <summary>   Gets or sets the booking text. </summary>
         ///
-        /// <value> The type of the cash discount. </value>
-		/// <remarks>
-        /// MaxLength=1,
-        /// 1 = Einkauf von Waren
-        /// 2 = Erwerb von Roh-Hilfs- und Betriebsstoffen
-		/// </remarks>
-		public int? CashDiscountType { get; set; }
+        /// <value> The booking text. </value>
+        /// <remarks>
+        /// MaxLength=60         
+        /// </remarks>
+        [DatevField(13, 1)]
+        public string BookingText { get; set; }
 
-        /// <summary>   Gets or sets the cash discount block. </summary>
+        /// <summary>   Gets or sets the blocked. </summary>
         ///
-        /// <value> The cash discount block. </value>
-		public bool? CashDiscountBlock { get; set; }
+        /// <value> The blocked. </value>
+        [DatevField(14, 1)]
+        public bool? Blocked { get; set; }
 
-		/// <summary>   Gets or sets the booking text. </summary>
-		///
-		/// <value> The booking text. </value>
-		/// <remarks>
-		/// MaxLength=60         
-		/// </remarks>
-		public string BookingText { get; set; }
-
-		/// <summary>   Gets or sets the blocked. </summary>
-		///
-		/// <value> The blocked. </value>
-		public bool? Blocked { get; set; }
-
-		/// <summary>   Gets or sets the diverse account number. </summary>
-		///
-		/// <value> The diverse account number. </value>
-		/// <remarks>
-		/// MaxLenght=9         
-		/// </remarks>
-		public string DiverseAccountNumber { get; set; }
+        /// <summary>   Gets or sets the diverse account number. </summary>
+        ///
+        /// <value> The diverse account number. </value>
+        /// <remarks>
+        /// MaxLenght=9         
+        /// </remarks>
+        [DatevField(15, 1)]
+        public string DiverseAccountNumber { get; set; }
 
 		/// <summary>   Gets or sets the partner bank. </summary>
 		///
@@ -148,7 +150,8 @@ namespace FluiTec.DatevSharp.Rows.BookingRow
 		/// <remarks>
 		/// MaxLength=3
 		/// </remarks>
-		public string PartnerBank { get; set; }
+		[DatevField(16, 1)]
+        public string PartnerBank { get; set; }
 
 		/// <summary>   Gets or sets the circumstances. </summary>
 		///
@@ -158,7 +161,8 @@ namespace FluiTec.DatevSharp.Rows.BookingRow
 		/// 31 = Mahnzins
 		/// 40 = Mahngebühr
 		/// </remarks>
-		public string Circumstances { get; set; }
+		[DatevField(17, 1)]
+        public string Circumstances { get; set; }
 
 		/// <summary>   Gets or sets a value indicating whether the interest block. </summary>
 		///
@@ -166,7 +170,8 @@ namespace FluiTec.DatevSharp.Rows.BookingRow
 		/// <remarks>
 		/// Zinsberechnungssperre         
 		/// </remarks>
-		public bool? InterestBlock { get; set; }
+		[DatevField(18, 1)]
+        public bool? InterestBlock { get; set; }
 
 		/// <summary>   Gets or sets the document link. </summary>
 		///
@@ -174,42 +179,73 @@ namespace FluiTec.DatevSharp.Rows.BookingRow
 		/// <remarks>
 		/// MaxLength=210         
 		/// </remarks>
-		public string DocumentLink { get; set; }
-
-		/// <summary>   Gets or sets the type of the booking. </summary>
-		///
-		/// <value> The type of the booking. </value>
-		/// <remarks>
-		/// MaxLength=2
-		/// AA = Angeforderte Anzahlung/
-		///		 Abschlagsrechnung
-		/// AG = Erhaltene Anzahlung(Geldeingang)
-		/// AV = Erhaltene Anzahlung(Verbindlichkeit)
-		/// SR = Schlussrechnung
-		/// SU = Schlussrechnung(Umbuchung)
-		/// SG = Schlussrechnung(Geldeingang)
-		/// SO = Sonstige
-		/// </remarks>
-		public string BookingType { get; set; }
+		[DatevField(19, 1)]
+        public string DocumentLink { get; set; }
 
         /// <summary>   Gets or sets the type of the payment. </summary>
         ///
         /// <value> The type of the payment. </value>
-		/// <remarks>
+        /// <remarks>
         /// MaxLength=2
         /// 1 = Lastschrift
         /// 2 = Mahnung
         /// 3 = Zahlung
-		/// </remarks>
-		public int? PaymentType { get; set; }
-
-        /// <summary>   Gets or sets the proprietor. </summary>
-        ///
-        /// <value> The proprietor. </value>
-		/// <remarks>
-        /// MaxLength=76         
         /// </remarks>
-		public string Proprietor { get; set; }
+        [DatevField(89, 2)]
+        public int? PaymentType { get; set; }
+
+		/// <summary>   Gets or sets the type of the cash discount. </summary>
+		///
+		/// <value> The type of the cash discount. </value>
+		/// <remarks>
+		/// MaxLength=1,
+		/// 1 = Einkauf von Waren
+		/// 2 = Erwerb von Roh-Hilfs- und Betriebsstoffen
+		/// </remarks>
+		[DatevField(93,2)]
+        public int? CashDiscountType { get; set; }
+
+        /// <summary>   Gets or sets the type of the booking. </summary>
+        ///
+        /// <value> The type of the booking. </value>
+        /// <remarks>
+        /// MaxLength=2
+        /// AA = Angeforderte Anzahlung/
+        ///		 Abschlagsrechnung
+        /// AG = Erhaltene Anzahlung(Geldeingang)
+        /// AV = Erhaltene Anzahlung(Verbindlichkeit)
+        /// SR = Schlussrechnung
+        /// SU = Schlussrechnung(Umbuchung)
+        /// SG = Schlussrechnung(Geldeingang)
+        /// SO = Sonstige
+        /// </remarks>
+        [DatevField(95, 4)]
+        public string BookingType { get; set; }
+
+        /// <summary>
+        /// Gets the source for the.
+        /// </summary>
+        ///
+        /// <value>
+        /// The source.
+        /// </value>
+		[DatevField(101,4)]
+        public string Source => "SV";
+
+		/// <summary>   Gets or sets the cash discount block. </summary>
+		///
+		/// <value> The cash discount block. </value>
+		[DatevField(105,5)]
+        public bool? CashDiscountBlock { get; set; }
+
+		/// <summary>   Gets or sets the proprietor. </summary>
+		///
+		/// <value> The proprietor. </value>
+		/// <remarks>
+		/// MaxLength=76         
+		/// </remarks>
+		[DatevField(106, 5)]
+        public string Proprietor { get; set; }
 
         /// <summary>   Gets or sets a value indicating whether the fixing. </summary>
         ///
@@ -217,11 +253,14 @@ namespace FluiTec.DatevSharp.Rows.BookingRow
 		/// <remarks>
         /// Default=false         
         /// </remarks>
+        [DatevField(113, 7)]
 		public bool Fixing { get; set; }
 
-        /// <summary>   Gets or sets the activity date. </summary>
-        ///
-        /// <value> The activity date. </value>
+		/// <summary>   Gets or sets the activity date. </summary>
+		///
+		/// <value> The activity date. </value>
+		[DatevField(114, 7)]
+        [DatevField(115, 7)]
 		public DateTime? ActivityDate { get; set; }
 	}
 }
