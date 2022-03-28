@@ -1,7 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Linq;
 using System.Text;
+using FluentValidation;
 using FluentValidation.Results;
+using FluiTec.DatevSharp.Helpers;
 using FluiTec.DatevSharp.Interfaces;
 using FluiTec.DatevSharp.Validation;
 
@@ -56,9 +60,19 @@ namespace FluiTec.DatevSharp
 
 			var sb = new StringBuilder();
 			sb.Append(Header.ToRow());
-			sb.Append(Environment.NewLine + DataCategories.GetHeaderRow(Header.DataCategory).ToRow());
-			foreach (var row in Rows)
-				sb.Append(Environment.NewLine + row.ToRow());
+			sb.Append(Environment.NewLine + GetHeaderRow(Header.DataCategory.RowType).ToRow(Header.DataVersion));
+            var map = Header.DataCategory.RowType.GetDatevMetadata().GetMap();
+            foreach (var row in Rows)
+            {
+                sb.AppendLine();
+                foreach (var field in Header.DataVersion.FormatDescription.Fields.OrderBy(f => f.OrdinalNumber))
+                {
+                    var memberMap = map.FindByOrdinalNumber(field.OrdinalNumber);
+                    sb.Append(memberMap != null ? $"{memberMap.DatevOutput(row)};" : field.FormatType == "Text" ? "\"\";" : ";");
+                }
+
+                sb.Remove(sb.Length - 1, 1);
+            }
 			return sb.ToString();
 		}
 
@@ -72,7 +86,38 @@ namespace FluiTec.DatevSharp
         /// </remarks>
 	    public string GetName()
 	    {
-            return $"EXTF_{Header.DataCategory.Name}_{Header.Created:yyyy_MM_dd_HH_mm_ss}.csv".Replace("/", "_");
+            return $"EXTF_{Header.DataCategory.DatevName}_{Header.Created:yyyy_MM_dd_HH_mm_ss}.csv".Replace("/", "_");
+        }
+
+        /// <summary>   Gets the validator needed for the given format. </summary>
+        ///
+        /// <returns>   The validator for the given format. </returns>
+        public IValidator<IDatevRow> GetValidator()
+        {
+            if (Header.DataCategory == null)
+                throw new NoNullAllowedException($"{nameof(DataCategory)} must not be null for this method to succeed.");
+            if (Header.DataCategory.Number == DataCategories.Instance.BookingCategory.Number)
+                return new BookingRowValidator(Header.ImpersonalAccountsLength);
+			if (Header.DataCategory.Number == DataCategories.Instance.AddressCategory.Number)
+                return new AddressRowValidator(Header.ImpersonalAccountsLength + 1);
+            if (Header.DataCategory.Number == DataCategories.Instance.TermsOfPaymentCategory.Number)
+                return new TermsOfPaymentRowValidator();
+
+            throw new ArgumentException($"{nameof(DataCategory)} with value {Header.DataCategory.Number} is not implemented yet.");
+		}
+
+        /// <summary>
+        /// Gets header row.
+        /// </summary>
+        ///
+        /// <param name="rowType">  Type of the row. </param>
+        ///
+        /// <returns>
+        /// The header row.
+        /// </returns>
+        public static IVersionDatevRow GetHeaderRow(Type rowType)
+        {
+            return rowType.GetDatevMetadata().GetHeader();
         }
 
 		#endregion

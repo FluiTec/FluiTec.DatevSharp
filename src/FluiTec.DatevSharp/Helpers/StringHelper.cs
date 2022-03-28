@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.Text.RegularExpressions;
 
 namespace FluiTec.DatevSharp.Helpers
 {
@@ -10,7 +9,8 @@ namespace FluiTec.DatevSharp.Helpers
         {
             {"\r\n", " " },
             {"\n", " " },
-            {"\"",  "\"\""}
+            {"\"",  "\"\""},
+            {";", ","}
         };
 
         private static readonly string Regex = string.Join("|", ReplaceMap.Keys);
@@ -24,7 +24,7 @@ namespace FluiTec.DatevSharp.Helpers
         {
             return string.IsNullOrWhiteSpace(str)
                 ? "\"\""
-                : "\"" + System.Text.RegularExpressions.Regex.Replace(str, Regex, m => ReplaceMap[m.Value]) + "\"";
+                : $"\"{System.Text.RegularExpressions.Regex.Replace(str, Regex, m => ReplaceMap[m.Value])}\"";
         }
     }
 }
