@@ -1,4 +1,5 @@
 ﻿using FluiTec.DatevSharp.Helpers;
+using FluiTec.DatevSharp.Rows.Maps.Base;
 
 namespace FluiTec.DatevSharp.Rows.Maps
 {

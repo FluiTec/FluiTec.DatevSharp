@@ -6,7 +6,7 @@ namespace FluiTec.DatevSharp.Tests.Categories;
 [TestClass]
 public class AddressCategoryTest : BaseDataCategoryTest
 {
-    public AddressCategoryTest() : base("Addresses", "Debitoren", typeof(AddressRow))
+    public AddressCategoryTest() : base("Addresses", "Debitoren/Kreditoren", typeof(AddressRow))
     {
     }
 

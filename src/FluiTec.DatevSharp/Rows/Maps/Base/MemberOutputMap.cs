@@ -4,7 +4,7 @@ using System.Reflection;
 using FluentValidation.Internal;
 using FluiTec.DatevSharp.Attributes;
 
-namespace FluiTec.DatevSharp.Rows.Maps
+namespace FluiTec.DatevSharp.Rows.Maps.Base
 {
     /// <summary>
     /// Map of member outputs.

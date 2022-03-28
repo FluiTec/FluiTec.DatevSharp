@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Reflection;
 using FluiTec.DatevSharp.Attributes;
 
-namespace FluiTec.DatevSharp.Rows.Maps
+namespace FluiTec.DatevSharp.Rows.Maps.Base
 {
     /// <summary>
     /// Interface for member output map.

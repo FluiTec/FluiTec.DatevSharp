@@ -4,7 +4,7 @@ using System.Linq;
 using System.Linq.Expressions;
 using FluiTec.DatevSharp.Helpers;
 
-namespace FluiTec.DatevSharp.Rows.Maps
+namespace FluiTec.DatevSharp.Rows.Maps.Base
 {
     /// <summary>
     /// Map of class.

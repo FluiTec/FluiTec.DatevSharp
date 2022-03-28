@@ -1,4 +1,6 @@
-﻿namespace FluiTec.DatevSharp.Rows.Maps
+﻿using FluiTec.DatevSharp.Rows.Maps.Base;
+
+namespace FluiTec.DatevSharp.Rows.Maps
 {
     /// <summary>
     /// Map of bookings.

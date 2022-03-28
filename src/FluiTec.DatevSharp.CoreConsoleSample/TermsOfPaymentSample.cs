@@ -1,26 +1,25 @@
 ﻿using System;
 using System.IO;
 using System.Text;
-using FluiTec.DatevSharp.Rows.AddressRow;
-using FluiTec.DatevSharp.Rows.Enums;
+using FluiTec.DatevSharp.Rows.TermsOfPaymentRow;
 
 namespace FluiTec.DatevSharp.CoreConsoleSample
 {
     /// <summary>
-    /// The address sample.
+    /// The terms of payment sample.
     /// </summary>
-    public class AddressSample
+    public class TermsOfPaymentSample
     {
         private static readonly DateTime StartOfBusinessYear = new DateTime(2017, 1, 1);
         private static readonly DateTime ExportStartDate = new DateTime(2017, 2, 15);
         private static readonly DateTime ExportEndDate = new DateTime(2017, 2, 28);
 
         /// <summary>
-        /// Executes the address sample.
+        /// Executes the 'sample' operation.
         /// </summary>
         public void RunSample()
         {
-            var datev = CreateAddressFile();
+            var datev = CreateToPFile();
             var targetFile =
                 Path.Combine(
                     Environment.GetFolderPath(Environment.SpecialFolder.Desktop, Environment.SpecialFolderOption.None),
@@ -34,15 +33,21 @@ namespace FluiTec.DatevSharp.CoreConsoleSample
             Console.WriteLine($"Wrote to file '{targetFile}'");
         }
 
-        // create our datev-"file" (in memory) defining it's basic properties
-        private static DatevFile CreateAddressFile()
+        /// <summary>
+        /// Creates to p file.
+        /// </summary>
+        ///
+        /// <returns>
+        /// The new to p file.
+        /// </returns>
+        private DatevFile CreateToPFile()
         {
             var file = new DatevFile
             {
                 Header = new DatevHeader
                 {
-                    DataCategory = DataCategories.Instance.AddressCategory, // <-- this defines we are going to export addresses
-                    DataVersion = DataCategories.Instance.AddressCategory.DefaultVersion, // <-- this defines the version we're going to use (optional as setting Category sets the version)
+                    DataCategory = DataCategories.Instance.TermsOfPaymentCategory, // <-- this defines we are going to export terms of payment
+                    DataVersion = DataCategories.Instance.TermsOfPaymentCategory.DefaultVersion, // <-- this defines the version we're going to use (optional as setting Category sets the version)
                     StartOfBusinessYear = StartOfBusinessYear, // <-- optional, by omitting this you set the current year
                     Source = "RE", // <-- defines we're using an erp-system
                     ConsultantNumber = 1001, // <-- unique number of the consultant within the datev-organization
@@ -52,26 +57,21 @@ namespace FluiTec.DatevSharp.CoreConsoleSample
                 }
             };
 
-            AddSampleAddressData(file);
+            AddSampleToPData(file);
 
             return file;
         }
 
-        // add sample booking data to our file
-        private static void AddSampleAddressData(DatevFile file)
+        private void AddSampleToPData(DatevFile file)
         {
-            file.Rows.Add(new AddressRow
+            file.Rows.Add(new TermsOfPaymentRow
             {
-                AccountNumber = 10001,
-                Name_Enterprise = "Möbel Mustermann",
-                Name_Enterprise_Extension = "Schreinerei",
-                AddressType = AddressType.Enterprise,
-                ShortName = "mustermann möb",
-                Salutation = "Firma",
-                PostalAddressType = "STR",
-                Street = "Teststraße 1",
-                ZipCode = "11111",
-                City = "Teststadt"
+                Number = 20,
+                Name = "YourName",
+                CashDiscount1Days = 10,
+                CashDiscount1Percent = 2,
+                DueType = 1,
+                Days = 30
             });
         }
     }

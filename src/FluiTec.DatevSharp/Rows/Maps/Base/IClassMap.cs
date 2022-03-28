@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace FluiTec.DatevSharp.Rows.Maps
+namespace FluiTec.DatevSharp.Rows.Maps.Base
 {
     /// <summary>
     /// Interface for class map.

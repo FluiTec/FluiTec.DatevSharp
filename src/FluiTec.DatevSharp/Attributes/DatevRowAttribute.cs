@@ -2,6 +2,7 @@
 using FluentValidation;
 using FluiTec.DatevSharp.Interfaces;
 using FluiTec.DatevSharp.Rows.Maps;
+using FluiTec.DatevSharp.Rows.Maps.Base;
 
 namespace FluiTec.DatevSharp.Attributes
 {
