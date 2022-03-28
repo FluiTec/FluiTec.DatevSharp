@@ -21,6 +21,11 @@ are generatec completely from those files. Data-rows are generated using
 the attributes DatevRow and DatevField (to associate classes with the formats)
 as well as ClassMaps that define how associated properties are formatted on output.
 
+This also enables you to pick a different version. By default - by assigning a DataCategory
+to a DatevFile - you're assigning the default datev-version as defined in format_map.json
+(currently: 510) - however - you can easily use another version by assigning
+a DataVersion upon creating a DatevFile.
+
 ### In case you're missing something ###
 
 #### New export-types ####
