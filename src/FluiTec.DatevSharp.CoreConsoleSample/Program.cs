@@ -20,10 +20,10 @@ namespace FluiTec.DatevSharp.CoreConsoleSample
             new BookingSample().RunSample();
 
             // run the address sample
-            //new AddressSample().RunSample();
+            new AddressSample().RunSample();
             
             // run the terms of payment sample
-            //new TermsOfPaymentSample().RunSample();
+            new TermsOfPaymentSample().RunSample();
         }
     }
 }
