@@ -1,10 +1,7 @@
 using System;
-using System.Data;
 using System.Globalization;
-using FluentValidation;
 using FluiTec.DatevSharp.Helpers;
 using FluiTec.DatevSharp.Interfaces;
-using FluiTec.DatevSharp.Validation;
 
 namespace FluiTec.DatevSharp
 {
@@ -25,6 +22,16 @@ namespace FluiTec.DatevSharp
             set
             {
                 _dataCategory = value;
+
+                if (DataCategory.Number == DataCategories.Instance.BookingCategory.Number)
+                {
+                    BookingType = 1;
+                }
+                else
+                {
+                    BookingType = null;
+                }
+
                 if (DataVersion == null)
                     DataVersion = _dataCategory.DefaultVersion;
             }
@@ -190,8 +197,7 @@ namespace FluiTec.DatevSharp
 			ExportedBy = Environment.UserName;
 			StartOfBusinessYear = new DateTime(Created.Year, 1, 1);
 			ImpersonalAccountsLength = 4;
-			BookingType = 1;
-			BillingIntention = 0;
+            BillingIntention = 0;
 			Fixing = false;
 			CurrencySymbol = new RegionInfo(System.Threading.Thread.CurrentThread.CurrentUICulture.LCID).ISOCurrencySymbol;
 		}

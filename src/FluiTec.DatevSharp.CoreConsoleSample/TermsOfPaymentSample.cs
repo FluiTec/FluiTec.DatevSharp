@@ -52,9 +52,7 @@ namespace FluiTec.DatevSharp.CoreConsoleSample
                     StartOfBusinessYear = StartOfBusinessYear, // <-- optional, by omitting this you set the current year
                     Source = "RE", // <-- defines we're using an erp-system
                     ConsultantNumber = 1001, // <-- unique number of the consultant within the datev-organization
-                    ClientNumber = 1001, // <-- your unique number of your enterprise within the consultant
-                    BookingsFrom = ExportStartDate, // <-- Defines the StartDate/Time of your export
-                    BookingsTill = ExportEndDate // <-- Defines the EndDate/Time of your export
+                    ClientNumber = 1001 // <-- your unique number of your enterprise within the consultant
                 }
             };
 
