@@ -26,10 +26,14 @@ namespace FluiTec.DatevSharp
                 if (DataCategory.Number == DataCategories.Instance.BookingCategory.Number)
                 {
                     BookingType = 1;
+                    CurrencySymbol = new RegionInfo(System.Threading.Thread.CurrentThread.CurrentUICulture.LCID).ISOCurrencySymbol;
+                    BillingIntention = 0;
                 }
                 else
                 {
                     BookingType = null;
+                    CurrencySymbol = null;
+                    BillingIntention = null;
                 }
 
                 if (DataVersion == null)
@@ -197,10 +201,8 @@ namespace FluiTec.DatevSharp
 			ExportedBy = Environment.UserName;
 			StartOfBusinessYear = new DateTime(Created.Year, 1, 1);
 			ImpersonalAccountsLength = 4;
-            BillingIntention = 0;
-			Fixing = false;
-			CurrencySymbol = new RegionInfo(System.Threading.Thread.CurrentThread.CurrentUICulture.LCID).ISOCurrencySymbol;
-		}
+            Fixing = false;
+        }
 
 		#endregion
 
