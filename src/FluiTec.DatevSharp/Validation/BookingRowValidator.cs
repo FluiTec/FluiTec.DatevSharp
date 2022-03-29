@@ -48,7 +48,9 @@ namespace FluiTec.DatevSharp.Validation
 			RuleFor(booking => booking.PartnerBank).Length(0, 3);
 			RuleFor(booking => booking.PartnerBank).Length(0, 210);
             RuleFor(booking => booking.Proprietor).Length(0, 76);
-	    }
+            RuleFor(booking => booking.SettlementReference).Length(0, 50);
+            RuleFor(booking => booking.StateCodeAndTaxId).Length(0, 15);
+		}
 
 	    private void AddBookingInfoRules()
 	    {

@@ -42,6 +42,14 @@ namespace FluiTec.DatevSharp.Rows.Maps
             Map(row => row.Proprietor, row => row.Proprietor.ToDatev());
             Map(row => row.Fixing, row => row.Fixing.ToDatev());
             Map(row => row.ActivityDate, row => row.ActivityDate.ToDatevDateReverse());
+            Map(row => row.DueDate, row => row.DueDate.ToDatevDateReverse());
+            Map(row => row.GeneralReversal, row => row.GeneralReversal.ToDatev());
+            Map(row => row.TaxRate, row => row.TaxRate.ToDatev());
+            Map(row => row.Country, row => row.Country?.ToDatev());
+            Map(row => row.SettlementReference, row => row.SettlementReference.ToDatev());
+            Map(row => row.AccrualsBasisAccounting, row => row.AccrualsBasisAccounting?.ValueToDatev());
+            Map(row => row.StateCodeAndTaxId, row => row.StateCodeAndTaxId.ToDatev());
+            Map(row => row.EuTaxRate, row => row.EuTaxRate.ToDatev());
 
             // document
             Map(row => row.BookingInfoType1, row => row.BookingInfoType1.ToDatev());

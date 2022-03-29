@@ -16,6 +16,8 @@ namespace FluiTec.DatevSharp.Helpers
         private static readonly Type ClaimType = typeof(Claim);
         private static readonly Type TaxationTypeType = typeof(TaxationType);
         private static readonly Type BookingTypeType = typeof(BookingType);
+        private static readonly Type CountryType = typeof(Country);
+        private static readonly Type AccrualsBasisAccountingType = typeof(AccrualsBasisAccounting);
 
         #endregion
 
@@ -101,6 +103,20 @@ namespace FluiTec.DatevSharp.Helpers
         }
 
         /// <summary>
+        /// An AccrualsBasisAccounting extension method that value to datev.
+        /// </summary>
+        ///
+        /// <param name="accrualsBasisAccounting">  The accrualsBasisAccounting to act on. </param>
+        ///
+        /// <returns>
+        /// A string.
+        /// </returns>
+        public static string ValueToDatev(this AccrualsBasisAccounting accrualsBasisAccounting)
+        {
+            return Convert.ToInt32(accrualsBasisAccounting).ToString().ToDatev();
+        }
+
+        /// <summary>
         /// A PostalAddressType extension method that converts a postalAddressType to a datev.
         /// </summary>
         ///
@@ -154,6 +170,20 @@ namespace FluiTec.DatevSharp.Helpers
         public static string ToDatev(this BookingType bookingType)
         {
             return GetStringValue(BookingTypeType, bookingType.ToString());
+        }
+
+        /// <summary>
+        /// A Country extension method that converts a postalAddressType to a datev.
+        /// </summary>
+        ///
+        /// <param name="country">  The country to act on. </param>
+        ///
+        /// <returns>
+        /// Country as a string.
+        /// </returns>
+        public static string ToDatev(this Country country)
+        {
+            return GetStringValue(CountryType, country.ToString());
         }
 
         #endregion

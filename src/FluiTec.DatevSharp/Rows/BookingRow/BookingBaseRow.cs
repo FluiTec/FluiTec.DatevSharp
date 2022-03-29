@@ -263,5 +263,77 @@ namespace FluiTec.DatevSharp.Rows.BookingRow
 		[DatevField(114, 7)]
         [DatevField(115, 7)]
 		public DateTime? ActivityDate { get; set; }
+
+        /// <summary>
+        /// Gets or sets the due date.
+        /// </summary>
+        ///
+        /// <value>
+        /// The due date.
+        /// </value>
+        [DatevField(116, 8)]
+		public DateTime? DueDate { get; set; }
+
+        /// <summary>
+        /// Gets or sets the general reversal.
+        /// </summary>
+        ///
+        /// <value>
+        /// The general reversal.
+        /// </value>
+		[DatevField(117, 9)]
+		public bool? GeneralReversal { get; set; }
+
+        /// <summary>
+        /// Gets or sets the tax rate.
+        /// </summary>
+        ///
+        /// <value>
+        /// The tax rate.
+        /// </value>
+        [DatevField(118,9)]
+		public float? TaxRate { get; set; }
+
+        /// <summary>
+        /// Gets or sets the country.
+        /// </summary>
+        ///
+        /// <value>
+        /// The country.
+        /// </value>
+        [DatevField(119,9)]
+		public Country? Country { get; set; }
+
+		[DatevField(120,10)]
+		public string SettlementReference { get; set; }
+
+        /// <summary>
+        /// Gets or sets the accruals basis accounting.
+        /// </summary>
+        ///
+        /// <value>
+        /// The accruals basis accounting.
+        /// </value>
+        [DatevField(121,11)]
+		public AccrualsBasisAccounting? AccrualsBasisAccounting { get; set; }
+
+        /// <summary>   Gets or sets the identifier of the country code and tax. </summary>
+        ///
+        /// <value> The identifier of the country code and tax. </value>
+        /// <remarks>
+        /// MaxLength=15         
+        /// </remarks>
+        [DatevField(122,12)]
+		public string StateCodeAndTaxId { get; set; }
+
+        /// <summary>
+        /// Gets or sets the tax rate.
+        /// </summary>
+        ///
+        /// <value>
+        /// The tax rate.
+        /// </value>
+        [DatevField(123, 12)]
+        public float? EuTaxRate { get; set; }
 	}
 }
