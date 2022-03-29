@@ -52,6 +52,7 @@ internal class Program
             sb.AppendLine("<table cellpadding='5' cellspacing='0' style='border: 1px solid #ccc;font-size: 9pt;font-family:arial'>");
             sb.AppendLine("\t<tr>");
             sb.AppendLine("\t\t<td><b>DatevLabel</b></td>");
+            sb.AppendLine("\t\t<td><b>OrdinalNumber</b></td>");
             sb.AppendLine("\t\t<td><b>Mapped</b></td>");
             sb.AppendLine("\t\t<td><b>Property</b></td>");
 
@@ -63,6 +64,7 @@ internal class Program
 
                 sb.AppendLine("\t<tr>");
                 sb.AppendLine($"\t\t<td>{label}</td>");
+                sb.AppendLine($"\t\t<td>{field.OrdinalNumber}</td>");
                 sb.AppendLine($"\t\t<td>{memberMap != null}</td>");
                 sb.AppendLine($"\t\t<td>{memberMap?.Member.Name}</td>");
                 sb.AppendLine("\t</tr>");
