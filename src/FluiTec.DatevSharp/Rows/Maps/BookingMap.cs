@@ -128,7 +128,7 @@ namespace FluiTec.DatevSharp.Rows.Maps
             Map(row => row.AdditionalInfoType16, row => row.AdditionalInfoType16.ToDatev());
             Map(row => row.AdditionalInfoContent16, row => row.AdditionalInfoContent16.ToDatev());
             Map(row => row.AdditionalInfoType17, row => row.AdditionalInfoType17.ToDatev());
-            Map(row => row.AdditionalInfoContent18, row => row.AdditionalInfoContent17.ToDatev());
+            Map(row => row.AdditionalInfoContent17, row => row.AdditionalInfoContent17.ToDatev());
             Map(row => row.AdditionalInfoType18, row => row.AdditionalInfoType18.ToDatev());
             Map(row => row.AdditionalInfoContent18, row => row.AdditionalInfoContent18.ToDatev());
             Map(row => row.AdditionalInfoType19, row => row.AdditionalInfoType19.ToDatev());
