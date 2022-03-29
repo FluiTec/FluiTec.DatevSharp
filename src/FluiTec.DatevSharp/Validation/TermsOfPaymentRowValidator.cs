@@ -15,9 +15,6 @@ namespace FluiTec.DatevSharp.Validation
         {
 	        RuleFor(top => top.Number).GreaterThanOrEqualTo(10).LessThanOrEqualTo(999);
 	        RuleFor(top => top.Name).Length(0, 40);
-			RuleFor(top => top.DueType)
-				.Must(dt => dt == null || (dt > 0 && dt < 3))
-				.WithMessage("DueType must be NULL OR >0 and <max!");
 			RuleFor(top => top.CashDiscount1Percent)
 				.Must(perc => perc == null || (perc > 0 && perc < 1000))
 				.WithMessage("CashDiscount1Percent must be NULL OR >0 and <max!");

@@ -26,12 +26,6 @@ namespace FluiTec.DatevSharp.Validation
 			RuleFor(address => address.Name_Enterprise_Extension).Length(0, 50);
             RuleFor(address => address.TransportAddition).Length(0, 50);
             RuleFor(address => address.AddressAddition).Length(0, 36);
-
-			var validPostalTypes = new[] { "STR", "PF", "GK" };
-			RuleFor(address => address.PostalAddressType)
-				.Must(type => type == null || validPostalTypes.Contains(type))
-				.WithMessage("PostalAddressType must be NULL or one of the predefined ones.");
-
 			RuleFor(address => address.Street).Length(0, 36);
 			RuleFor(address => address.PostBox).Length(0, 10);
 

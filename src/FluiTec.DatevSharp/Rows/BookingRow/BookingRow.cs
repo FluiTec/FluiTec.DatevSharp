@@ -12,7 +12,7 @@ namespace FluiTec.DatevSharp.Rows.BookingRow
 		/// <summary>   Default constructor. </summary>
 		public BookingRow()
 		{
-			Claim = "S";
+			Claim = Enums.Claim.Debit;
 			CurrencySymbol = new RegionInfo(Thread.CurrentThread.CurrentUICulture.LCID).ISOCurrencySymbol;
 			Fixing = false;
 		}

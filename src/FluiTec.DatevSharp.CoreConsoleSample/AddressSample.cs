@@ -68,7 +68,7 @@ namespace FluiTec.DatevSharp.CoreConsoleSample
                 AddressType = AddressType.Enterprise,
                 ShortName = "mustermann möb",
                 Salutation = "Firma",
-                PostalAddressType = "STR",
+                PostalAddressType = PostalAddressType.Street,
                 Street = "Teststraße 1",
                 ZipCode = "11111",
                 City = "Teststadt"

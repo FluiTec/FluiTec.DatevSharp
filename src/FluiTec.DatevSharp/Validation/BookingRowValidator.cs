@@ -24,8 +24,7 @@ namespace FluiTec.DatevSharp.Validation
 	    {
 		    RuleFor(booking => booking.Volume).GreaterThan(0);
 			RuleFor(booking => booking.Volume).LessThanOrEqualTo(9999999999.99m); // avoid havin length>13
-			RuleFor(booking => booking.Claim).Must(claim => claim == "S" || claim == "H").WithMessage("Claim must either be 'S' or 'H'!");
-			RuleFor(booking => booking.ExchangeRage).Must(rate => rate == null || rate > 0).WithMessage("ExchangeRate must be NULL or > 0!");
+            RuleFor(booking => booking.ExchangeRage).Must(rate => rate == null || rate > 0).WithMessage("ExchangeRate must be NULL or > 0!");
 			RuleFor(booking => booking.BasicVolume)
 				.Must(bv => bv == null || (bv > 0 && bv < 9999999999.99m))
 				.WithMessage("BasicVolume must be NULL OR >0 and <max!");
@@ -48,14 +47,7 @@ namespace FluiTec.DatevSharp.Validation
 			RuleFor(booking => booking.DiverseAccountNumber).Length(0, 9);
 			RuleFor(booking => booking.PartnerBank).Length(0, 3);
 			RuleFor(booking => booking.PartnerBank).Length(0, 210);
-			RuleFor(booking => booking.CashDiscountType)
-				.Must(bv => bv == null || (bv > 0 && bv <=2))
-				.WithMessage("CashDiscountType must be NULL OR >0 and <max!");
-		    RuleFor(booking => booking.BookingType).Length(0, 2);
-			RuleFor(booking => booking.PaymentType)
-				.Must(bv => bv == null || (bv > 0 && bv <= 99))
-				.WithMessage("PaymentType must be NULL OR >0 and <max!");
-		    RuleFor(booking => booking.Proprietor).Length(0, 76);
+            RuleFor(booking => booking.Proprietor).Length(0, 76);
 	    }
 
 	    private void AddBookingInfoRules()
@@ -89,8 +81,7 @@ namespace FluiTec.DatevSharp.Validation
 			RuleFor(booking => booking.EuroTax)
 				.Must(bv => bv == null || (bv > 0 && bv < 99.99m))
 				.WithMessage("EuroTax must be NULL OR >0 and <max!");
-			RuleFor(booking => booking.DifferentTaxType).Length(0, 1);
-			RuleFor(booking => booking.IntentionLL)
+            RuleFor(booking => booking.IntentionLL)
 				.Must(bv => bv == null || (bv > 0 && bv <= 999))
 				.WithMessage("IntentionLL must be NULL OR >0 and <=max!");
 			RuleFor(booking => booking.FunctionLL)

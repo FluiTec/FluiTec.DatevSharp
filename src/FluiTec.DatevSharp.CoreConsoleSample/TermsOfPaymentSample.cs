@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Text;
+using FluiTec.DatevSharp.Rows.Enums;
 using FluiTec.DatevSharp.Rows.TermsOfPaymentRow;
 
 namespace FluiTec.DatevSharp.CoreConsoleSample
@@ -70,7 +71,7 @@ namespace FluiTec.DatevSharp.CoreConsoleSample
                 Name = "YourName",
                 CashDiscount1Days = 10,
                 CashDiscount1Percent = 2,
-                DueType = 1,
+                DueType = DueType.DueInDays,
                 Days = 30
             });
         }

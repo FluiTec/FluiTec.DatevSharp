@@ -1,5 +1,6 @@
 ﻿using System;
 using FluiTec.DatevSharp.Attributes;
+using FluiTec.DatevSharp.Rows.Enums;
 
 namespace FluiTec.DatevSharp.Rows.BookingRow
 {
@@ -61,7 +62,7 @@ namespace FluiTec.DatevSharp.Rows.BookingRow
 		/// S = Soll-Versteuerung
 		/// </remarks>
         [DatevField(41, 1)]
-		public string DifferentTaxType { get; set; }
+		public TaxationType DifferentTaxType { get; set; }
 
 		/// <summary>   Gets or sets the intention ll. </summary>
 		///

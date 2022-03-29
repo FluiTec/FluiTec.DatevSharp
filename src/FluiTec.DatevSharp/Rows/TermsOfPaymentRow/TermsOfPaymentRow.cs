@@ -1,4 +1,5 @@
 ﻿using FluiTec.DatevSharp.Attributes;
+using FluiTec.DatevSharp.Rows.Enums;
 using FluiTec.DatevSharp.Rows.Maps;
 
 namespace FluiTec.DatevSharp.Rows.TermsOfPaymentRow
@@ -25,7 +26,7 @@ namespace FluiTec.DatevSharp.Rows.TermsOfPaymentRow
 		/// <summary>   Gets or sets the type of the due. </summary>
 		/// <value> The type of the due. </value>
         [DatevField(2,1)]
-		public int? DueType { get; set; }
+		public DueType DueType { get; set; }
 
 		/// <summary>   Gets or sets the cash discount 1 percent. </summary>
 		/// <value> The cash discount 1 percent. </value>

@@ -1,5 +1,6 @@
 ﻿using System;
 using FluiTec.DatevSharp.Attributes;
+using FluiTec.DatevSharp.Rows.Enums;
 
 namespace FluiTec.DatevSharp.Rows.BookingRow
 {
@@ -21,7 +22,7 @@ namespace FluiTec.DatevSharp.Rows.BookingRow
 		/// S/H (Soll/Haben)         
 		/// </remarks>
         [DatevField(1,1)]
-		public string Claim { get; set; }
+		public Claim Claim { get; set; }
 
 		/// <summary>   Gets or sets the currency symbol. </summary>
 		///
@@ -192,7 +193,7 @@ namespace FluiTec.DatevSharp.Rows.BookingRow
         /// 3 = Zahlung
         /// </remarks>
         [DatevField(89, 2)]
-        public int? PaymentType { get; set; }
+        public PaymentType PaymentType { get; set; }
 
 		/// <summary>   Gets or sets the type of the cash discount. </summary>
 		///
@@ -203,7 +204,7 @@ namespace FluiTec.DatevSharp.Rows.BookingRow
 		/// 2 = Erwerb von Roh-Hilfs- und Betriebsstoffen
 		/// </remarks>
 		[DatevField(93,2)]
-        public int? CashDiscountType { get; set; }
+        public CashDiscountType CashDiscountType { get; set; }
 
         /// <summary>   Gets or sets the type of the booking. </summary>
         ///
@@ -220,7 +221,7 @@ namespace FluiTec.DatevSharp.Rows.BookingRow
         /// SO = Sonstige
         /// </remarks>
         [DatevField(95, 4)]
-        public string BookingType { get; set; }
+        public BookingType BookingType { get; set; }
 
         /// <summary>
         /// Gets the source for the.

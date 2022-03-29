@@ -86,7 +86,7 @@ namespace FluiTec.DatevSharp.Rows.AddressRow
         ///     MaxLength=3
         /// </remarks>
         [DatevField(14, 1)]
-        public string PostalAddressType { get; set; }
+        public PostalAddressType PostalAddressType { get; set; }
 
         /// <summary>   Gets or sets the street. </summary>
         /// <value> The street. </value>
