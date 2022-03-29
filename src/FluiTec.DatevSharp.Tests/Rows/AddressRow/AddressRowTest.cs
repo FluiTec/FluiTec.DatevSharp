@@ -6,5 +6,8 @@ namespace FluiTec.DatevSharp.Tests.Rows.AddressRow;
 [TestClass]
 public class AddressRowTest : RowTest
 {
-    public override IDatevRow CreateRow() => new DatevSharp.Rows.AddressRow.AddressRow();
+    public override IDatevRow CreateRow()
+    {
+        return new DatevSharp.Rows.AddressRow.AddressRow();
+    }
 }

@@ -10,5 +10,8 @@ public class AddressCategoryTest : BaseDataCategoryTest
     {
     }
 
-    protected override DataCategory GetCategory() => DataCategories.Instance.AddressCategory;
+    protected override DataCategory GetCategory()
+    {
+        return DataCategories.Instance.AddressCategory;
+    }
 }

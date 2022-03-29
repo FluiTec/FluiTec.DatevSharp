@@ -7,23 +7,13 @@ using FluiTec.DatevSharp.Helpers;
 namespace FluiTec.DatevSharp.Rows.Maps.Base
 {
     /// <summary>
-    /// Map of class.
+    ///     Map of class.
     /// </summary>
-    ///
     /// <typeparam name="T">    Generic type parameter. </typeparam>
     public class ClassMap<T> : ClassMap
     {
         /// <summary>
-        /// Gets the members.
-        /// </summary>
-        ///
-        /// <value>
-        /// The members.
-        /// </value>
-        public List<MemberOutputMap<T>> GenericMembers { get; }
-
-        /// <summary>
-        /// Default constructor.
+        ///     Default constructor.
         /// </summary>
         public ClassMap()
         {
@@ -31,9 +21,16 @@ namespace FluiTec.DatevSharp.Rows.Maps.Base
         }
 
         /// <summary>
-        /// Maps.
+        ///     Gets the members.
         /// </summary>
-        ///
+        /// <value>
+        ///     The members.
+        /// </value>
+        public List<MemberOutputMap<T>> GenericMembers { get; }
+
+        /// <summary>
+        ///     Maps.
+        /// </summary>
         /// <typeparam name="TProperty">    Type of the property. </typeparam>
         /// <param name="expression">   The expression. </param>
         /// <param name="datevOutput">  The datev output. </param>
@@ -47,13 +44,11 @@ namespace FluiTec.DatevSharp.Rows.Maps.Base
         }
 
         /// <summary>
-        /// Searches for the first ordinal number.
+        ///     Searches for the first ordinal number.
         /// </summary>
-        ///
         /// <param name="ordinalNumber">    The ordinal number. </param>
-        ///
         /// <returns>
-        /// The found ordinal number.
+        ///     The found ordinal number.
         /// </returns>
         public MemberOutputMap<T> FindGenericByOrdinalNumber(int ordinalNumber)
         {
@@ -64,22 +59,12 @@ namespace FluiTec.DatevSharp.Rows.Maps.Base
     }
 
     /// <summary>
-    /// Map of class.
+    ///     Map of class.
     /// </summary>
     public abstract class ClassMap : IClassMap
     {
         /// <summary>
-        /// Gets the members.
-        /// </summary>
-        ///
-        /// <value>
-        /// The members.
-        /// </value>
-        // ReSharper disable once UnassignedGetOnlyAutoProperty
-        public List<MemberOutputMap> Members { get; }
-
-        /// <summary>
-        /// Specialized default constructor for use only by derived class.
+        ///     Specialized default constructor for use only by derived class.
         /// </summary>
         protected ClassMap()
         {
@@ -87,13 +72,20 @@ namespace FluiTec.DatevSharp.Rows.Maps.Base
         }
 
         /// <summary>
-        /// Searches for the first ordinal number.
+        ///     Gets the members.
         /// </summary>
-        ///
+        /// <value>
+        ///     The members.
+        /// </value>
+        // ReSharper disable once UnassignedGetOnlyAutoProperty
+        public List<MemberOutputMap> Members { get; }
+
+        /// <summary>
+        ///     Searches for the first ordinal number.
+        /// </summary>
         /// <param name="ordinalNumber">    The ordinal number. </param>
-        ///
         /// <returns>
-        /// The found ordinal number.
+        ///     The found ordinal number.
         /// </returns>
         public MemberOutputMap FindByOrdinalNumber(int ordinalNumber)
         {

@@ -6,18 +6,18 @@ namespace FluiTec.DatevSharp.Tests.Categories;
 
 public abstract class BaseDataCategoryTest
 {
-    public string Name { get; }
-
-    public string DatevName { get; }
-
-    public Type RowType { get; }
-
     protected BaseDataCategoryTest(string name, string datevName, Type rowType)
     {
         Name = name;
         DatevName = datevName;
         RowType = rowType;
     }
+
+    public string Name { get; }
+
+    public string DatevName { get; }
+
+    public Type RowType { get; }
 
     protected abstract DataCategory GetCategory();
 
@@ -38,7 +38,7 @@ public abstract class BaseDataCategoryTest
     {
         Assert.AreEqual(RowType, GetCategory().RowType);
     }
-    
+
     [TestMethod]
     public void CanGetMetadata()
     {

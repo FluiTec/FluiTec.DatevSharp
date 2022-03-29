@@ -10,5 +10,8 @@ public class TermsOfPaymentCategoryTest : BaseDataCategoryTest
     {
     }
 
-    protected override DataCategory GetCategory() => DataCategories.Instance.TermsOfPaymentCategory;
+    protected override DataCategory GetCategory()
+    {
+        return DataCategories.Instance.TermsOfPaymentCategory;
+    }
 }

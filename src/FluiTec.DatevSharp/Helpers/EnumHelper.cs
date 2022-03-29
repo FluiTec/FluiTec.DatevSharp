@@ -1,37 +1,23 @@
 ﻿using System;
-using System.Text;
 using FluiTec.DatevSharp.Attributes;
 using FluiTec.DatevSharp.Rows.Enums;
 
 namespace FluiTec.DatevSharp.Helpers
 {
     /// <summary>
-    /// An enum helper.
+    ///     An enum helper.
     /// </summary>
     public static class EnumHelper
     {
-        #region enumTypes
-
-        private static readonly Type PostalAddressTypeType = typeof(PostalAddressType);
-        private static readonly Type ClaimType = typeof(Claim);
-        private static readonly Type TaxationTypeType = typeof(TaxationType);
-        private static readonly Type BookingTypeType = typeof(BookingType);
-        private static readonly Type CountryType = typeof(Country);
-        private static readonly Type AccrualsBasisAccountingType = typeof(AccrualsBasisAccounting);
-
-        #endregion
-
         #region Private Methods
 
         /// <summary>
-        /// Gets string value.
+        ///     Gets string value.
         /// </summary>
-        ///
         /// <param name="enumType">     Type of the enum. </param>
         /// <param name="fieldName">    Name of the field. </param>
-        ///
         /// <returns>
-        /// The string value.
+        ///     The string value.
         /// </returns>
         private static string GetStringValue(Type enumType, string fieldName)
         {
@@ -44,16 +30,25 @@ namespace FluiTec.DatevSharp.Helpers
 
         #endregion
 
+        #region enumTypes
+
+        private static readonly Type PostalAddressTypeType = typeof(PostalAddressType);
+        private static readonly Type ClaimType = typeof(Claim);
+        private static readonly Type TaxationTypeType = typeof(TaxationType);
+        private static readonly Type BookingTypeType = typeof(BookingType);
+        private static readonly Type CountryType = typeof(Country);
+        private static readonly Type AccrualsBasisAccountingType = typeof(AccrualsBasisAccounting);
+
+        #endregion
+
         #region ToDatev
 
         /// <summary>
-        /// An AddressType extension method that value to datev.
+        ///     An AddressType extension method that value to datev.
         /// </summary>
-        ///
         /// <param name="addressType">  The addressType to act on. </param>
-        ///
         /// <returns>
-        /// A string.
+        ///     A string.
         /// </returns>
         public static string ValueToDatev(this AddressType addressType)
         {
@@ -61,13 +56,11 @@ namespace FluiTec.DatevSharp.Helpers
         }
 
         /// <summary>
-        /// An DueType extension method that value to datev.
+        ///     An DueType extension method that value to datev.
         /// </summary>
-        ///
         /// <param name="dueType">  The dueType to act on. </param>
-        ///
         /// <returns>
-        /// A string.
+        ///     A string.
         /// </returns>
         public static string ValueToDatev(this DueType dueType)
         {
@@ -75,13 +68,11 @@ namespace FluiTec.DatevSharp.Helpers
         }
 
         /// <summary>
-        /// An PaymentType extension method that value to datev.
+        ///     An PaymentType extension method that value to datev.
         /// </summary>
-        ///
         /// <param name="paymentType">  The paymentType to act on. </param>
-        ///
         /// <returns>
-        /// A string.
+        ///     A string.
         /// </returns>
         public static string ValueToDatev(this PaymentType paymentType)
         {
@@ -89,13 +80,11 @@ namespace FluiTec.DatevSharp.Helpers
         }
 
         /// <summary>
-        /// An CashDiscountType extension method that value to datev.
+        ///     An CashDiscountType extension method that value to datev.
         /// </summary>
-        ///
         /// <param name="cashDiscountType"> The cashDiscountType to act on. </param>
-        ///
         /// <returns>
-        /// A string.
+        ///     A string.
         /// </returns>
         public static string ValueToDatev(this CashDiscountType cashDiscountType)
         {
@@ -103,13 +92,11 @@ namespace FluiTec.DatevSharp.Helpers
         }
 
         /// <summary>
-        /// An AccrualsBasisAccounting extension method that value to datev.
+        ///     An AccrualsBasisAccounting extension method that value to datev.
         /// </summary>
-        ///
         /// <param name="accrualsBasisAccounting">  The accrualsBasisAccounting to act on. </param>
-        ///
         /// <returns>
-        /// A string.
+        ///     A string.
         /// </returns>
         public static string ValueToDatev(this AccrualsBasisAccounting accrualsBasisAccounting)
         {
@@ -117,13 +104,11 @@ namespace FluiTec.DatevSharp.Helpers
         }
 
         /// <summary>
-        /// A PostalAddressType extension method that converts a postalAddressType to a datev.
+        ///     A PostalAddressType extension method that converts a postalAddressType to a datev.
         /// </summary>
-        ///
         /// <param name="postalAddressType">    The postalAddressType to act on. </param>
-        ///
         /// <returns>
-        /// PostalAddressType as a string.
+        ///     PostalAddressType as a string.
         /// </returns>
         public static string ToDatev(this PostalAddressType postalAddressType)
         {
@@ -131,13 +116,11 @@ namespace FluiTec.DatevSharp.Helpers
         }
 
         /// <summary>
-        /// A Claim extension method that converts a claim to a datev.
+        ///     A Claim extension method that converts a claim to a datev.
         /// </summary>
-        ///
         /// <param name="claim">    The claim to act on. </param>
-        ///
         /// <returns>
-        /// Claim as a string.
+        ///     Claim as a string.
         /// </returns>
         public static string ToDatev(this Claim claim)
         {
@@ -145,13 +128,11 @@ namespace FluiTec.DatevSharp.Helpers
         }
 
         /// <summary>
-        /// A TaxationType extension method that converts a TaxationType to a datev.
+        ///     A TaxationType extension method that converts a TaxationType to a datev.
         /// </summary>
-        ///
         /// <param name="taxationType"> The taxationType to act on. </param>
-        ///
         /// <returns>
-        /// TaxationType as a string.
+        ///     TaxationType as a string.
         /// </returns>
         public static string ToDatev(this TaxationType taxationType)
         {
@@ -159,13 +140,11 @@ namespace FluiTec.DatevSharp.Helpers
         }
 
         /// <summary>
-        /// A BookingType extension method that converts a BookingType to a datev.
+        ///     A BookingType extension method that converts a BookingType to a datev.
         /// </summary>
-        ///
         /// <param name="bookingType">  The bookingType to act on. </param>
-        ///
         /// <returns>
-        /// BookingType as a string.
+        ///     BookingType as a string.
         /// </returns>
         public static string ToDatev(this BookingType bookingType)
         {
@@ -173,13 +152,11 @@ namespace FluiTec.DatevSharp.Helpers
         }
 
         /// <summary>
-        /// A Country extension method that converts a postalAddressType to a datev.
+        ///     A Country extension method that converts a postalAddressType to a datev.
         /// </summary>
-        ///
         /// <param name="country">  The country to act on. </param>
-        ///
         /// <returns>
-        /// Country as a string.
+        ///     Country as a string.
         /// </returns>
         public static string ToDatev(this Country country)
         {
@@ -187,13 +164,11 @@ namespace FluiTec.DatevSharp.Helpers
         }
 
         /// <summary>
-        /// A PostalAddressType extension method that converts a postalAddressType to a datev.
+        ///     A PostalAddressType extension method that converts a postalAddressType to a datev.
         /// </summary>
-        ///
         /// <param name="country">  The country to act on. </param>
-        ///
         /// <returns>
-        /// PostalAddressType as a string.
+        ///     PostalAddressType as a string.
         /// </returns>
         public static string ToDatev(this Country? country)
         {

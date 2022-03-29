@@ -5,14 +5,14 @@ using FluiTec.DatevSharp.Rows.Maps;
 
 namespace FluiTec.DatevSharp.Rows.AddressRow
 {
-	/// <summary>   The address row. </summary>
+    /// <summary>   The address row. </summary>
     [DatevRow(typeof(AddressMap), typeof(HeaderRow))]
-	public class AddressRow : IDatevRow
+    public class AddressRow : IDatevRow
     {
         /// <summary>   Gets or sets the account number. </summary>
         /// <value> The account number. </value>
         [DatevField(0, 1)]
-		public int AccountNumber { get; set; }
+        public int AccountNumber { get; set; }
 
         /// <summary>   Gets or sets the name enterprise. </summary>
         /// <value> The name enterprise. </value>
@@ -23,10 +23,9 @@ namespace FluiTec.DatevSharp.Rows.AddressRow
         public string Name_Enterprise { get; set; }
 
         /// <summary>   Gets or sets the name extension 1. </summary>
-        ///
         /// <value> The name extension 1. </value>
         /// <remarks>
-        /// MaxLength=50         
+        ///     MaxLength=50
         /// </remarks>
         [DatevField(2, 1)]
         public string Name_Enterprise_Extension { get; set; }
@@ -72,13 +71,12 @@ namespace FluiTec.DatevSharp.Rows.AddressRow
         public string ShortName { get; set; }
 
         /// <summary>
-        /// Gets or sets the country.
+        ///     Gets or sets the country.
         /// </summary>
-        ///
         /// <value>
-        /// The country.
+        ///     The country.
         /// </value>
-        [DatevField(8,1)]
+        [DatevField(8, 1)]
         public Country? Country { get; set; }
 
         /// <summary>   Gets or sets the salutation. </summary>
@@ -86,8 +84,8 @@ namespace FluiTec.DatevSharp.Rows.AddressRow
         /// <remarks>
         ///     MaxLength=30
         /// </remarks>
-        [DatevField(10,1)]
-		public string Salutation { get; set; }
+        [DatevField(10, 1)]
+        public string Salutation { get; set; }
 
         /// <summary>   Gets or sets the type of the postal address. </summary>
         /// <value> The type of the postal address. </value>
@@ -115,63 +113,57 @@ namespace FluiTec.DatevSharp.Rows.AddressRow
         public string PostBox { get; set; }
 
         /// <summary>   Gets or sets the zip code. </summary>
-        ///
         /// <value> The zip code. </value>
         /// <remarks>
-        /// MaxLength=10         
+        ///     MaxLength=10
         /// </remarks>
         [DatevField(17, 1)]
         public string ZipCode { get; set; }
 
         /// <summary>   Gets or sets the city. </summary>
-        ///
         /// <value> The city. </value>
         /// <remarks>
-        /// MaxLength=30         
+        ///     MaxLength=30
         /// </remarks>
         [DatevField(18, 1)]
         public string City { get; set; }
-        
+
         /// <summary>   Gets or sets the TransportAddition. </summary>
-        ///
         /// <value> The TransportAddition. </value>
         /// <remarks>
-        /// MaxLength=50         
+        ///     MaxLength=50
         /// </remarks>
-        [DatevField(20,1)]
+        [DatevField(20, 1)]
         public string TransportAddition { get; set; }
 
-		/// <summary>   Gets or sets the AddressAddition. </summary>
-		///
-		/// <value> The TransportAddition. </value>
-		/// <remarks>
-		/// MaxLength=36         
-		/// </remarks>
-		[DatevField(21, 1)]
+        /// <summary>   Gets or sets the AddressAddition. </summary>
+        /// <value> The TransportAddition. </value>
+        /// <remarks>
+        ///     MaxLength=36
+        /// </remarks>
+        [DatevField(21, 1)]
         public string AddressAddition { get; set; }
 
         /// <summary>
-        /// Gets the marker correspondence address.
+        ///     Gets the marker correspondence address.
         /// </summary>
-        ///
         /// <value>
-        /// The marker correspondence address.
+        ///     The marker correspondence address.
         /// </value>
         /// <remarks>
-        /// MaxLength=1
-        /// Only valid value = 1
+        ///     MaxLength=1
+        ///     Only valid value = 1
         /// </remarks>
-        [DatevField(25,1)]
+        [DatevField(25, 1)]
         public int MarkerCorrespondenceAddress => 1;
 
         /// <summary>
-        /// Gets the marker main banking account 1.
+        ///     Gets the marker main banking account 1.
         /// </summary>
-        ///
         /// <value>
-        /// The marker main banking account 1.
+        ///     The marker main banking account 1.
         /// </value>
-        [DatevField(48,1)]
+        [DatevField(48, 1)]
         public string MarkerMainBankingAccount1 => "1";
     }
 }

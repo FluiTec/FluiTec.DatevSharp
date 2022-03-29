@@ -17,14 +17,15 @@ public abstract class RowTest
     }
 
     /// <summary>
-    /// Gets the metadata.
+    ///     Gets the metadata.
     /// </summary>
-    ///
     /// <returns>
-    /// The metadata.
+    ///     The metadata.
     /// </returns>
-    protected DatevRowAttribute GetMetadata() =>
-        CreateRow().GetType().GetDatevMetadata() ?? throw new InvalidOperationException();
+    protected DatevRowAttribute GetMetadata()
+    {
+        return CreateRow().GetType().GetDatevMetadata() ?? throw new InvalidOperationException();
+    }
 
     [TestMethod]
     public void CanGetMetadata()

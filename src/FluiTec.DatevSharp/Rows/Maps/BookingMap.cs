@@ -4,12 +4,12 @@ using FluiTec.DatevSharp.Rows.Maps.Base;
 namespace FluiTec.DatevSharp.Rows.Maps
 {
     /// <summary>
-    /// Map of bookings.
+    ///     Map of bookings.
     /// </summary>
     public class BookingMap : ClassMap<BookingRow.BookingRow>
     {
         /// <summary>
-        /// Default constructor.
+        ///     Default constructor.
         /// </summary>
         public BookingMap()
         {

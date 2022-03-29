@@ -10,5 +10,8 @@ public class BookingCategoryTest : BaseDataCategoryTest
     {
     }
 
-    protected override DataCategory GetCategory() => DataCategories.Instance.BookingCategory;
+    protected override DataCategory GetCategory()
+    {
+        return DataCategories.Instance.BookingCategory;
+    }
 }

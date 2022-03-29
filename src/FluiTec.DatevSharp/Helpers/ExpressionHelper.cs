@@ -6,20 +6,18 @@ using System.Reflection;
 namespace FluiTec.DatevSharp.Helpers
 {
     /// <summary>
-    /// An expression helper.
+    ///     An expression helper.
     /// </summary>
     public static class ExpressionHelper
     {
         /// <summary>
-        /// Gets the members.
+        ///     Gets the members.
         /// </summary>
-        ///
         /// <typeparam name="TModel">       Type of the model. </typeparam>
         /// <typeparam name="TProperty">    Type of the property. </typeparam>
         /// <param name="expression">   The expression. </param>
-        ///
         /// <returns>
-        /// The members.
+        ///     The members.
         /// </returns>
         public static Stack<MemberInfo> GetMembers<TModel, TProperty>(Expression<Func<TModel, TProperty>> expression)
         {
@@ -29,10 +27,7 @@ namespace FluiTec.DatevSharp.Helpers
             while (true)
             {
                 var memberExpression = GetMemberExpression(currentExpression);
-                if (memberExpression == null)
-                {
-                    break;
-                }
+                if (memberExpression == null) break;
 
                 stack.Push(memberExpression.Member);
                 currentExpression = memberExpression.Expression;
@@ -42,13 +37,11 @@ namespace FluiTec.DatevSharp.Helpers
         }
 
         /// <summary>
-        /// Gets member expression.
+        ///     Gets member expression.
         /// </summary>
-        ///
         /// <param name="expression">   The expression. </param>
-        ///
         /// <returns>
-        /// The member expression.
+        ///     The member expression.
         /// </returns>
         private static MemberExpression GetMemberExpression(Expression expression)
         {
@@ -57,7 +50,7 @@ namespace FluiTec.DatevSharp.Helpers
             {
                 case ExpressionType.Convert:
                 {
-                    var body = (UnaryExpression)expression;
+                    var body = (UnaryExpression) expression;
                     memberExpression = body.Operand as MemberExpression;
                     break;
                 }
@@ -68,5 +61,5 @@ namespace FluiTec.DatevSharp.Helpers
 
             return memberExpression;
         }
-	}
+    }
 }

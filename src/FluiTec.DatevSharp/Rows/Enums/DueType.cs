@@ -1,7 +1,7 @@
 ﻿namespace FluiTec.DatevSharp.Rows.Enums
 {
     /// <summary>
-    /// Values that represent due types.
+    ///     Values that represent due types.
     /// </summary>
     public enum DueType
     {

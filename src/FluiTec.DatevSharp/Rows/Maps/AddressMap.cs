@@ -4,12 +4,12 @@ using FluiTec.DatevSharp.Rows.Maps.Base;
 namespace FluiTec.DatevSharp.Rows.Maps
 {
     /// <summary>
-    /// Map of address.
+    ///     Map of address.
     /// </summary>
     public class AddressMap : ClassMap<AddressRow.AddressRow>
     {
         /// <summary>
-        /// Default constructor.
+        ///     Default constructor.
         /// </summary>
         public AddressMap()
         {

@@ -8,8 +8,8 @@ using Newtonsoft.Json;
 
 namespace FluiTec.DatevSharp
 {
-	/// <summary>   A data categories. </summary>
-	public sealed class DataCategories
+    /// <summary>   A data categories. </summary>
+    public sealed class DataCategories
     {
         private const string BookingsName = "Bookings";
         private const string AddressName = "Addresses";
@@ -17,12 +17,14 @@ namespace FluiTec.DatevSharp
 
         // Explicit static constructor to tell C# compiler
         // not to mark type as beforefieldinit
-        static DataCategories() { }
+        static DataCategories()
+        {
+        }
 
-		/// <summary>
-		/// Constructor that prevents a default instance of this class from being created.
-		/// </summary>
-		private DataCategories()
+        /// <summary>
+        ///     Constructor that prevents a default instance of this class from being created.
+        /// </summary>
+        private DataCategories()
         {
             var asm = typeof(DataCategories).Assembly;
             using (var mapResource = asm.GetManifestResourceStream("FluiTec.DatevSharp.Formats.format_map.json"))
@@ -46,39 +48,35 @@ namespace FluiTec.DatevSharp
         }
 
         /// <summary>
-        /// Gets the instance.
+        ///     Gets the instance.
         /// </summary>
-        ///
         /// <value>
-        /// The instance.
+        ///     The instance.
         /// </value>
         // ReSharper disable once UnusedMember.Global
         public static DataCategories Instance { get; } = new DataCategories();
 
         /// <summary>
-        /// Gets or sets the category the booking belongs to.
+        ///     Gets or sets the category the booking belongs to.
         /// </summary>
-        ///
         /// <value>
-        /// The booking category.
+        ///     The booking category.
         /// </value>
         public DataCategory BookingCategory { get; }
 
         /// <summary>
-        /// Gets the category the address belongs to.
+        ///     Gets the category the address belongs to.
         /// </summary>
-        ///
         /// <value>
-        /// The address category.
+        ///     The address category.
         /// </value>
         public DataCategory AddressCategory { get; }
 
         /// <summary>
-        /// Gets the category the terms of payment belongs to.
+        ///     Gets the category the terms of payment belongs to.
         /// </summary>
-        ///
         /// <value>
-        /// The terms of payment category.
+        ///     The terms of payment category.
         /// </value>
         public DataCategory TermsOfPaymentCategory { get; }
     }

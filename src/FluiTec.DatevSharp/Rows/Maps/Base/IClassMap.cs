@@ -3,27 +3,24 @@
 namespace FluiTec.DatevSharp.Rows.Maps.Base
 {
     /// <summary>
-    /// Interface for class map.
+    ///     Interface for class map.
     /// </summary>
     public interface IClassMap
     {
         /// <summary>
-        /// Gets the members.
+        ///     Gets the members.
         /// </summary>
-        ///
         /// <value>
-        /// The members.
+        ///     The members.
         /// </value>
         List<MemberOutputMap> Members { get; }
 
         /// <summary>
-        /// Searches for the first ordinal number.
+        ///     Searches for the first ordinal number.
         /// </summary>
-        ///
         /// <param name="ordinalNumber">    The ordinal number. </param>
-        ///
         /// <returns>
-        /// The found ordinal number.
+        ///     The found ordinal number.
         /// </returns>
         MemberOutputMap FindByOrdinalNumber(int ordinalNumber);
     }

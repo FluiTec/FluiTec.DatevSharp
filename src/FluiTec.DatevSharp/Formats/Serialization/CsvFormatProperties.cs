@@ -1,124 +1,111 @@
 ﻿namespace FluiTec.DatevSharp.Formats.Serialization
 {
     /// <summary>
-    /// A CSV format properties.
+    ///     A CSV format properties.
     /// </summary>
     public class CsvFormatProperties
     {
         /// <summary>
-        /// Gets or sets the identifier of the CSV format properties.
+        ///     Gets or sets the identifier of the CSV format properties.
         /// </summary>
-        ///
         /// <value>
-        /// The identifier of the CSV format properties.
+        ///     The identifier of the CSV format properties.
         /// </value>
         public int CsvFormatPropertiesId { get; set; }
 
         /// <summary>
-        /// Gets or sets the identifier of the format.
+        ///     Gets or sets the identifier of the format.
         /// </summary>
-        ///
         /// <value>
-        /// The identifier of the format.
+        ///     The identifier of the format.
         /// </value>
         public int FormatId { get; set; }
 
         /// <summary>
-        /// Gets or sets the seperator field.
+        ///     Gets or sets the seperator field.
         /// </summary>
-        ///
         /// <value>
-        /// The seperator field.
+        ///     The seperator field.
         /// </value>
         public string SeperatorField { get; set; }
 
         /// <summary>
-        /// Gets or sets the seperator text.
+        ///     Gets or sets the seperator text.
         /// </summary>
-        ///
         /// <value>
-        /// The seperator text.
+        ///     The seperator text.
         /// </value>
         public string SeperatorText { get; set; }
 
         /// <summary>
-        /// Gets or sets the double text seperator.
+        ///     Gets or sets the double text seperator.
         /// </summary>
-        ///
         /// <value>
-        /// The double text seperator.
+        ///     The double text seperator.
         /// </value>
         public int DoubleTextSeperator { get; set; }
 
         /// <summary>
-        /// Gets or sets the layout style.
+        ///     Gets or sets the layout style.
         /// </summary>
-        ///
         /// <value>
-        /// The layout style.
+        ///     The layout style.
         /// </value>
         public string LayoutStyle { get; set; }
 
         /// <summary>
-        /// Gets or sets the alignment.
+        ///     Gets or sets the alignment.
         /// </summary>
-        ///
         /// <value>
-        /// The alignment.
+        ///     The alignment.
         /// </value>
         public string Alignment { get; set; }
 
         /// <summary>
-        /// Gets or sets the coding.
+        ///     Gets or sets the coding.
         /// </summary>
-        ///
         /// <value>
-        /// The coding.
+        ///     The coding.
         /// </value>
         public string Coding { get; set; }
 
         /// <summary>
-        /// Gets or sets the row from.
+        ///     Gets or sets the row from.
         /// </summary>
-        ///
         /// <value>
-        /// The row from.
+        ///     The row from.
         /// </value>
         public int RowFrom { get; set; }
 
         /// <summary>
-        /// Gets or sets the row to.
+        ///     Gets or sets the row to.
         /// </summary>
-        ///
         /// <value>
-        /// The row to.
+        ///     The row to.
         /// </value>
         public int RowTo { get; set; }
 
         /// <summary>
-        /// Gets or sets the header.
+        ///     Gets or sets the header.
         /// </summary>
-        ///
         /// <value>
-        /// The header.
+        ///     The header.
         /// </value>
         public int Header { get; set; }
 
         /// <summary>
-        /// Gets or sets the headline.
+        ///     Gets or sets the headline.
         /// </summary>
-        ///
         /// <value>
-        /// The headline.
+        ///     The headline.
         /// </value>
         public int Headline { get; set; }
 
         /// <summary>
-        /// Gets or sets the end line with seperator text.
+        ///     Gets or sets the end line with seperator text.
         /// </summary>
-        ///
         /// <value>
-        /// The end line with seperator text.
+        ///     The end line with seperator text.
         /// </value>
         public int EndLineWithSeperatorText { get; set; }
     }

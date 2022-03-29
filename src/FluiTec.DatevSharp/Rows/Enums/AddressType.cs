@@ -1,7 +1,7 @@
 ﻿namespace FluiTec.DatevSharp.Rows.Enums
 {
     /// <summary>
-    /// Values that represent address types.
+    ///     Values that represent address types.
     /// </summary>
     public enum AddressType
     {

@@ -1,30 +1,20 @@
 ﻿using System.Linq;
 using System.Text;
+using FluiTec.DatevSharp.Interfaces;
 
 namespace FluiTec.DatevSharp.Rows
 {
     /// <summary>
-    /// A header row.
+    ///     A header row.
     /// </summary>
-    public class HeaderRow : Interfaces.IDatevRow, Interfaces.IVersionDatevRow
+    public class HeaderRow : IDatevRow, IVersionDatevRow
     {
         /// <summary>
-        /// Converts this object to a row.
+        ///     Converts this object to a row.
         /// </summary>
-        ///
-        /// <returns>
-        /// This object as a string.
-        /// </returns>
-        public virtual string ToRow() => string.Empty;
-
-        /// <summary>
-        /// Converts this object to a row.
-        /// </summary>
-        ///
         /// <param name="version">  The version. </param>
-        ///
         /// <returns>
-        /// This object as a string.
+        ///     This object as a string.
         /// </returns>
         public string ToRow(DataCategoryVersion version)
         {
@@ -39,6 +29,17 @@ namespace FluiTec.DatevSharp.Rows
             }
 
             return sb.ToString();
+        }
+
+        /// <summary>
+        ///     Converts this object to a row.
+        /// </summary>
+        /// <returns>
+        ///     This object as a string.
+        /// </returns>
+        public virtual string ToRow()
+        {
+            return string.Empty;
         }
     }
 }

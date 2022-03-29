@@ -5,18 +5,16 @@ using FluiTec.DatevSharp.Attributes;
 namespace FluiTec.DatevSharp.Helpers
 {
     /// <summary>
-    /// A reflection helper.
+    ///     A reflection helper.
     /// </summary>
     public static class ReflectionHelper
     {
         /// <summary>
-        /// A Type extension method that gets datev metadata.
+        ///     A Type extension method that gets datev metadata.
         /// </summary>
-        ///
         /// <param name="type"> The type to act on. </param>
-        ///
         /// <returns>
-        /// The datev metadata.
+        ///     The datev metadata.
         /// </returns>
         public static DatevRowAttribute GetDatevMetadata(this Type type)
         {

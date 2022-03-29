@@ -15,7 +15,7 @@ public class DataCategoryVersionTest
 
     private void CanGetFilesOfCategory(DataCategory category)
     {
-        foreach(var version in category.Versions)
+        foreach (var version in category.Versions)
             Assert.IsNotNull(version.FormatDocument);
     }
 }

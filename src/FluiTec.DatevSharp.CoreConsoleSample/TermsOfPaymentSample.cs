@@ -4,74 +4,76 @@ using System.Text;
 using FluiTec.DatevSharp.Rows.Enums;
 using FluiTec.DatevSharp.Rows.TermsOfPaymentRow;
 
-namespace FluiTec.DatevSharp.CoreConsoleSample
+namespace FluiTec.DatevSharp.CoreConsoleSample;
+
+/// <summary>
+///     The terms of payment sample.
+/// </summary>
+public class TermsOfPaymentSample
 {
+    private static readonly DateTime StartOfBusinessYear = new(2017, 1, 1);
+    private static readonly DateTime ExportStartDate = new(2017, 2, 15);
+    private static readonly DateTime ExportEndDate = new(2017, 2, 28);
+
     /// <summary>
-    /// The terms of payment sample.
+    ///     Executes the 'sample' operation.
     /// </summary>
-    public class TermsOfPaymentSample
+    public void RunSample()
     {
-        private static readonly DateTime StartOfBusinessYear = new DateTime(2017, 1, 1);
-        private static readonly DateTime ExportStartDate = new DateTime(2017, 2, 15);
-        private static readonly DateTime ExportEndDate = new DateTime(2017, 2, 28);
+        var datev = CreateToPFile();
+        var targetFile =
+            Path.Combine(
+                Environment.GetFolderPath(Environment.SpecialFolder.Desktop, Environment.SpecialFolderOption.None),
+                datev.GetName());
 
-        /// <summary>
-        /// Executes the 'sample' operation.
-        /// </summary>
-        public void RunSample()
+        using (var sw = new StreamWriter(targetFile, false, Encoding.GetEncoding(1252)))
         {
-            var datev = CreateToPFile();
-            var targetFile =
-                Path.Combine(
-                    Environment.GetFolderPath(Environment.SpecialFolder.Desktop, Environment.SpecialFolderOption.None),
-                    datev.GetName());
+            sw.Write(datev.ToDatev());
+        }
 
-            using (var sw = new StreamWriter(targetFile, false, Encoding.GetEncoding(1252)))
+        Console.WriteLine($"Wrote to file '{targetFile}'");
+    }
+
+    /// <summary>
+    ///     Creates to p file.
+    /// </summary>
+    /// <returns>
+    ///     The new to p file.
+    /// </returns>
+    private DatevFile CreateToPFile()
+    {
+        var file = new DatevFile
+        {
+            Header = new DatevHeader
             {
-                sw.Write(datev.ToDatev());
+                DataCategory =
+                    DataCategories.Instance
+                        .TermsOfPaymentCategory, // <-- this defines we are going to export terms of payment
+                DataVersion =
+                    DataCategories.Instance.TermsOfPaymentCategory
+                        .DefaultVersion, // <-- this defines the version we're going to use (optional as setting Category sets the version)
+                StartOfBusinessYear = StartOfBusinessYear, // <-- optional, by omitting this you set the current year
+                Source = "RE", // <-- defines we're using an erp-system
+                ConsultantNumber = 1001, // <-- unique number of the consultant within the datev-organization
+                ClientNumber = 1001 // <-- your unique number of your enterprise within the consultant
             }
+        };
 
-            Console.WriteLine($"Wrote to file '{targetFile}'");
-        }
+        AddSampleToPData(file);
 
-        /// <summary>
-        /// Creates to p file.
-        /// </summary>
-        ///
-        /// <returns>
-        /// The new to p file.
-        /// </returns>
-        private DatevFile CreateToPFile()
+        return file;
+    }
+
+    private void AddSampleToPData(DatevFile file)
+    {
+        file.Rows.Add(new TermsOfPaymentRow
         {
-            var file = new DatevFile
-            {
-                Header = new DatevHeader
-                {
-                    DataCategory = DataCategories.Instance.TermsOfPaymentCategory, // <-- this defines we are going to export terms of payment
-                    DataVersion = DataCategories.Instance.TermsOfPaymentCategory.DefaultVersion, // <-- this defines the version we're going to use (optional as setting Category sets the version)
-                    StartOfBusinessYear = StartOfBusinessYear, // <-- optional, by omitting this you set the current year
-                    Source = "RE", // <-- defines we're using an erp-system
-                    ConsultantNumber = 1001, // <-- unique number of the consultant within the datev-organization
-                    ClientNumber = 1001 // <-- your unique number of your enterprise within the consultant
-                }
-            };
-
-            AddSampleToPData(file);
-
-            return file;
-        }
-
-        private void AddSampleToPData(DatevFile file)
-        {
-            file.Rows.Add(new TermsOfPaymentRow
-            {
-                Number = 20,
-                Name = "YourName",
-                CashDiscount1Days = 10,
-                CashDiscount1Percent = 2,
-                DueType = DueType.DueInDays,
-                Days = 30
-            });
-        }
+            Number = 20,
+            Name = "YourName",
+            CashDiscount1Days = 10,
+            CashDiscount1Percent = 2,
+            DueType = DueType.DueInDays,
+            Days = 30
+        });
     }
 }

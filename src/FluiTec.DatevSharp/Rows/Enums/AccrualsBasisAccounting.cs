@@ -1,7 +1,7 @@
 ﻿namespace FluiTec.DatevSharp.Rows.Enums
 {
     /// <summary>
-    /// Values that represent accruals basis accountings.
+    ///     Values that represent accruals basis accountings.
     /// </summary>
     public enum AccrualsBasisAccounting
     {

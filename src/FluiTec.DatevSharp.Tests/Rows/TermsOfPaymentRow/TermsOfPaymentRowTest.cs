@@ -6,5 +6,8 @@ namespace FluiTec.DatevSharp.Tests.Rows.TermsOfPaymentRow;
 [TestClass]
 public class TermsOfPaymentRowTest : RowTest
 {
-    public override IDatevRow CreateRow() => new DatevSharp.Rows.TermsOfPaymentRow.TermsOfPaymentRow();
+    public override IDatevRow CreateRow()
+    {
+        return new DatevSharp.Rows.TermsOfPaymentRow.TermsOfPaymentRow();
+    }
 }
