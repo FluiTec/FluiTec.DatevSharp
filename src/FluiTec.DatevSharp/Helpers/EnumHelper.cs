@@ -127,7 +127,7 @@ namespace FluiTec.DatevSharp.Helpers
         /// </returns>
         public static string ToDatev(this PostalAddressType postalAddressType)
         {
-            return GetStringValue(PostalAddressTypeType, postalAddressType.ToString());
+            return GetStringValue(PostalAddressTypeType, postalAddressType.ToString()).ToDatev();
         }
 
         /// <summary>

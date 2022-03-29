@@ -21,6 +21,7 @@ namespace FluiTec.DatevSharp.Rows.Maps
             Map(row => row.Name, row => row.Name.ToDatev());
             Map(row => row.AddressType, row => row.AddressType.ValueToDatev());
             Map(row => row.ShortName, row => row.ShortName.ToDatev());
+            Map(row => row.Country, row => row.Country.ToDatev());
             Map(row => row.Salutation, row => row.Salutation.ToDatev());
             Map(row => row.PostalAddressType, row => row.PostalAddressType.ToDatev());
             Map(row => row.Street, row => row.Street.ToDatev());

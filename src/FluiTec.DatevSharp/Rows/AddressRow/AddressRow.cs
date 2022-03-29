@@ -71,6 +71,16 @@ namespace FluiTec.DatevSharp.Rows.AddressRow
         [DatevField(7, 1)]
         public string ShortName { get; set; }
 
+        /// <summary>
+        /// Gets or sets the country.
+        /// </summary>
+        ///
+        /// <value>
+        /// The country.
+        /// </value>
+        [DatevField(8,1)]
+        public Country? Country { get; set; }
+
         /// <summary>   Gets or sets the salutation. </summary>
         /// <value> The salutation. </value>
         /// <remarks>
