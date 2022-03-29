@@ -47,7 +47,8 @@ Exports types need several changes:
 https://www.nuget.org/packages/FluiTec.DatevSharp/
 PM> Install-Package FluiTec.DatevSharp
 
-### Framework ###
+### Frameworks ###
 * NET 4.5.2
 * NET 4.6.1
 * NETSTANDARD 2.0
+* NET 6.0
