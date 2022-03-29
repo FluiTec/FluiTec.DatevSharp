@@ -141,7 +141,7 @@ namespace FluiTec.DatevSharp.Helpers
         /// </returns>
         public static string ToDatev(this Claim claim)
         {
-            return GetStringValue(ClaimType, claim.ToString());
+            return GetStringValue(ClaimType, claim.ToString()).ToDatev();
         }
 
         /// <summary>
@@ -155,7 +155,7 @@ namespace FluiTec.DatevSharp.Helpers
         /// </returns>
         public static string ToDatev(this TaxationType taxationType)
         {
-            return GetStringValue(TaxationTypeType, taxationType.ToString());
+            return GetStringValue(TaxationTypeType, taxationType.ToString()).ToDatev();
         }
 
         /// <summary>
@@ -169,7 +169,7 @@ namespace FluiTec.DatevSharp.Helpers
         /// </returns>
         public static string ToDatev(this BookingType bookingType)
         {
-            return GetStringValue(BookingTypeType, bookingType.ToString());
+            return GetStringValue(BookingTypeType, bookingType.ToString()).ToDatev();
         }
 
         /// <summary>
@@ -183,7 +183,21 @@ namespace FluiTec.DatevSharp.Helpers
         /// </returns>
         public static string ToDatev(this Country country)
         {
-            return GetStringValue(CountryType, country.ToString());
+            return GetStringValue(CountryType, country.ToString()).ToDatev();
+        }
+
+        /// <summary>
+        /// A PostalAddressType extension method that converts a postalAddressType to a datev.
+        /// </summary>
+        ///
+        /// <param name="country">  The country to act on. </param>
+        ///
+        /// <returns>
+        /// PostalAddressType as a string.
+        /// </returns>
+        public static string ToDatev(this Country? country)
+        {
+            return country == null ? "\"\"" : GetStringValue(CountryType, country.ToString()).ToDatev();
         }
 
         #endregion
