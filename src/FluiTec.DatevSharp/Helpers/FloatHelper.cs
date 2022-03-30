@@ -1,4 +1,6 @@
-﻿namespace FluiTec.DatevSharp.Helpers
+﻿using System.Globalization;
+
+namespace FluiTec.DatevSharp.Helpers
 {
     /// <summary>
     ///     A float helper.

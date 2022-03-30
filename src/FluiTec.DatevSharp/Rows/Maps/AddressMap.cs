@@ -13,6 +13,7 @@ namespace FluiTec.DatevSharp.Rows.Maps
         /// </summary>
         public AddressMap()
         {
+            // base
             Map(row => row.AccountNumber, row => row.AccountNumber.ToDatev());
             Map(row => row.Name_Enterprise, row => row.Name_Enterprise.ToDatev());
             Map(row => row.Name_Enterprise_Extension, row => row.Name_Enterprise_Extension.ToDatev());
@@ -53,7 +54,33 @@ namespace FluiTec.DatevSharp.Rows.Maps
             Map(row => row.FaxNote, row => row.FaxNote.ToDatev());
             Map(row => row.Other, row => row.Other.ToDatev());
             Map(row => row.OtherNote, row => row.OtherNote.ToDatev());
+            Map(row => row.LetterSalutation, row => row.LetterSalutation.ToDatev());
+            Map(row => row.ComplimentaryClose, row => row.ComplimentaryClose.ToDatev());
+            Map(row => row.CustomerNumber, row => row.CustomerNumber.ToDatev());
+            Map(row => row.TaxNumber, row => row.TaxNumber.ToDatev());
+            Map(row => row.Language, row => row.Language?.ValueToDatev());
+            Map(row => row.ContactPerson, row => row.ContactPerson.ToDatev());
+            Map(row => row.Representative, row => row.Representative.ToDatev());
+            Map(row => row.Referee, row => row.Referee.ToDatev());
+            Map(row => row.IsDiverse, row => row.IsDiverse.ToDatev());
+            Map(row => row.OutputTarget, row => row.OutputTarget?.ValueToDatev());
+            Map(row => row.CurrencyHandling, row => row.CurrencyHandling?.ValueToDatev());
+            Map(row => row.CreditLimit, row => row.CreditLimit.ToDatev());
+            Map(row => row.TermsOfPaymentNumber, row => row.TermsOfPaymentNumber.ToDatev());
+            Map(row => row.DebitorDueDays, row => row.DebitorDueDays.ToDatev());
+            Map(row => row.DebitorCashDiscount, row => row.DebitorCashDiscount.ToDatev());
+            Map(row => row.CreditorDueDays1, row => row.CreditorDueDays1.ToDatev());
+            Map(row => row.CreditorCashDiscount1, row => row.CreditorCashDiscount1.ToDatev());
+            Map(row => row.CreditorDueDays2, row => row.CreditorDueDays2.ToDatev());
+            Map(row => row.CreditorCashDiscount2, row => row.CreditorCashDiscount2.ToDatev());
+            Map(row => row.CreditorDueDays3, row => row.CreditorDueDays3.ToDatev());
+            Map(row => row.CreditorDueDays4, row => row.CreditorDueDays4.ToDatev());
+            Map(row => row.CreditorCashDiscount4, row => row.CreditorCashDiscount4.ToDatev());
+            Map(row => row.CreditorDueDays5, row => row.CreditorDueDays5.ToDatev());
+            Map(row => row.CreditorCashDiscount5, row => row.CreditorCashDiscount5.ToDatev());
+            Map(row => row.Admonition, row => row.Admonition?.ValueToDatev());
 
+            // bank
             Map(row => row.BankCode1, row => row.BankCode1.ToDatev());
             Map(row => row.BankName1, row => row.BankName1.ToDatev());
             Map(row => row.BankAccountNumber1, row => row.BankAccountNumber1.ToDatev());
@@ -65,7 +92,6 @@ namespace FluiTec.DatevSharp.Rows.Maps
             Map(row => row.MarkerMainBankingAccount1, row => row.MarkerMainBankingAccount1.ToDatevWrapped());
             Map(row => row.BankValidFrom1, row => row.BankValidFrom1.ToDatevDateReverse());
             Map(row => row.BankValidTill1, row => row.BankValidTill1.ToDatevDateReverse());
-
             Map(row => row.BankCode2, row => row.BankCode2.ToDatev());
             Map(row => row.BankName2, row => row.BankName2.ToDatev());
             Map(row => row.BankAccountNumber2, row => row.BankAccountNumber2.ToDatev());
@@ -77,7 +103,6 @@ namespace FluiTec.DatevSharp.Rows.Maps
             Map(row => row.MarkerMainBankingAccount2, row => row.MarkerMainBankingAccount2.ToDatevWrapped());
             Map(row => row.BankValidFrom2, row => row.BankValidFrom2.ToDatevDateReverse());
             Map(row => row.BankValidTill2, row => row.BankValidTill2.ToDatevDateReverse());
-
             Map(row => row.BankCode3, row => row.BankCode3.ToDatev());
             Map(row => row.BankName3, row => row.BankName3.ToDatev());
             Map(row => row.BankAccountNumber3, row => row.BankAccountNumber3.ToDatev());
@@ -89,7 +114,6 @@ namespace FluiTec.DatevSharp.Rows.Maps
             Map(row => row.MarkerMainBankingAccount3, row => row.MarkerMainBankingAccount3.ToDatevWrapped());
             Map(row => row.BankValidFrom3, row => row.BankValidFrom3.ToDatevDateReverse());
             Map(row => row.BankValidTill3, row => row.BankValidTill3.ToDatevDateReverse());
-
             Map(row => row.BankCode4, row => row.BankCode4.ToDatev());
             Map(row => row.BankName4, row => row.BankName4.ToDatev());
             Map(row => row.BankAccountNumber4, row => row.BankAccountNumber4.ToDatev());
@@ -101,7 +125,6 @@ namespace FluiTec.DatevSharp.Rows.Maps
             Map(row => row.MarkerMainBankingAccount4, row => row.MarkerMainBankingAccount4.ToDatevWrapped());
             Map(row => row.BankValidFrom4, row => row.BankValidFrom4.ToDatevDateReverse());
             Map(row => row.BankValidTill4, row => row.BankValidTill4.ToDatevDateReverse());
-
             Map(row => row.BankCode5, row => row.BankCode5.ToDatev());
             Map(row => row.BankName5, row => row.BankName5.ToDatev());
             Map(row => row.BankAccountNumber5, row => row.BankAccountNumber5.ToDatev());
@@ -113,6 +136,7 @@ namespace FluiTec.DatevSharp.Rows.Maps
             Map(row => row.MarkerMainBankingAccount5, row => row.MarkerMainBankingAccount5.ToDatevWrapped());
             Map(row => row.BankValidFrom5, row => row.BankValidFrom5.ToDatevDateReverse());
             Map(row => row.BankValidTill5, row => row.BankValidTill5.ToDatevDateReverse());
+            Map(row => row.BusinessPartnerBank, row => row.BusinessPartnerBank.ToDatev());
         }
     }
 }

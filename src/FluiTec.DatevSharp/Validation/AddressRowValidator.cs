@@ -1,5 +1,4 @@
-﻿using System.Data;
-using System.Threading;
+﻿using System.Threading;
 using System.Threading.Tasks;
 using FluentValidation;
 using FluentValidation.Results;
@@ -15,6 +14,7 @@ namespace FluiTec.DatevSharp.Validation
         /// <param name="accountLength">    Length of the account. </param>
         public AddressRowValidator(int accountLength)
         {
+            // base
             RuleFor(address => address.AccountNumber.ToString()).NotNull().Length(accountLength).NotEmpty();
             RuleFor(address => address.Salutation).Length(0, 30);
             RuleFor(address => address.DivergentSalutation).Length(0, 30);
@@ -46,41 +46,46 @@ namespace FluiTec.DatevSharp.Validation
             RuleFor(address => address.FaxNote).Length(0, 40);
             RuleFor(address => address.Other).Length(0, 60);
             RuleFor(address => address.OtherNote).Length(0, 40);
+            RuleFor(address => address.LetterSalutation).Length(0, 100);
+            RuleFor(address => address.ComplimentaryClose).Length(0, 50);
+            RuleFor(address => address.CustomerNumber).Length(0, 15);
+            RuleFor(address => address.TaxNumber).Length(0, 20);
+            RuleFor(address => address.ContactPerson).Length(0, 40);
+            RuleFor(address => address.Representative).Length(0, 40);
+            RuleFor(address => address.Referee).Length(0, 40);
 
+            // bank
             RuleFor(address => address.BankCode1).Length(0, 8);
             RuleFor(address => address.BankName1).Length(0, 30);
             RuleFor(address => address.BankAccountNumber1).Length(0, 10);
             RuleFor(address => address.Iban1).Length(0, 34);
             RuleFor(address => address.Swift1).Length(0, 11);
             RuleFor(address => address.DivergentAccountHolder1).Length(0, 70);
-
             RuleFor(address => address.BankCode2).Length(0, 8);
             RuleFor(address => address.BankName2).Length(0, 30);
             RuleFor(address => address.BankAccountNumber2).Length(0, 10);
             RuleFor(address => address.Iban2).Length(0, 34);
             RuleFor(address => address.Swift2).Length(0, 11);
             RuleFor(address => address.DivergentAccountHolder2).Length(0, 70);
-
             RuleFor(address => address.BankCode3).Length(0, 8);
             RuleFor(address => address.BankName3).Length(0, 30);
             RuleFor(address => address.BankAccountNumber3).Length(0, 10);
             RuleFor(address => address.Iban3).Length(0, 34);
             RuleFor(address => address.Swift3).Length(0, 11);
             RuleFor(address => address.DivergentAccountHolder3).Length(0, 70);
-
             RuleFor(address => address.BankCode4).Length(0, 8);
             RuleFor(address => address.BankName4).Length(0, 30);
             RuleFor(address => address.BankAccountNumber4).Length(0, 10);
             RuleFor(address => address.Iban4).Length(0, 34);
             RuleFor(address => address.Swift4).Length(0, 11);
             RuleFor(address => address.DivergentAccountHolder4).Length(0, 70);
-
             RuleFor(address => address.BankCode5).Length(0, 8);
             RuleFor(address => address.BankName5).Length(0, 30);
             RuleFor(address => address.BankAccountNumber5).Length(0, 10);
             RuleFor(address => address.Iban5).Length(0, 34);
             RuleFor(address => address.Swift5).Length(0, 11);
             RuleFor(address => address.DivergentAccountHolder5).Length(0, 70);
+            RuleFor(address => address.BusinessPartnerBank).Length(0, 3);
         }
 
         /// <summary>   Validates the specified instance. </summary>

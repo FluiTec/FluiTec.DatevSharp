@@ -8,6 +8,6 @@ public class AddressRowTest : RowTest
 {
     public override IDatevRow CreateRow()
     {
-        return new DatevSharp.Rows.AddressRow.AddressRow();
+        return new DatevSharp.Rows.AddressRow.AddressBaseRow();
     }
 }

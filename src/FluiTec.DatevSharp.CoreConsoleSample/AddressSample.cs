@@ -61,7 +61,7 @@ public class AddressSample
     // add sample booking data to our file
     private static void AddSampleAddressData(DatevFile file)
     {
-        file.Rows.Add(new AddressRow
+        file.Rows.Add(new AddressBaseRow
         {
             AccountNumber = 10001,
             Name_Enterprise = "Möbel Mustermann",

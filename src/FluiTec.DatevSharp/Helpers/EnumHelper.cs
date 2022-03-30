@@ -37,7 +37,6 @@ namespace FluiTec.DatevSharp.Helpers
         private static readonly Type TaxationTypeType = typeof(TaxationType);
         private static readonly Type BookingTypeType = typeof(BookingType);
         private static readonly Type CountryType = typeof(Country);
-        private static readonly Type AccrualsBasisAccountingType = typeof(AccrualsBasisAccounting);
 
         #endregion
 
@@ -89,6 +88,62 @@ namespace FluiTec.DatevSharp.Helpers
         public static string ValueToDatev(this CashDiscountType cashDiscountType)
         {
             return Convert.ToInt32(cashDiscountType).ToString();
+        }
+
+        /// <summary>
+        /// An Language extension method that value to datev.
+        /// </summary>
+        ///
+        /// <param name="language"> The language to act on. </param>
+        ///
+        /// <returns>
+        /// A string.
+        /// </returns>
+        public static string ValueToDatev(this Language language)
+        {
+            return Convert.ToInt32(language).ToString();
+        }
+
+        /// <summary>
+        /// An OutputTarget extension method that value to datev.
+        /// </summary>
+        ///
+        /// <param name="outputTarget"> The outputTarget to act on. </param>
+        ///
+        /// <returns>
+        /// A string.
+        /// </returns>
+        public static string ValueToDatev(this OutputTarget outputTarget)
+        {
+            return Convert.ToInt32(outputTarget).ToString();
+        }
+
+        /// <summary>
+        /// An CurrencyHandling extension method that value to datev.
+        /// </summary>
+        ///
+        /// <param name="currencyHandling"> The currencyHandling to act on. </param>
+        ///
+        /// <returns>
+        /// A string.
+        /// </returns>
+        public static string ValueToDatev(this CurrencyHandling currencyHandling)
+        {
+            return Convert.ToInt32(currencyHandling).ToString();
+        }
+
+        /// <summary>
+        /// An Admonition extension method that value to datev.
+        /// </summary>
+        ///
+        /// <param name="admonition">   The admonition to act on. </param>
+        ///
+        /// <returns>
+        /// A string.
+        /// </returns>
+        public static string ValueToDatev(this Admonition admonition)
+        {
+            return Convert.ToInt32(admonition).ToString();
         }
 
         /// <summary>
