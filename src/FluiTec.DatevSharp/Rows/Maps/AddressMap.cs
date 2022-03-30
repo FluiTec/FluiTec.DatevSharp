@@ -20,7 +20,7 @@ namespace FluiTec.DatevSharp.Rows.Maps
             Map(row => row.Name_Person, row => row.Name_Person.ToDatev());
             Map(row => row.FirstName_Person, row => row.FirstName_Person.ToDatev());
             Map(row => row.Name, row => row.Name.ToDatev());
-            Map(row => row.AddressType, row => row.AddressType.ValueToDatev());
+            Map(row => row.AddressType, row => row.AddressType.ToDatev());
             Map(row => row.ShortName, row => row.ShortName.ToDatev());
             Map(row => row.EuCountry, row => row.EuCountry.ToDatev());
             Map(row => row.Country, row => row.Country.ToDatev());
@@ -58,13 +58,13 @@ namespace FluiTec.DatevSharp.Rows.Maps
             Map(row => row.ComplimentaryClose, row => row.ComplimentaryClose.ToDatev());
             Map(row => row.CustomerNumber, row => row.CustomerNumber.ToDatev());
             Map(row => row.TaxNumber, row => row.TaxNumber.ToDatev());
-            Map(row => row.Language, row => row.Language?.ValueToDatev());
+            Map(row => row.Language, row => row.Language?.ToDatev());
             Map(row => row.ContactPerson, row => row.ContactPerson.ToDatev());
             Map(row => row.Representative, row => row.Representative.ToDatev());
             Map(row => row.Referee, row => row.Referee.ToDatev());
             Map(row => row.IsDiverse, row => row.IsDiverse.ToDatev());
-            Map(row => row.OutputTarget, row => row.OutputTarget?.ValueToDatev());
-            Map(row => row.CurrencyHandling, row => row.CurrencyHandling?.ValueToDatev());
+            Map(row => row.OutputTarget, row => row.OutputTarget?.ToDatev());
+            Map(row => row.CurrencyHandling, row => row.CurrencyHandling?.ToDatev());
             Map(row => row.CreditLimit, row => row.CreditLimit.ToDatev());
             Map(row => row.TermsOfPaymentNumber, row => row.TermsOfPaymentNumber.ToDatev());
             Map(row => row.DebitorDueDays, row => row.DebitorDueDays.ToDatev());
@@ -78,7 +78,7 @@ namespace FluiTec.DatevSharp.Rows.Maps
             Map(row => row.CreditorCashDiscount4, row => row.CreditorCashDiscount4.ToDatev());
             Map(row => row.CreditorDueDays5, row => row.CreditorDueDays5.ToDatev());
             Map(row => row.CreditorCashDiscount5, row => row.CreditorCashDiscount5.ToDatev());
-            Map(row => row.Admonition, row => row.Admonition?.ValueToDatev());
+            Map(row => row.Admonition, row => row.Admonition?.ToDatev());
 
             // bank
             Map(row => row.BankCode1, row => row.BankCode1.ToDatev());

@@ -49,7 +49,7 @@ namespace FluiTec.DatevSharp.Helpers
         /// <returns>
         ///     A string.
         /// </returns>
-        public static string ValueToDatev(this AddressType addressType)
+        public static string ToDatev(this AddressType addressType)
         {
             return Convert.ToInt32(addressType).ToString().ToDatev();
         }
@@ -61,7 +61,7 @@ namespace FluiTec.DatevSharp.Helpers
         /// <returns>
         ///     A string.
         /// </returns>
-        public static string ValueToDatev(this DueType dueType)
+        public static string ToDatev(this DueType dueType)
         {
             return Convert.ToInt32(dueType).ToString();
         }
@@ -73,7 +73,7 @@ namespace FluiTec.DatevSharp.Helpers
         /// <returns>
         ///     A string.
         /// </returns>
-        public static string ValueToDatev(this PaymentType paymentType)
+        public static string ToDatev(this PaymentType paymentType)
         {
             return Convert.ToInt32(paymentType).ToString();
         }
@@ -85,7 +85,7 @@ namespace FluiTec.DatevSharp.Helpers
         /// <returns>
         ///     A string.
         /// </returns>
-        public static string ValueToDatev(this CashDiscountType cashDiscountType)
+        public static string ToDatev(this CashDiscountType cashDiscountType)
         {
             return Convert.ToInt32(cashDiscountType).ToString();
         }
@@ -99,7 +99,7 @@ namespace FluiTec.DatevSharp.Helpers
         /// <returns>
         /// A string.
         /// </returns>
-        public static string ValueToDatev(this Language language)
+        public static string ToDatev(this Language language)
         {
             return Convert.ToInt32(language).ToString();
         }
@@ -113,7 +113,7 @@ namespace FluiTec.DatevSharp.Helpers
         /// <returns>
         /// A string.
         /// </returns>
-        public static string ValueToDatev(this OutputTarget outputTarget)
+        public static string ToDatev(this OutputTarget outputTarget)
         {
             return Convert.ToInt32(outputTarget).ToString();
         }
@@ -127,7 +127,7 @@ namespace FluiTec.DatevSharp.Helpers
         /// <returns>
         /// A string.
         /// </returns>
-        public static string ValueToDatev(this CurrencyHandling currencyHandling)
+        public static string ToDatev(this CurrencyHandling currencyHandling)
         {
             return Convert.ToInt32(currencyHandling).ToString();
         }
@@ -141,7 +141,7 @@ namespace FluiTec.DatevSharp.Helpers
         /// <returns>
         /// A string.
         /// </returns>
-        public static string ValueToDatev(this Admonition admonition)
+        public static string ToDatev(this Admonition admonition)
         {
             return Convert.ToInt32(admonition).ToString();
         }
@@ -153,7 +153,7 @@ namespace FluiTec.DatevSharp.Helpers
         /// <returns>
         ///     A string.
         /// </returns>
-        public static string ValueToDatev(this AccrualsBasisAccounting accrualsBasisAccounting)
+        public static string ToDatev(this AccrualsBasisAccounting accrualsBasisAccounting)
         {
             return Convert.ToInt32(accrualsBasisAccounting).ToString().ToDatev();
         }

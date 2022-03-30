@@ -34,8 +34,8 @@ namespace FluiTec.DatevSharp.Rows.Maps
             Map(row => row.Circumstances, row => row.Circumstances.ToDatev());
             Map(row => row.InterestBlock, row => row.InterestBlock.ToDatev());
             Map(row => row.DocumentLink, row => row.DocumentLink.ToDatev());
-            Map(row => row.PaymentType, row => row.PaymentType.ValueToDatev());
-            Map(row => row.CashDiscountType, row => row.CashDiscountType.ValueToDatev());
+            Map(row => row.PaymentType, row => row.PaymentType.ToDatev());
+            Map(row => row.CashDiscountType, row => row.CashDiscountType.ToDatev());
             Map(row => row.BookingType, row => row.BookingType.ToDatev());
             Map(row => row.Source, row => row.Source.ToDatev());
             Map(row => row.CashDiscountBlock, row => row.CashDiscountBlock.ToDatev());
@@ -47,7 +47,7 @@ namespace FluiTec.DatevSharp.Rows.Maps
             Map(row => row.TaxRate, row => row.TaxRate.ToDatev());
             Map(row => row.Country, row => row.Country.ToDatev());
             Map(row => row.SettlementReference, row => row.SettlementReference.ToDatev());
-            Map(row => row.AccrualsBasisAccounting, row => row.AccrualsBasisAccounting?.ValueToDatev());
+            Map(row => row.AccrualsBasisAccounting, row => row.AccrualsBasisAccounting?.ToDatev());
             Map(row => row.StateCodeAndTaxId, row => row.StateCodeAndTaxId.ToDatev());
             Map(row => row.EuTaxRate, row => row.EuTaxRate.ToDatev());
 
