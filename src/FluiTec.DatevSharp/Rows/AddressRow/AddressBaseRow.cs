@@ -1186,5 +1186,115 @@ namespace FluiTec.DatevSharp.Rows.AddressRow
         /// </value>
         [DatevField(231,3)]
         public int? LinkedDebitAccountNumber { get; set; }
+
+        /// <summary>
+        /// Gets or sets the Date/Time of the admonition block till.
+        /// </summary>
+        ///
+        /// <value>
+        /// The admonition block till.
+        /// </value>
+        [DatevField(232,4)]
+        public DateTime? AdmonitionBlockTill { get; set; }
+
+        /// <summary>
+        /// Gets or sets the Date/Time of the debit advice block till.
+        /// </summary>
+        ///
+        /// <value>
+        /// The debit advice block till.
+        /// </value>
+        [DatevField(233,4)]
+        public DateTime? DebitAdviceBlockTill { get; set; }
+
+        /// <summary>
+        /// Gets or sets the Date/Time of the payment block till.
+        /// </summary>
+        ///
+        /// <value>
+        /// The payment block till.
+        /// </value>
+        [DatevField(234,4)]
+        public DateTime? PaymentBlockTill { get; set; }
+
+        /// <summary>
+        /// Gets or sets the dues calculation.
+        /// </summary>
+        ///
+        /// <value>
+        /// The dues calculation.
+        /// </value>
+        [DatevField(235,4)]
+        public bool? DuesCalculation { get; set; }
+
+        /// <summary>
+        /// Gets or sets the admonition dues 1.
+        /// </summary>
+        ///
+        /// <value>
+        /// The admonition dues 1.
+        /// </value>
+        [DatevField(236,4)]
+        public decimal? AdmonitionDues1 { get; set; }
+
+        /// <summary>
+        /// Gets or sets the admonition dues 2.
+        /// </summary>
+        ///
+        /// <value>
+        /// The admonition dues 2.
+        /// </value>
+        [DatevField(237,4)]
+        public decimal? AdmonitionDues2 { get; set; }
+
+        /// <summary>
+        /// Gets or sets the admonition dues 3.
+        /// </summary>
+        ///
+        /// <value>
+        /// The admonition dues 3.
+        /// </value>
+        [DatevField(238,4)]
+        public decimal? AdmonitionDues3 { get; set; }
+
+        /// <summary>
+        /// Gets or sets the delay dues calculation.
+        /// </summary>
+        ///
+        /// <value>
+        /// The delay dues calculation.
+        /// </value>
+        [DatevField(239,4)]
+        public bool? DelayDuesCalculation { get; set; }
+
+        /// <summary>
+        /// Gets or sets the delay dues 1.
+        /// </summary>
+        ///
+        /// <value>
+        /// The delay dues 1.
+        /// </value>
+        [DatevField(240,4)]
+        public decimal? DelayDues1 { get; set; }
+
+        /// <summary>
+        /// Gets or sets the delay dues 2.
+        /// </summary>
+        ///
+        /// <value>
+        /// The delay dues 2.
+        /// </value>
+        [DatevField(241,4)]
+        public decimal? DelayDues2 { get; set; }
+
+        /// <summary>
+        /// Gets or sets the delay dues 3.
+        /// </summary>
+        ///
+        /// <value>
+        /// The delay dues 3.
+        /// </value>
+        [DatevField(242,4)]
+        public decimal? DelayDues3 { get; set; }
     }
 }

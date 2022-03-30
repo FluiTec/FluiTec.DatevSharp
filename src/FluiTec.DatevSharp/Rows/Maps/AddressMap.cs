@@ -135,6 +135,17 @@ namespace FluiTec.DatevSharp.Rows.Maps
             Map(row => row.SepaMandateReference9, row => row.SepaMandateReference9.ToDatev());
             Map(row => row.SepaMandateReference10, row => row.SepaMandateReference10.ToDatev());
             Map(row => row.LinkedDebitAccountNumber, row => row.LinkedDebitAccountNumber.ToDatev());
+            Map(row => row.AdmonitionBlockTill, row => row.AdmonitionBlockTill.ToDatevDateReverse());
+            Map(row => row.DebitAdviceBlockTill, row => row.DebitAdviceBlockTill.ToDatevDateReverse());
+            Map(row => row.PaymentBlockTill, row => row.PaymentBlockTill.ToDatevDateReverse());
+            Map(row => row.DuesCalculation, row => row.DuesCalculation.ToDatev());
+            Map(row => row.AdmonitionDues1, row => row.AdmonitionDues1.ToDatev());
+            Map(row => row.AdmonitionDues2, row => row.AdmonitionDues2.ToDatev());
+            Map(row => row.AdmonitionDues3, row => row.AdmonitionDues3.ToDatev());
+            Map(row => row.DelayDuesCalculation, row => row.DelayDuesCalculation.ToDatev());
+            Map(row => row.DelayDues1, row => row.DelayDues1.ToDatev());
+            Map(row => row.DelayDues2, row => row.DelayDues2.ToDatev());
+            Map(row => row.DelayDues3, row => row.DelayDues3.ToDatev());
 
             // bank
             Map(row => row.BankCode1, row => row.BankCode1.ToDatev());
