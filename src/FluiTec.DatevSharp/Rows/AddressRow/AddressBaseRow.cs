@@ -1296,5 +1296,115 @@ namespace FluiTec.DatevSharp.Rows.AddressRow
         /// </value>
         [DatevField(242,4)]
         public decimal? DelayDues3 { get; set; }
+
+        /// <summary>
+        /// Gets or sets the name of the divergent search.
+        /// </summary>
+        ///
+        /// <value>
+        /// The name of the divergent search.
+        /// </value>
+        [DatevField(243,5)]
+        public string DivergentSearchName { get; set; }
+
+        /// <summary>
+        /// Gets or sets the status.
+        /// </summary>
+        ///
+        /// <value>
+        /// The status.
+        /// </value>
+        [DatevField(244,5)]
+        public bool? Status { get; set; }
+
+        /// <summary>
+        /// Gets or sets the individual correspondence address changed.
+        /// </summary>
+        ///
+        /// <value>
+        /// The individual correspondence address changed.
+        /// </value>
+        [DatevField(245,5)]
+        public bool? IndividualCorrespondenceAddressChanged { get; set; }
+
+        /// <summary>
+        /// Gets or sets the individual correspondence address.
+        /// </summary>
+        ///
+        /// <value>
+        /// The individual correspondence address.
+        /// </value>
+        [DatevField(246,5)]
+        public string IndividualCorrespondenceAddress { get; set; }
+
+        /// <summary>
+        /// Gets or sets the individual billing address changed.
+        /// </summary>
+        ///
+        /// <value>
+        /// The individual billing address changed.
+        /// </value>
+        [DatevField(247, 5)]
+        public bool? IndividualBillingAddressChanged { get; set; }
+
+        /// <summary>
+        /// Gets or sets the individual billing address.
+        /// </summary>
+        ///
+        /// <value>
+        /// The individual billing address.
+        /// </value>
+        [DatevField(248, 5)]
+        public string IndividualBillingAddress { get; set; }
+
+        /// <summary>
+        /// Gets or sets the dead line calculation.
+        /// </summary>
+        ///
+        /// <value>
+        /// The dead line calculation.
+        /// </value>
+        [DatevField(249,5)]
+        public bool? DeadLineCalculation { get; set; }
+
+        /// <summary>
+        /// Gets or sets the admonition 1 deadline days.
+        /// </summary>
+        ///
+        /// <value>
+        /// The admonition 1 deadline days.
+        /// </value>
+        [DatevField(250,5)]
+        public int? Admonition1DeadlineDays { get; set; }
+
+        /// <summary>
+        /// Gets or sets the admonition 2 deadline days.
+        /// </summary>
+        ///
+        /// <value>
+        /// The admonition 2 deadline days.
+        /// </value>
+        [DatevField(251,5)]
+        public int? Admonition2DeadlineDays { get; set; }
+
+        /// <summary>
+        /// Gets or sets the admonition 3 deadline days.
+        /// </summary>
+        ///
+        /// <value>
+        /// The admonition 3 deadline days.
+        /// </value>
+        [DatevField(252,5)]
+        public int? Admonition3DeadlineDays { get; set; }
+
+        /// <summary>
+        /// Gets or sets the final deadline days.
+        /// </summary>
+        ///
+        /// <value>
+        /// The final deadline days.
+        /// </value>
+        [DatevField(253,5)]
+        public int? FinalDeadlineDays { get; set; }
     }
 }

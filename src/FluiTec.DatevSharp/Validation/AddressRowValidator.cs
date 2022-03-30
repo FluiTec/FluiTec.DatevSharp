@@ -89,6 +89,9 @@ namespace FluiTec.DatevSharp.Validation
             RuleFor(address => address.SepaMandateReference8).Length(0, 35);
             RuleFor(address => address.SepaMandateReference9).Length(0, 35);
             RuleFor(address => address.SepaMandateReference10).Length(0, 35);
+            RuleFor(address => address.DivergentSearchName).Length(0, 50);
+            RuleFor(address => address.IndividualCorrespondenceAddress).Length(0, 306);
+            RuleFor(address => address.IndividualBillingAddress).Length(0, 306);
 
             // bank
             RuleFor(address => address.BankCode1).Length(0, 8);

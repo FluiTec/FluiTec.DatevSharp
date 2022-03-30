@@ -146,6 +146,17 @@ namespace FluiTec.DatevSharp.Rows.Maps
             Map(row => row.DelayDues1, row => row.DelayDues1.ToDatev());
             Map(row => row.DelayDues2, row => row.DelayDues2.ToDatev());
             Map(row => row.DelayDues3, row => row.DelayDues3.ToDatev());
+            Map(row => row.DivergentSearchName, row => row.DivergentSearchName.ToDatev());
+            Map(row => row.Status, row => row.Status.ToDatev());
+            Map(row => row.IndividualCorrespondenceAddressChanged, row => row.IndividualCorrespondenceAddressChanged.ToDatev());
+            Map(row => row.IndividualCorrespondenceAddress, row => row.IndividualCorrespondenceAddress.ToDatev());
+            Map(row => row.IndividualBillingAddressChanged, row => row.IndividualBillingAddressChanged.ToDatev());
+            Map(row => row.IndividualBillingAddress, row => row.IndividualBillingAddress.ToDatev());
+            Map(row => row.DeadLineCalculation, row => row.DeadLineCalculation.ToDatev());
+            Map(row => row.Admonition1DeadlineDays, row => row.Admonition1DeadlineDays.ToDatev());
+            Map(row => row.Admonition2DeadlineDays, row => row.Admonition2DeadlineDays.ToDatev());
+            Map(row => row.Admonition3DeadlineDays, row => row.Admonition3DeadlineDays.ToDatev());
+            Map(row => row.FinalDeadlineDays, row => row.FinalDeadlineDays.ToDatev());
 
             // bank
             Map(row => row.BankCode1, row => row.BankCode1.ToDatev());
