@@ -1066,5 +1066,125 @@ namespace FluiTec.DatevSharp.Rows.AddressRow
         /// </value>
         [DatevField(219,2)]
         public string ExternalAccountNumber { get; set; }
+
+        /// <summary>
+        /// Gets or sets the insolvent.
+        /// </summary>
+        ///
+        /// <value>
+        /// The insolvent.
+        /// </value>
+        [DatevField(220,3)]
+        public bool? Insolvent { get; set; }
+
+        /// <summary>
+        /// Gets or sets the sepa mandate reference 1.
+        /// </summary>
+        ///
+        /// <value>
+        /// The sepa mandate reference 1.
+        /// </value>
+        [DatevField(221,3)]
+        public string SepaMandateReference1 { get; set; }
+
+        /// <summary>
+        /// Gets or sets the sepa mandate reference 2.
+        /// </summary>
+        ///
+        /// <value>
+        /// The sepa mandate reference 2.
+        /// </value>
+        [DatevField(222,3)]
+        public string SepaMandateReference2 { get; set; }
+
+        /// <summary>
+        /// Gets or sets the sepa mandate reference 3.
+        /// </summary>
+        ///
+        /// <value>
+        /// The sepa mandate reference 3.
+        /// </value>
+        [DatevField(223,3)]
+        public string SepaMandateReference3 { get; set; }
+
+        /// <summary>
+        /// Gets or sets the sepa mandate reference 4.
+        /// </summary>
+        ///
+        /// <value>
+        /// The sepa mandate reference 4.
+        /// </value>
+        [DatevField(224,3)]
+        public string SepaMandateReference4 { get; set; }
+
+        /// <summary>
+        /// Gets or sets the sepa mandate reference 5.
+        /// </summary>
+        ///
+        /// <value>
+        /// The sepa mandate reference 5.
+        /// </value>
+        [DatevField(225,3)]
+        public string SepaMandateReference5 { get; set; }
+
+        /// <summary>
+        /// Gets or sets the sepa mandate reference 6.
+        /// </summary>
+        ///
+        /// <value>
+        /// The sepa mandate reference 6.
+        /// </value>
+        [DatevField(226,3)]
+        public string SepaMandateReference6 { get; set; }
+
+        /// <summary>
+        /// Gets or sets the sepa mandate reference 7.
+        /// </summary>
+        ///
+        /// <value>
+        /// The sepa mandate reference 7.
+        /// </value>
+        [DatevField(227,3)]
+        public string SepaMandateReference7 { get; set; }
+
+        /// <summary>
+        /// Gets or sets the sepa mandate reference 8.
+        /// </summary>
+        ///
+        /// <value>
+        /// The sepa mandate reference 8.
+        /// </value>
+        [DatevField(228,3)]
+        public string SepaMandateReference8 { get; set; }
+
+        /// <summary>
+        /// Gets or sets the sepa mandate reference 9.
+        /// </summary>
+        ///
+        /// <value>
+        /// The sepa mandate reference 9.
+        /// </value>
+        [DatevField(229,3)]
+        public string SepaMandateReference9 { get; set; }
+
+        /// <summary>
+        /// Gets or sets the sepa mandate reference 10.
+        /// </summary>
+        ///
+        /// <value>
+        /// The sepa mandate reference 10.
+        /// </value>
+        [DatevField(230,3)]
+        public string SepaMandateReference10 { get; set; }
+
+        /// <summary>
+        /// Gets or sets the linked debit account number.
+        /// </summary>
+        ///
+        /// <value>
+        /// The linked debit account number.
+        /// </value>
+        [DatevField(231,3)]
+        public int? LinkedDebitAccountNumber { get; set; }
     }
 }

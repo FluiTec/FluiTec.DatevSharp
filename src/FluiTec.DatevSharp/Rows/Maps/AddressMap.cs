@@ -123,6 +123,18 @@ namespace FluiTec.DatevSharp.Rows.Maps
             Map(row => row.BillingValidFrom, row => row.BillingValidFrom.ToDatevDateReverse());
             Map(row => row.BillingValidTill, row => row.BillingValidTill.ToDatevDateReverse());
             Map(row => row.ExternalAccountNumber, row => row.ExternalAccountNumber.ToDatev());
+            Map(row => row.Insolvent, row => row.Insolvent.ToDatev());
+            Map(row => row.SepaMandateReference1, row => row.SepaMandateReference1.ToDatev());
+            Map(row => row.SepaMandateReference2, row => row.SepaMandateReference2.ToDatev());
+            Map(row => row.SepaMandateReference3, row => row.SepaMandateReference3.ToDatev());
+            Map(row => row.SepaMandateReference4, row => row.SepaMandateReference4.ToDatev());
+            Map(row => row.SepaMandateReference5, row => row.SepaMandateReference5.ToDatev());
+            Map(row => row.SepaMandateReference6, row => row.SepaMandateReference6.ToDatev());
+            Map(row => row.SepaMandateReference7, row => row.SepaMandateReference7.ToDatev());
+            Map(row => row.SepaMandateReference8, row => row.SepaMandateReference8.ToDatev());
+            Map(row => row.SepaMandateReference9, row => row.SepaMandateReference9.ToDatev());
+            Map(row => row.SepaMandateReference10, row => row.SepaMandateReference10.ToDatev());
+            Map(row => row.LinkedDebitAccountNumber, row => row.LinkedDebitAccountNumber.ToDatev());
 
             // bank
             Map(row => row.BankCode1, row => row.BankCode1.ToDatev());

@@ -79,6 +79,16 @@ namespace FluiTec.DatevSharp.Validation
             RuleFor(address => address.BillingDeliveryDirective1).Length(0, 50);
             RuleFor(address => address.BillingDeliveryDirective1).Length(0, 36);
             RuleFor(address => address.ExternalAccountNumber).Length(0, 15);
+            RuleFor(address => address.SepaMandateReference1).Length(0, 35);
+            RuleFor(address => address.SepaMandateReference2).Length(0, 35);
+            RuleFor(address => address.SepaMandateReference3).Length(0, 35);
+            RuleFor(address => address.SepaMandateReference4).Length(0, 35);
+            RuleFor(address => address.SepaMandateReference5).Length(0, 35);
+            RuleFor(address => address.SepaMandateReference6).Length(0, 35);
+            RuleFor(address => address.SepaMandateReference7).Length(0, 35);
+            RuleFor(address => address.SepaMandateReference8).Length(0, 35);
+            RuleFor(address => address.SepaMandateReference9).Length(0, 35);
+            RuleFor(address => address.SepaMandateReference10).Length(0, 35);
 
             // bank
             RuleFor(address => address.BankCode1).Length(0, 8);
