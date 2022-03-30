@@ -30,6 +30,45 @@ namespace FluiTec.DatevSharp.Validation
             RuleFor(top => top.Days)
                 .Must(days => days == null || days > 0 && days < 999)
                 .WithMessage("Days must be NULL OR >0 and <max!");
+
+            RuleFor(top => top.Period1BillingDay)
+                .Must(d => d == null || d > 0 && d < 32)
+                .WithMessage("Period1BillingDay must be null or 1-31!");
+            RuleFor(top => top.Period1CashDiscount1Day)
+                .Must(d => d == null || d > 0 && d < 32)
+                .WithMessage("Period1CashDiscount1Day must be null or 1-31!");
+            RuleFor(top => top.Period1CashDiscount2Day)
+                .Must(d => d == null || d > 0 && d < 32)
+                .WithMessage("Period1CashDiscount2Day must be null or 1-31!");
+            RuleFor(top => top.Period1DueDay)
+                .Must(d => d == null || d > 0 && d < 32)
+                .WithMessage("Period1DueDay must be null or 1-31!");
+
+            RuleFor(top => top.Period2BillingDay)
+                .Must(d => d == null || d > 0 && d < 32)
+                .WithMessage("Period2BillingDay must be null or 1-31!");
+            RuleFor(top => top.Period2CashDiscount1Day)
+                .Must(d => d == null || d > 0 && d < 32)
+                .WithMessage("Period2CashDiscount1Day must be null or 1-31!");
+            RuleFor(top => top.Period2CashDiscount2Day)
+                .Must(d => d == null || d > 0 && d < 32)
+                .WithMessage("Period2CashDiscount2Day must be null or 1-31!");
+            RuleFor(top => top.Period2DueDay)
+                .Must(d => d == null || d > 0 && d < 32)
+                .WithMessage("Period2DueDay must be null or 1-31!");
+
+            RuleFor(top => top.Period3BillingDay)
+                .Must(d => d == null || d > 0 && d < 32)
+                .WithMessage("Period3BillingDay must be null or 1-31!");
+            RuleFor(top => top.Period3CashDiscount1Day)
+                .Must(d => d == null || d > 0 && d < 32)
+                .WithMessage("Period3CashDiscount1Day must be null or 1-31!");
+            RuleFor(top => top.Period3CashDiscount2Day)
+                .Must(d => d == null || d > 0 && d < 32)
+                .WithMessage("Period3CashDiscount2Day must be null or 1-31!");
+            RuleFor(top => top.Period3DueDay)
+                .Must(d => d == null || d > 0 && d < 32)
+                .WithMessage("Period3DueDay must be null or 1-31!");
         }
 
         /// <summary>   Validates the specified instance. </summary>

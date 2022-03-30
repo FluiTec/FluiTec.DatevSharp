@@ -105,6 +105,20 @@ namespace FluiTec.DatevSharp.Helpers
         }
 
         /// <summary>
+        /// An AddressType extension method that value to datev.
+        /// </summary>
+        ///
+        /// <param name="monthPick">    The monthPick to act on. </param>
+        ///
+        /// <returns>
+        /// A string.
+        /// </returns>
+        public static string ToDatev(this MonthPick? monthPick)
+        {
+            return monthPick.HasValue ? Convert.ToInt32(monthPick).ToString() : null;
+        }
+
+        /// <summary>
         /// An OutputTarget extension method that value to datev.
         /// </summary>
         ///
