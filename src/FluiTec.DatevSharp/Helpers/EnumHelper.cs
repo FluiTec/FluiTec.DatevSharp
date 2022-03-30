@@ -127,9 +127,9 @@ namespace FluiTec.DatevSharp.Helpers
         /// <returns>
         /// A string.
         /// </returns>
-        public static string ToDatev(this CurrencyHandling currencyHandling)
+        public static string ToDatev(this CurrencyHandling? currencyHandling)
         {
-            return Convert.ToInt32(currencyHandling).ToString();
+            return currencyHandling.HasValue ? Convert.ToInt32(currencyHandling.Value).ToString().ToDatev() : "\"\"";
         }
 
         /// <summary>
@@ -197,9 +197,9 @@ namespace FluiTec.DatevSharp.Helpers
         /// <returns>
         /// A string.
         /// </returns>
-        public static string ToDatev(this PaymentTransferMedium paymentTransferMedium)
+        public static string ToDatev(this PaymentTransferMedium? paymentTransferMedium)
         {
-            return Convert.ToInt32(paymentTransferMedium).ToString();
+            return paymentTransferMedium.HasValue ? Convert.ToInt32(paymentTransferMedium).ToString() : "\"\"";
         }
 
         /// <summary>
@@ -211,9 +211,9 @@ namespace FluiTec.DatevSharp.Helpers
         /// <returns>
         /// A string.
         /// </returns>
-        public static string ToDatev(this DebitAdvice debitAdvice)
+        public static string ToDatev(this DebitAdvice? debitAdvice)
         {
-            return Convert.ToInt32(debitAdvice).ToString();
+            return debitAdvice.HasValue ? Convert.ToInt32(debitAdvice.Value).ToString().ToDatev() : "\"\"";
         }
 
         /// <summary>
