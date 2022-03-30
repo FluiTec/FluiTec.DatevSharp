@@ -91,7 +91,7 @@ namespace FluiTec.DatevSharp.Rows.Maps
             Map(row => row.AdmonitionInterestRate2, row => row.AdmonitionInterestRate2?.ToDatev());
             Map(row => row.AdmonitionInterestRate3, row => row.AdmonitionInterestRate3?.ToDatev());
             Map(row => row.DebitAdvice, row => row.DebitAdvice.ToDatev());
-            Map(row => row.Method, row => row.Method?.ToDatev());
+            Map(row => row.Method, row => row.Method.ToDatev());
             Map(row => row.DebitAdviceBank, row => row.DebitAdviceBank.ToDatev());
             Map(row => row.PaymentTransferMedium, row => row.PaymentTransferMedium.ToDatev());
             Map(row => row.IndividualField1, row => row.IndividualField1.ToDatev());
