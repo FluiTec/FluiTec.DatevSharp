@@ -147,6 +147,90 @@ namespace FluiTec.DatevSharp.Helpers
         }
 
         /// <summary>
+        /// An AccountStatement extension method that value to datev.
+        /// </summary>
+        ///
+        /// <param name="accountStatement"> The accountStatement to act on. </param>
+        ///
+        /// <returns>
+        /// A string.
+        /// </returns>
+        public static string ToDatev(this AccountStatement accountStatement)
+        {
+            return Convert.ToInt32(accountStatement).ToString();
+        }
+
+        /// <summary>
+        /// An AdmontitionText extension method that value to datev.
+        /// </summary>
+        ///
+        /// <param name="accountStatement"> The accountStatement to act on. </param>
+        ///
+        /// <returns>
+        /// A string.
+        /// </returns>
+        public static string ToDatev(this AdmontitionText accountStatement)
+        {
+            return Convert.ToInt32(accountStatement).ToString();
+        }
+
+        /// <summary>
+        /// An InterestCalculation extension method that value to datev.
+        /// </summary>
+        ///
+        /// <param name="interestCalculation">  The interestCalculation to act on. </param>
+        ///
+        /// <returns>
+        /// A string.
+        /// </returns>
+        public static string ToDatev(this InterestCalculation interestCalculation)
+        {
+            return Convert.ToInt32(interestCalculation).ToString();
+        }
+
+        /// <summary>
+        /// An PaymentTransferMedium extension method that value to datev.
+        /// </summary>
+        ///
+        /// <param name="paymentTransferMedium">    The paymentTransferMedium to act on. </param>
+        ///
+        /// <returns>
+        /// A string.
+        /// </returns>
+        public static string ToDatev(this PaymentTransferMedium paymentTransferMedium)
+        {
+            return Convert.ToInt32(paymentTransferMedium).ToString();
+        }
+
+        /// <summary>
+        /// An DebitAdvice extension method that value to datev.
+        /// </summary>
+        ///
+        /// <param name="debitAdvice">  The debitAdvice to act on. </param>
+        ///
+        /// <returns>
+        /// A string.
+        /// </returns>
+        public static string ToDatev(this DebitAdvice debitAdvice)
+        {
+            return Convert.ToInt32(debitAdvice).ToString();
+        }
+
+        /// <summary>
+        /// An AccountStatementText extension method that value to datev.
+        /// </summary>
+        ///
+        /// <param name="accountStatementText"> The accountStatementText to act on. </param>
+        ///
+        /// <returns>
+        /// A string.
+        /// </returns>
+        public static string ToDatev(this AccountStatementText accountStatementText)
+        {
+            return Convert.ToInt32(accountStatementText).ToString();
+        }
+
+        /// <summary>
         ///     An AccrualsBasisAccounting extension method that value to datev.
         /// </summary>
         /// <param name="accrualsBasisAccounting">  The accrualsBasisAccounting to act on. </param>

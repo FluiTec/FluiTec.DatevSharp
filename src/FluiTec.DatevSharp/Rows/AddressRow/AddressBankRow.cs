@@ -553,7 +553,7 @@ namespace FluiTec.DatevSharp.Rows.AddressRow
         /// </value>
         [DatevField(94, 1)]
         public DateTime? BankValidTill5 { get; set; }
-
+        
         /// <summary>
         /// Gets or sets the business partner bank.
         /// </summary>
@@ -563,5 +563,550 @@ namespace FluiTec.DatevSharp.Rows.AddressRow
         /// </value>
         [DatevField(95, 1)]
         public string BusinessPartnerBank { get; set; }
+
+        /// <summary>
+        /// Gets or sets the bank code 6.
+        /// </summary>
+        ///
+        /// <value>
+        /// The bank code 6.
+        /// </value>
+        [DatevField(164, 2)]
+        public string BankCode6 { get; set; }
+
+        /// <summary>
+        /// Gets or sets the bank name 6.
+        /// </summary>
+        ///
+        /// <value>
+        /// The bank name 6.
+        /// </value>
+        [DatevField(165, 2)]
+        public string BankName6 { get; set; }
+
+        /// <summary>
+        /// Gets or sets the bank account number 6.
+        /// </summary>
+        ///
+        /// <value>
+        /// The bank account number 6.
+        /// </value>
+        [DatevField(166, 2)]
+        public string BankAccountNumber6 { get; set; }
+
+        /// <summary>
+        /// Gets or sets the bank country 6.
+        /// </summary>
+        ///
+        /// <value>
+        /// The bank country 6.
+        /// </value>
+        [DatevField(167, 2)]
+        public Country? BankCountry6 { get; set; }
+
+        /// <summary>
+        /// Gets or sets the iban 6.
+        /// </summary>
+        ///
+        /// <value>
+        /// The iban 6.
+        /// </value>
+        [DatevField(168, 2)]
+        public string Iban6 { get; set; }
+
+        /// <summary>
+        /// Gets or sets the iban 6 correct.
+        /// </summary>
+        ///
+        /// <value>
+        /// The iban 6 correct.
+        /// </value>
+        [DatevField(169, 2)]
+        public bool? Iban6Correct { get; set; }
+
+        /// <summary>
+        /// Gets or sets the swift 6.
+        /// </summary>
+        ///
+        /// <value>
+        /// The swift 6.
+        /// </value>
+        [DatevField(170, 2)]
+        public string Swift6 { get; set; }
+
+        /// <summary>
+        /// Gets or sets the divergent account holder 6.
+        /// </summary>
+        ///
+        /// <value>
+        /// The divergent account holder 6.
+        /// </value>
+        [DatevField(171, 2)]
+        public string DivergentAccountHolder6 { get; set; }
+
+        /// <summary>
+        ///     Gets the marker main banking account 6.
+        /// </summary>
+        /// <value>
+        ///     The marker main banking account 6.
+        /// </value>
+        [DatevField(172, 2)]
+        public bool MarkerMainBankingAccount6 { get; set; }
+
+        /// <summary>
+        /// Gets or sets the Date/Time of the bank valid from 6.
+        /// </summary>
+        ///
+        /// <value>
+        /// The bank valid from 6.
+        /// </value>
+        [DatevField(173, 2)]
+        public DateTime? BankValidFrom6 { get; set; }
+
+        /// <summary>
+        /// Gets or sets the Date/Time of the bank valid till 6.
+        /// </summary>
+        ///
+        /// <value>
+        /// The bank valid till 6.
+        /// </value>
+        [DatevField(174, 2)]
+        public DateTime? BankValidTill6 { get; set; }
+
+        /// <summary>
+        /// Gets or sets the bank code 7.
+        /// </summary>
+        ///
+        /// <value>
+        /// The bank code 7.
+        /// </value>
+        [DatevField(175, 2)]
+        public string BankCode7 { get; set; }
+
+        /// <summary>
+        /// Gets or sets the bank name 7.
+        /// </summary>
+        ///
+        /// <value>
+        /// The bank name 7.
+        /// </value>
+        [DatevField(176, 2)]
+        public string BankName7 { get; set; }
+
+        /// <summary>
+        /// Gets or sets the bank account number 7.
+        /// </summary>
+        ///
+        /// <value>
+        /// The bank account number 7.
+        /// </value>
+        [DatevField(177, 2)]
+        public string BankAccountNumber7 { get; set; }
+
+        /// <summary>
+        /// Gets or sets the bank country 7.
+        /// </summary>
+        ///
+        /// <value>
+        /// The bank country 7.
+        /// </value>
+        [DatevField(178, 2)]
+        public Country? BankCountry7 { get; set; }
+
+        /// <summary>
+        /// Gets or sets the iban 7.
+        /// </summary>
+        ///
+        /// <value>
+        /// The iban 7.
+        /// </value>
+        [DatevField(179, 2)]
+        public string Iban7 { get; set; }
+
+        /// <summary>
+        /// Gets or sets the iban 7 correct.
+        /// </summary>
+        ///
+        /// <value>
+        /// The iban 7 correct.
+        /// </value>
+        [DatevField(180, 2)]
+        public bool? Iban7Correct { get; set; }
+
+        /// <summary>
+        /// Gets or sets the swift 7.
+        /// </summary>
+        ///
+        /// <value>
+        /// The swift 7.
+        /// </value>
+        [DatevField(181, 2)]
+        public string Swift7 { get; set; }
+
+        /// <summary>
+        /// Gets or sets the divergent account holder 7.
+        /// </summary>
+        ///
+        /// <value>
+        /// The divergent account holder 7.
+        /// </value>
+        [DatevField(182, 2)]
+        public string DivergentAccountHolder7 { get; set; }
+
+        /// <summary>
+        ///     Gets the marker main banking account 7.
+        /// </summary>
+        /// <value>
+        ///     The marker main banking account 7.
+        /// </value>
+        [DatevField(183, 2)]
+        public bool MarkerMainBankingAccount7 { get; set; }
+
+        /// <summary>
+        /// Gets or sets the Date/Time of the bank valid from 7.
+        /// </summary>
+        ///
+        /// <value>
+        /// The bank valid from 7.
+        /// </value>
+        [DatevField(184, 2)]
+        public DateTime? BankValidFrom7 { get; set; }
+
+        /// <summary>
+        /// Gets or sets the Date/Time of the bank valid till 7.
+        /// </summary>
+        ///
+        /// <value>
+        /// The bank valid till 7.
+        /// </value>
+        [DatevField(185, 2)]
+        public DateTime? BankValidTill7 { get; set; }
+
+        /// <summary>
+        /// Gets or sets the bank code 8.
+        /// </summary>
+        ///
+        /// <value>
+        /// The bank code 8.
+        /// </value>
+        [DatevField(186, 2)]
+        public string BankCode8 { get; set; }
+
+        /// <summary>
+        /// Gets or sets the bank name 8.
+        /// </summary>
+        ///
+        /// <value>
+        /// The bank name 8.
+        /// </value>
+        [DatevField(187, 2)]
+        public string BankName8 { get; set; }
+
+        /// <summary>
+        /// Gets or sets the bank account number 8.
+        /// </summary>
+        ///
+        /// <value>
+        /// The bank account number 8.
+        /// </value>
+        [DatevField(188, 2)]
+        public string BankAccountNumber8 { get; set; }
+
+        /// <summary>
+        /// Gets or sets the bank country 8.
+        /// </summary>
+        ///
+        /// <value>
+        /// The bank country 8.
+        /// </value>
+        [DatevField(189, 2)]
+        public Country? BankCountry8 { get; set; }
+
+        /// <summary>
+        /// Gets or sets the iban 8.
+        /// </summary>
+        ///
+        /// <value>
+        /// The iban 8.
+        /// </value>
+        [DatevField(190, 2)]
+        public string Iban8 { get; set; }
+
+        /// <summary>
+        /// Gets or sets the iban 8 correct.
+        /// </summary>
+        ///
+        /// <value>
+        /// The iban 8 correct.
+        /// </value>
+        [DatevField(191, 2)]
+        public bool? Iban8Correct { get; set; }
+
+        /// <summary>
+        /// Gets or sets the swift 8.
+        /// </summary>
+        ///
+        /// <value>
+        /// The swift 8.
+        /// </value>
+        [DatevField(192, 2)]
+        public string Swift8 { get; set; }
+
+        /// <summary>
+        /// Gets or sets the divergent account holder 8.
+        /// </summary>
+        ///
+        /// <value>
+        /// The divergent account holder 8.
+        /// </value>
+        [DatevField(193, 2)]
+        public string DivergentAccountHolder8 { get; set; }
+
+        /// <summary>
+        ///     Gets the marker main banking account 8.
+        /// </summary>
+        /// <value>
+        ///     The marker main banking account 8.
+        /// </value>
+        [DatevField(194, 2)]
+        public bool MarkerMainBankingAccount8 { get; set; }
+
+        /// <summary>
+        /// Gets or sets the Date/Time of the bank valid from 8.
+        /// </summary>
+        ///
+        /// <value>
+        /// The bank valid from 8.
+        /// </value>
+        [DatevField(195, 2)]
+        public DateTime? BankValidFrom8 { get; set; }
+
+        /// <summary>
+        /// Gets or sets the Date/Time of the bank valid till 8.
+        /// </summary>
+        ///
+        /// <value>
+        /// The bank valid till 8.
+        /// </value>
+        [DatevField(196, 2)]
+        public DateTime? BankValidTill8 { get; set; }
+
+        /// <summary>
+        /// Gets or sets the bank code 9.
+        /// </summary>
+        ///
+        /// <value>
+        /// The bank code 9.
+        /// </value>
+        [DatevField(197, 2)]
+        public string BankCode9 { get; set; }
+
+        /// <summary>
+        /// Gets or sets the bank name 9.
+        /// </summary>
+        ///
+        /// <value>
+        /// The bank name 9.
+        /// </value>
+        [DatevField(198, 2)]
+        public string BankName9 { get; set; }
+
+        /// <summary>
+        /// Gets or sets the bank account number 9.
+        /// </summary>
+        ///
+        /// <value>
+        /// The bank account number 9.
+        /// </value>
+        [DatevField(199, 2)]
+        public string BankAccountNumber9 { get; set; }
+
+        /// <summary>
+        /// Gets or sets the bank country 9.
+        /// </summary>
+        ///
+        /// <value>
+        /// The bank country 9.
+        /// </value>
+        [DatevField(200, 2)]
+        public Country? BankCountry9 { get; set; }
+
+        /// <summary>
+        /// Gets or sets the iban 9.
+        /// </summary>
+        ///
+        /// <value>
+        /// The iban 9.
+        /// </value>
+        [DatevField(201, 2)]
+        public string Iban9 { get; set; }
+
+        /// <summary>
+        /// Gets or sets the iban 9 correct.
+        /// </summary>
+        ///
+        /// <value>
+        /// The iban 9 correct.
+        /// </value>
+        [DatevField(202, 2)]
+        public bool? Iban9Correct { get; set; }
+
+        /// <summary>
+        /// Gets or sets the swift 9.
+        /// </summary>
+        ///
+        /// <value>
+        /// The swift 9.
+        /// </value>
+        [DatevField(203, 2)]
+        public string Swift9 { get; set; }
+
+        /// <summary>
+        /// Gets or sets the divergent account holder 9.
+        /// </summary>
+        ///
+        /// <value>
+        /// The divergent account holder 9.
+        /// </value>
+        [DatevField(204, 2)]
+        public string DivergentAccountHolder9 { get; set; }
+
+        /// <summary>
+        ///     Gets the marker main banking account 9.
+        /// </summary>
+        /// <value>
+        ///     The marker main banking account 9.
+        /// </value>
+        [DatevField(205, 2)]
+        public bool MarkerMainBankingAccount9 { get; set; }
+
+        /// <summary>
+        /// Gets or sets the Date/Time of the bank valid from 9.
+        /// </summary>
+        ///
+        /// <value>
+        /// The bank valid from 9.
+        /// </value>
+        [DatevField(206, 2)]
+        public DateTime? BankValidFrom9 { get; set; }
+
+        /// <summary>
+        /// Gets or sets the Date/Time of the bank valid till 9.
+        /// </summary>
+        ///
+        /// <value>
+        /// The bank valid till 9.
+        /// </value>
+        [DatevField(207, 2)]
+        public DateTime? BankValidTill9 { get; set; }
+
+        /// <summary>
+        /// Gets or sets the bank code 10.
+        /// </summary>
+        ///
+        /// <value>
+        /// The bank code 10.
+        /// </value>
+        [DatevField(208, 2)]
+        public string BankCode10 { get; set; }
+
+        /// <summary>
+        /// Gets or sets the bank name 10.
+        /// </summary>
+        ///
+        /// <value>
+        /// The bank name 10.
+        /// </value>
+        [DatevField(209, 2)]
+        public string BankName10 { get; set; }
+
+        /// <summary>
+        /// Gets or sets the bank account number 10.
+        /// </summary>
+        ///
+        /// <value>
+        /// The bank account number 10.
+        /// </value>
+        [DatevField(210, 2)]
+        public string BankAccountNumber10 { get; set; }
+
+        /// <summary>
+        /// Gets or sets the bank country 10.
+        /// </summary>
+        ///
+        /// <value>
+        /// The bank country 10.
+        /// </value>
+        [DatevField(211, 2)]
+        public Country? BankCountry10 { get; set; }
+
+        /// <summary>
+        /// Gets or sets the iban 10.
+        /// </summary>
+        ///
+        /// <value>
+        /// The iban 10.
+        /// </value>
+        [DatevField(212, 2)]
+        public string Iban10 { get; set; }
+
+        /// <summary>
+        /// Gets or sets the iban 10 correct.
+        /// </summary>
+        ///
+        /// <value>
+        /// The iban 10 correct.
+        /// </value>
+        [DatevField(213, 2)]
+        public bool? Iban10Correct { get; set; }
+
+        /// <summary>
+        /// Gets or sets the swift 10.
+        /// </summary>
+        ///
+        /// <value>
+        /// The swift 10.
+        /// </value>
+        [DatevField(214, 2)]
+        public string Swift10 { get; set; }
+
+        /// <summary>
+        /// Gets or sets the divergent account holder 10.
+        /// </summary>
+        ///
+        /// <value>
+        /// The divergent account holder 10.
+        /// </value>
+        [DatevField(215, 2)]
+        public string DivergentAccountHolder10 { get; set; }
+
+        /// <summary>
+        ///     Gets the marker main banking account 10.
+        /// </summary>
+        /// <value>
+        ///     The marker main banking account 10.
+        /// </value>
+        [DatevField(216, 2)]
+        public bool MarkerMainBankingAccount10 { get; set; }
+
+        /// <summary>
+        /// Gets or sets the Date/Time of the bank valid from 10.
+        /// </summary>
+        ///
+        /// <value>
+        /// The bank valid from 10.
+        /// </value>
+        [DatevField(217, 2)]
+        public DateTime? BankValidFrom10 { get; set; }
+
+        /// <summary>
+        /// Gets or sets the Date/Time of the bank valid till 10.
+        /// </summary>
+        ///
+        /// <value>
+        /// The bank valid till 10.
+        /// </value>
+        [DatevField(218, 2)]
+        public DateTime? BankValidTill10 { get; set; }
     }
 }

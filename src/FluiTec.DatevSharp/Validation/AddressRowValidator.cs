@@ -53,6 +53,32 @@ namespace FluiTec.DatevSharp.Validation
             RuleFor(address => address.ContactPerson).Length(0, 40);
             RuleFor(address => address.Representative).Length(0, 40);
             RuleFor(address => address.Referee).Length(0, 40);
+            RuleFor(address => address.Method).Length(0, 1);
+            RuleFor(address => address.IndividualField1).Length(0, 40);
+            RuleFor(address => address.IndividualField2).Length(0, 40);
+            RuleFor(address => address.IndividualField3).Length(0, 40);
+            RuleFor(address => address.IndividualField4).Length(0, 40);
+            RuleFor(address => address.IndividualField5).Length(0, 40);
+            RuleFor(address => address.IndividualField6).Length(0, 40);
+            RuleFor(address => address.IndividualField7).Length(0, 40);
+            RuleFor(address => address.IndividualField8).Length(0, 40);
+            RuleFor(address => address.IndividualField9).Length(0, 40);
+            RuleFor(address => address.IndividualField10).Length(0, 40);
+            RuleFor(address => address.IndividualField11).Length(0, 40);
+            RuleFor(address => address.IndividualField12).Length(0, 40);
+            RuleFor(address => address.IndividualField13).Length(0, 40);
+            RuleFor(address => address.IndividualField14).Length(0, 40);
+            RuleFor(address => address.IndividualField15).Length(0, 40);
+            RuleFor(address => address.BillingDivergentSalutation).Length(0, 30);
+            RuleFor(address => address.BillingStreet).Length(0, 36);
+            RuleFor(address => address.BillingPostBox).Length(0, 10);
+            RuleFor(address => address.BillingZipCode).Length(0, 10);
+            RuleFor(address => address.BillingCity).Length(0, 30);
+            RuleFor(address => address.BillingTransportAddition).Length(0, 50);
+            RuleFor(address => address.BillingAddressAddition).Length(0, 36);
+            RuleFor(address => address.BillingDeliveryDirective1).Length(0, 50);
+            RuleFor(address => address.BillingDeliveryDirective1).Length(0, 36);
+            RuleFor(address => address.ExternalAccountNumber).Length(0, 15);
 
             // bank
             RuleFor(address => address.BankCode1).Length(0, 8);
@@ -86,6 +112,36 @@ namespace FluiTec.DatevSharp.Validation
             RuleFor(address => address.Swift5).Length(0, 11);
             RuleFor(address => address.DivergentAccountHolder5).Length(0, 70);
             RuleFor(address => address.BusinessPartnerBank).Length(0, 3);
+            RuleFor(address => address.BankCode6).Length(0, 8);
+            RuleFor(address => address.BankName6).Length(0, 30);
+            RuleFor(address => address.BankAccountNumber6).Length(0, 10);
+            RuleFor(address => address.Iban6).Length(0, 34);
+            RuleFor(address => address.Swift6).Length(0, 11);
+            RuleFor(address => address.DivergentAccountHolder6).Length(0, 70);
+            RuleFor(address => address.BankCode7).Length(0, 8);
+            RuleFor(address => address.BankName7).Length(0, 30);
+            RuleFor(address => address.BankAccountNumber7).Length(0, 10);
+            RuleFor(address => address.Iban7).Length(0, 34);
+            RuleFor(address => address.Swift7).Length(0, 11);
+            RuleFor(address => address.DivergentAccountHolder7).Length(0, 70);
+            RuleFor(address => address.BankCode8).Length(0, 8);
+            RuleFor(address => address.BankName8).Length(0, 30);
+            RuleFor(address => address.BankAccountNumber8).Length(0, 10);
+            RuleFor(address => address.Iban8).Length(0, 34);
+            RuleFor(address => address.Swift8).Length(0, 11);
+            RuleFor(address => address.DivergentAccountHolder8).Length(0, 80);
+            RuleFor(address => address.BankCode9).Length(0, 9);
+            RuleFor(address => address.BankName9).Length(0, 30);
+            RuleFor(address => address.BankAccountNumber9).Length(0, 10);
+            RuleFor(address => address.Iban9).Length(0, 34);
+            RuleFor(address => address.Swift9).Length(0, 11);
+            RuleFor(address => address.DivergentAccountHolder9).Length(0, 90);
+            RuleFor(address => address.BankCode10).Length(0, 10);
+            RuleFor(address => address.BankName10).Length(0, 30);
+            RuleFor(address => address.BankAccountNumber10).Length(0, 10);
+            RuleFor(address => address.Iban10).Length(0, 34);
+            RuleFor(address => address.Swift10).Length(0, 11);
+            RuleFor(address => address.DivergentAccountHolder10).Length(0, 100);
         }
 
         /// <summary>   Validates the specified instance. </summary>
