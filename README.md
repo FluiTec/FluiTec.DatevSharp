@@ -23,7 +23,7 @@ as well as ClassMaps that define how associated properties are formatted on outp
 
 This also enables you to pick a different version. By default - by assigning a DataCategory
 to a DatevFile - you're assigning the default datev-version as defined in format_map.json
-(currently: 510) - however - you can easily use another version by assigning
+(currently: 700) - however - you can easily use another version by assigning
 a DataVersion upon creating a DatevFile.
 
 ### In case you're missing something ###
