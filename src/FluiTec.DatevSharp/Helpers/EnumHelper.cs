@@ -19,11 +19,11 @@ namespace FluiTec.DatevSharp.Helpers
         /// <returns>
         ///     The string value.
         /// </returns>
-        private static string GetStringValue(Type enumType, string fieldName)
+        public static string GetStringValue(Type enumType, string fieldName)
         {
             var fieldInfo = enumType.GetField(fieldName);
-            return fieldInfo.GetCustomAttributes(typeof(StringValueAttribute), false)
-                is StringValueAttribute[] attrs && attrs.Length > 0
+            return fieldInfo?.GetCustomAttributes(typeof(StringValueAttribute), false)
+                is StringValueAttribute[] { Length: > 0 } attrs
                 ? attrs[0].Value
                 : null;
         }
