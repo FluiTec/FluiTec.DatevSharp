@@ -7,6 +7,7 @@ namespace FluiTec.DatevSharp.Rows.Enums
     /// </summary>
     public enum BookingType
     {
+        [StringValue(null)] Undefined,
         [StringValue("AA")] RequestedCommission,
         [StringValue("AG")] ReceivedCommission,
         [StringValue("AV")] ReceivedObligation,
