@@ -7,6 +7,7 @@ namespace FluiTec.DatevSharp.Rows.Enums
     /// </summary>
     public enum TaxationType
     {
+        [StringValue(null)] Undefined,
         [StringValue("I")] Actual,
         [StringValue("K")] None,
         [StringValue("P")] Flat,

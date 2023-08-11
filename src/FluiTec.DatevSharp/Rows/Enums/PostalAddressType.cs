@@ -7,6 +7,7 @@ namespace FluiTec.DatevSharp.Rows.Enums
     /// </summary>
     public enum PostalAddressType
     {
+        [StringValue(null)] Undefined,
         [StringValue("STR")] Street,
         [StringValue("PF")] PostBox,
         [StringValue("GK")] MajorCustomer
