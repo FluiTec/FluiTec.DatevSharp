@@ -50,10 +50,14 @@ namespace FluiTec.DatevSharp.Validation
             RuleFor(booking => booking)
                 .Must(booking => booking.BasicVolumeCurrencySymbol == null || booking.BasicVolume.HasValue)
                 .WithMessage("If BasicVolumeCurrencySymbol is used, BasicVolume can not be NULL!");
-            RuleFor(booking => booking.AccountNumber).Length(impersonalAccountsLength, impersonalAccountsLength + 1)
-                .NotNull();
+            RuleFor(booking => booking.AccountNumber)
+                .Length(impersonalAccountsLength, impersonalAccountsLength + 1)
+                .NotNull()
+                .WithMessage("AccountNumber is required and cannot be NULL!");
             RuleFor(booking => booking.ContraAccountNumber)
-                .Length(impersonalAccountsLength, impersonalAccountsLength + 1).NotNull();
+                .Length(impersonalAccountsLength, impersonalAccountsLength + 1)
+                .NotNull()
+                .WithMessage("ContraAccountNumber is required and cannot be NULL!");
             RuleFor(booking => booking)
                 .Must(b => b.AccountNumber.Length + b.ContraAccountNumber.Length <= impersonalAccountsLength * 2 + 1)
                 .WithMessage("Booking from one PersonalAccountNumber to another PersonalAccountNumber is forbidden!");
