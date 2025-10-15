@@ -10,6 +10,7 @@
     <PackageTags>C# CSharp Datev</PackageTags>
     <Description>Simple, clean library that enables validation and export of DATEV-conform data in typical, type-safe C#-Code.</Description>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+	<GenerateDocumentationFile>True</GenerateDocumentationFile>
     <Authors>Achim Schnell</Authors>
     <Company>Achim Schnell</Company>
 	<LangVersion>9.0</LangVersion>
